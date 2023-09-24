@@ -5,7 +5,6 @@ package vulkan
 
 /*
 #cgo android LDFLAGS: -Wl,--no-warn-mismatch
-#cgo android CFLAGS: -DVK_USE_PLATFORM_ANDROID_KHR -arch arm64
 
 #include <android/native_window.h>
 
