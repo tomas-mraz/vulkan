@@ -62,21 +62,22 @@ Follow the [build instructions](https://github.com/KhronosGroup/MoltenVK#buildin
 
 ## MoltenVK on iOS
 
-grab MoltenVK asset from github actions, copy to suitable directory:
+Download the MoltenVK asset from [the MoltenVK GitHub actions](https://github.com/KhronosGroup/MoltenVK/actions). Then, copy it to a suitable directory, and make a `.framework` by running:
 
 ```
--L/Users/oreilly/dev/ios/MoltenVK/MoltenVK/dylib/iOS/`  and `-lMoltenVK ` in `vulkan_ios.go`
-
-$ cp libMoltenVK.dylib myapp.app` 
-$ lipo -create libMoltenVK.dylib -output MoltenVK`
-$ mkdir MoltenVK.framework
-$ mv MoltenVK MoltenVK.framework/
-$ install_name_tool -change @rpath/libMoltenVK.dylib @executable_path/MoltenVK.framework/MoltenVK main
-$ codesign --force --deep --verbose=2 --sign "Randall O'Reilly" widgets.app
-$ codesign -vvvv ../widgets.app
+lipo -create libMoltenVK.dylib -output MoltenVK
 ```
 
-Info.plist for `MoltenVK.framework`
+When building apps, run the standard `goki build` command and then
+```
+cp -r {{the path you put the MoltenVK framework at}} {{appname}}.app
+```
+For example:
+```
+cp -r ~/devFrameworks/MoltenVK.framework drawtri.app
+```
+
+Info.plist for `MoltenVK.framework` (shouldn't be relevant)
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
