@@ -62,15 +62,17 @@ Follow the [build instructions](https://github.com/KhronosGroup/MoltenVK#buildin
 
 ## MoltenVK on iOS
 
-Download the MoltenVK asset from [the MoltenVK GitHub actions](https://github.com/KhronosGroup/MoltenVK/actions). Then, copy it to a suitable directory, and make a `.framework` by running:
+The following steps are needed when developing for iOS and **not** using the `goki` tool. When using the `goki` tool, you just need to run `goki setup ios` once to create the framework and then `goki build` will always copy the framework for you. This information only exists for reference if you are not using the `goki` tool, and should not be relevant for most people.
+
+Download the MoltenVK asset from [the MoltenVK GitHub actions](https://github.com/KhronosGroup/MoltenVK/actions). Then, copy it to the `~/Library/goki` directory, and make a `.framework` by running:
 
 ```
-lipo -create libMoltenVK.dylib -output MoltenVK
+lipo -create libMoltenVK.dylib -output MoltenVK.framework
 ```
 
 When building apps, run the standard `goki build` command and then
 ```
-cp -r {{the path you put the MoltenVK framework at}} {{appname}}.app
+cp -r ~/Library/goki/MoltenVK.framework {{appname}}.app
 ```
 For example:
 ```
