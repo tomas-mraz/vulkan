@@ -66,12 +66,14 @@ The following steps are needed when developing for iOS and **not** using the `go
 
 Download the MoltenVK iOS asset from [the MoltenVK GitHub releases](https://github.com/KhronosGroup/MoltenVK/releases/latest/download/MoltenVK-ios.tar). Then, copy it to your `~/Library/goki` directory, and make a `.framework` by running:
 
-```
+```sh
+install_name_tool -id @executable_path/MoltenVK.framework/MoltenVK libMoltenVK.dylib
 lipo -create libMoltenVK.dylib -output MoltenVK
 mkdir MoltenVK.framework
 mv MoltenVK MoltenVK.framework
-cd MoltenVK.framework
-install_name_tool -change @rpath/libMoltenVK.dylib @executable_path/MoltenVK.framework/MoltenVK MoltenVK
+# now copy the Info.plist for MoltenVK.framework below into MoltenVK.framework/Info.plist
+codesign --force --deep --verbose=2 --sign "rcoreilly@me.com" MoltenVK.framework
+codesign -vvvv MoltenVK.framework
 ```
 
 When building apps, build the app with the environment variable `CGO_LDFLAGS=-F/Users/{{you}}/Library/goki`. Then, after you build the app, run:
@@ -83,7 +85,7 @@ For example:
 cp -r ~/Library/goki/MoltenVK.framework drawtri.app
 ```
 
-Info.plist for `MoltenVK.framework` (shouldn't be relevant)
+Info.plist for `MoltenVK.framework` (needs to be copied when making a framework above)
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
