@@ -99,7 +99,7 @@ Info.plist for `MoltenVK.framework` (needs to be copied when making a framework 
 	<key>CFBundleExecutable</key>
 	<string>MoltenVK</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.example.test.MoltenVK</string>
+	<string>com.goki.MoltenVK</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
