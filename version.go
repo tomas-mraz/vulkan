@@ -3,7 +3,7 @@
 package vulkan
 
 const (
-	GoVersion   = "v1.0.7"
-	GitCommit   = "8a345fd"          // the commit JUST BEFORE the release
-	VersionDate = "2023-10-07 02:17" // UTC
+	GoVersion   = "v1.0.8"
+	GitCommit   = "6baec6f"          // the commit JUST BEFORE the release
+	VersionDate = "2024-07-20 18:47" // UTC
 )
