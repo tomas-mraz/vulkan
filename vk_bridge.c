@@ -1325,19 +1325,19 @@ VkResult callVkCreateIOSSurfaceMVK(
 VkResult callVkGetMoltenVKDeviceConfigurationMVK(
     VkDevice                                    device,
     MVKConfiguration*                     pConfiguration) {
-    return vgo_vkGetMoltenVKDeviceConfigurationMVK(device, pConfiguration, sizeof(MVKConfiguration));
+    return vgo_vkGetMoltenVKDeviceConfigurationMVK(device, pConfiguration, (size_t*)sizeof(MVKConfiguration));
 }
 
 VkResult callVkSetMoltenVKDeviceConfigurationMVK(
     VkDevice                                    device,
     MVKConfiguration*                     pConfiguration) {
-    return vgo_vkSetMoltenVKDeviceConfigurationMVK(device, pConfiguration, sizeof(MVKConfiguration));
+    return vgo_vkSetMoltenVKDeviceConfigurationMVK(device, pConfiguration, (size_t*)sizeof(MVKConfiguration));
 }
 
 VkResult callVkGetPhysicalDeviceMetalFeaturesMVK(
     VkPhysicalDevice                            physicalDevice,
     MVKPhysicalDeviceMetalFeatures*             pMetalFeatures) {
-    return vgo_vkGetPhysicalDeviceMetalFeaturesMVK(physicalDevice, pMetalFeatures, sizeof(MVKConfiguration));
+    return vgo_vkGetPhysicalDeviceMetalFeaturesMVK(physicalDevice, pMetalFeatures, (size_t*)sizeof(MVKConfiguration));
 }
 
 // VkResult callVkGetSwapchainPerformanceMVK(
