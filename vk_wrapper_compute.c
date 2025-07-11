@@ -1,4 +1,4 @@
-// +build linux,compute linux,headless freebsd,compute freebsd,headless
+//go:build (linux && (compute || headless)) || (freebsd && (compute || headless))
 
 #include "vk_wrapper.h"
 #include <dlfcn.h>

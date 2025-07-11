@@ -1,5 +1,4 @@
-// +build darwin
-// +build arm arm64
+//go:build darwin && (arm || arm64)
 
 #include "vk_wrapper.h"
 #include <dlfcn.h>

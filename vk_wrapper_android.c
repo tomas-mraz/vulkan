@@ -1,4 +1,4 @@
-// +build android
+//go:build android
 
 #include "vk_wrapper.h"
 #include <dlfcn.h>
