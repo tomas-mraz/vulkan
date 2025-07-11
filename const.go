@@ -23,6 +23,10 @@ const (
 	NoPrototypes = 1
 	// Version10 as defined in vulkan/vulkan_core.h:22
 	Version10 = 1
+	// ApiVersion10 as defined in vulkan/vulkan_core.h:40
+	ApiVersion10 = 4194304
+	// ApiVersion11 as defined in vulkan/vulkan_core.h:3789
+	ApiVersion11 = 4198400
 	// Use64BitPtrDefines as defined in vulkan/vulkan_core.h:30
 	Use64BitPtrDefines = 1
 	// HeaderVersion as defined in vulkan/vulkan_core.h:75
