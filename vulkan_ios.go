@@ -7,7 +7,7 @@ package vulkan
 #cgo LDFLAGS: -framework Foundation -framework Metal -framework QuartzCore -framework IOSurface -framework MoltenVK -lc++
 #cgo CFLAGS: -x objective-c -DVK_USE_PLATFORM_IOS_MVK -v
 
-#include "vulkan/vulkan.h"
+#include "vulkan/volk.h"
 #include "vk_wrapper.h"
 #include "vk_bridge.h"
 #include <stdlib.h>
@@ -18,11 +18,11 @@ import "unsafe"
 const (
 	// UsePlatformIos means enabled support of MoltenVK.
 	UsePlatformIos = 1
-	// MvkIosSurface as defined in vulkan/vulkan.h:5765
+	// MvkIosSurface as defined in vulkan/volk.h:5765
 	MvkIosSurface = 1
-	// MvkIosSurfaceSpecVersion as defined in vulkan/vulkan.h:5766
+	// MvkIosSurfaceSpecVersion as defined in vulkan/volk.h:5766
 	MvkIosSurfaceSpecVersion = 2
-	// MvkIosSurfaceExtensionName as defined in vulkan/vulkan.h:5767
+	// MvkIosSurfaceExtensionName as defined in vulkan/volk.h:5767
 	MvkIosSurfaceExtensionName = "VK_MVK_ios_surface"
 	// MvkMoltenvkSpecVersion as defined in moltenVK/vk_mvk_moltenvk.h:28
 	MvkMoltenvkSpecVersion = 1
@@ -30,10 +30,10 @@ const (
 	MvkMoltenvkExtensionName = "VK_MVK_moltenvk"
 )
 
-// IOSSurfaceCreateFlagsMVK type as declared in vulkan/vulkan.h:5769
+// IOSSurfaceCreateFlagsMVK type as declared in vulkan/volk.h:5769
 type IOSSurfaceCreateFlagsMVK uint32
 
-// IOSSurfaceCreateInfoMVK as declared in vulkan/vulkan.h:5776
+// IOSSurfaceCreateInfoMVK as declared in vulkan/volk.h:5776
 type IOSSurfaceCreateInfoMVK struct {
 	SType          StructureType
 	PNext          unsafe.Pointer

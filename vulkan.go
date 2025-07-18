@@ -7,7 +7,7 @@ package vulkan
 
 /*
 #cgo CFLAGS: -I. -DVK_NO_PROTOTYPES
-#include "vulkan/vulkan.h"
+#include "vulkan/volk.h"
 #include "vulkan/vulkan_beta.h"
 #include "vk_wrapper.h"
 #include "vk_bridge.h"

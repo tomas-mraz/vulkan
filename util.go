@@ -6,7 +6,7 @@ import (
 	"unsafe"
 )
 
-// #include "vulkan/vulkan.h"
+// #include "vulkan/volk.h"
 import "C"
 
 // Max bounds of uint32 and uint64,

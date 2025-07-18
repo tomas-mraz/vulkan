@@ -13,7 +13,7 @@ package vulkan
 
 #include <android/native_window.h>
 
-#include "vulkan/vulkan.h"
+#include "vulkan/volk.h"
 #include "vk_wrapper.h"
 #include "vk_bridge.h"
 #include "cgo_helpers.h"
@@ -24,11 +24,11 @@ import "unsafe"
 const (
 	// UsePlatformAndroid as defined in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html
 	UsePlatformAndroid = 1
-	// KhrAndroidSurface as defined in vulkan/vulkan.h:3669
+	// KhrAndroidSurface as defined in vulkan/volk.h:3669
 	KhrAndroidSurface = 1
-	// KhrAndroidSurfaceSpecVersion as defined in vulkan/vulkan.h:3672
+	// KhrAndroidSurfaceSpecVersion as defined in vulkan/volk.h:3672
 	KhrAndroidSurfaceSpecVersion = 6
-	// KhrAndroidSurfaceExtensionName as defined in vulkan/vulkan.h:3673
+	// KhrAndroidSurfaceExtensionName as defined in vulkan/volk.h:3673
 	KhrAndroidSurfaceExtensionName = "VK_KHR_android_surface"
 )
 

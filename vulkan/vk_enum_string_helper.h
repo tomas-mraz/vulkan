@@ -37,7 +37,7 @@
 #endif
 
 #include <string>
-#include <vulkan/vulkan.h>
+#include <vulkan/volk.h>
 
 
 static inline const char* string_VkResult(VkResult input_value)
