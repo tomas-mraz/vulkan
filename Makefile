@@ -2,20 +2,24 @@ VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/t
 
 help:
 	@echo "Available targets:"
-	@echo "  help         - show this help"
-	@echo "  download     - download Vulkan headers ZIP and extract *.h into ./vulkan"
-	@echo "  patch        - apply local patches to downloaded Vulkan headers"
-	@echo "  install-tool - install c-for-go generator tool"
-	@echo "  generate     - generate bindings from vulkan.yml"
-	@echo "  clean        - remove generated Go/C helper files"
-	@echo "  test         - build project to verify compilation"
-	@echo "  release      - regenerate version.go metadata"
+	@echo "  help          - show this help"
+	@echo "  run           - execute full pipeline: download, patch-headers, generate, patch-go, test"
+	@echo "  download      - download Vulkan headers ZIP and extract *.h into ./vulkan"
+	@echo "  patch-headers - apply local patches to downloaded Vulkan headers (comments H264 and H265 stuff)"
+	@echo "  install-tool  - install c-for-go generator tool"
+	@echo "  generate      - generate bindings from vulkan.yml"
+	@echo "  patch-go      - apply post-generation patch to const.go (fix true/false type)"
+	@echo "  clean         - remove generated Go/C helper files"
+	@echo "  test          - build project to verify compilation"
+	@echo "  release       - regenerate version.go metadata"
+
+run: download patch-headers generate patch-go test
 
 download:
 	curl -L -O $(VULKAN_HEADERS_URL)
 	unzip -j -o $(notdir $(VULKAN_HEADERS_URL)) 'Vulkan-Headers-*/include/vulkan/*.h' -d ./vulkan
 
-patch:
+patch-headers:
 	patch -N -d vulkan -p0 < vulkan/vulkan_core_h.patch
 	patch -N -d vulkan -p0 < vulkan/vulkan_beta_h.patch
 
@@ -24,6 +28,9 @@ install-tool:
 
 generate:
 	c-for-go -ccdefs vulkan.yml
+
+patch-go:
+	patch -N -p0 < const_go.patch
 
 clean:
 	rm vulkan.go doc.go types.go const.go
