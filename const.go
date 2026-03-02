@@ -42,7 +42,7 @@ const (
 	// AttachmentUnused as defined in vulkan/vulkan_core.h:123
 	AttachmentUnused = (^uint32(0))
 	// False as defined in vulkan/vulkan_core.h:124
-	False = uint32(0)
+	False = Bool32(0)
 	// LodClampNone as defined in vulkan/vulkan_core.h:125
 	LodClampNone = 1000.0
 	// QueueFamilyIgnored as defined in vulkan/vulkan_core.h:126
@@ -54,7 +54,7 @@ const (
 	// SubpassExternal as defined in vulkan/vulkan_core.h:129
 	SubpassExternal = (^uint32(0))
 	// True as defined in vulkan/vulkan_core.h:130
-	True = uint32(1)
+	True = Bool32(1)
 	// WholeSize as defined in vulkan/vulkan_core.h:131
 	WholeSize = (^uint64(0))
 	// MaxMemoryTypes as defined in vulkan/vulkan_core.h:132
