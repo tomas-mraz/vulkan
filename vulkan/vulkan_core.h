@@ -72,7 +72,7 @@ extern "C" {
 #define VK_API_VERSION_1_0 VK_MAKE_API_VERSION(0, 1, 0, 0)// Patch version should always be set to 0
 
 // Version of this file
-#define VK_HEADER_VERSION 239
+#define VK_HEADER_VERSION 240
 
 // Complete version of this file
 #define VK_HEADER_VERSION_COMPLETE VK_MAKE_API_VERSION(0, 1, 3, VK_HEADER_VERSION)
@@ -1001,6 +1001,7 @@ typedef enum VkStructureType {
     VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT = 1000351002,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_FEATURES_ARM = 1000497000,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_PROPERTIES_ARM = 1000497001,
+    VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_LIBRARY_GROUP_HANDLES_FEATURES_EXT = 1000498000,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES,
     VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETER_FEATURES = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DRAW_PARAMETERS_FEATURES,
     VK_STRUCTURE_TYPE_DEBUG_REPORT_CREATE_INFO_EXT = VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT,
@@ -8180,8 +8181,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDecodeVideoKHR(
     const VkVideoDecodeInfoKHR*                 pDecodeInfo);
 #endif
 
-#ifdef GO_INCLUDE_video_decode
-
+/*
 #define VK_KHR_video_decode_h264 1
 #include "vk_video/vulkan_video_codec_h264std.h"
 #include "vk_video/vulkan_video_codec_h264std_decode.h"
@@ -8239,8 +8239,8 @@ typedef struct VkVideoDecodeH264DpbSlotInfoKHR {
     const void*                               pNext;
     const StdVideoDecodeH264ReferenceInfo*    pStdReferenceInfo;
 } VkVideoDecodeH264DpbSlotInfoKHR;
+*/
 
-#endif // GO_INCLUDE_video_decode
 
 #define VK_KHR_dynamic_rendering 1
 #define VK_KHR_DYNAMIC_RENDERING_SPEC_VERSION 1
@@ -9354,8 +9354,7 @@ typedef struct VkPhysicalDeviceShaderClockFeaturesKHR {
 } VkPhysicalDeviceShaderClockFeaturesKHR;
 
 
-#ifdef GO_INCLUDE_video_decode
-
+/*
 #define VK_KHR_video_decode_h265 1
 #include "vk_video/vulkan_video_codec_h265std.h"
 #include "vk_video/vulkan_video_codec_h265std_decode.h"
@@ -9406,8 +9405,8 @@ typedef struct VkVideoDecodeH265DpbSlotInfoKHR {
     const void*                               pNext;
     const StdVideoDecodeH265ReferenceInfo*    pStdReferenceInfo;
 } VkVideoDecodeH265DpbSlotInfoKHR;
+*/
 
-#endif // GO_INCLUDE_video_decode
 
 #define VK_KHR_global_priority 1
 #define VK_MAX_GLOBAL_PRIORITY_SIZE_KHR   16U
@@ -10490,7 +10489,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectByteCountEXT(
     uint32_t                                    vertexStride);
 #endif
 
-/*
+
 #define VK_NVX_binary_import 1
 VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkCuModuleNVX)
 VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkCuFunctionNVX)
@@ -10560,7 +10559,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCuLaunchKernelNVX(
     VkCommandBuffer                             commandBuffer,
     const VkCuLaunchInfoNVX*                    pLaunchInfo);
 #endif
-*/
+
 
 #define VK_NVX_image_view_handle 1
 #define VK_NVX_IMAGE_VIEW_HANDLE_SPEC_VERSION 2
@@ -11913,8 +11912,6 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoarseSampleOrderNV(
     const VkCoarseSampleOrderCustomNV*          pCustomSampleOrders);
 #endif
 
-// ray tracing not working on mac..
-#ifdef GO_INCLUDE_NV_ray_tracing
 
 #define VK_NV_ray_tracing 1
 VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkAccelerationStructureNV)
@@ -12289,7 +12286,6 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCompileDeferredNV(
     uint32_t                                    shader);
 #endif
 
-#endif // GO_INCLUDE_NV_ray_tracing
 
 #define VK_NV_representative_fragment_test 1
 #define VK_NV_REPRESENTATIVE_FRAGMENT_TEST_SPEC_VERSION 2
@@ -14173,16 +14169,12 @@ typedef struct VkOpaqueCaptureDescriptorDataCreateInfoEXT {
     const void*        opaqueCaptureDescriptorData;
 } VkOpaqueCaptureDescriptorDataCreateInfoEXT;
 
-#ifdef GO_INCLUDE_NV_ray_tracing
-
 typedef struct VkAccelerationStructureCaptureDescriptorDataInfoEXT {
     VkStructureType               sType;
     const void*                   pNext;
     VkAccelerationStructureKHR    accelerationStructure;
     VkAccelerationStructureNV     accelerationStructureNV;
 } VkAccelerationStructureCaptureDescriptorDataInfoEXT;
-
-#endif // GO_INCLUDE_NV_ray_tracing
 
 typedef void (VKAPI_PTR *PFN_vkGetDescriptorSetLayoutSizeEXT)(VkDevice device, VkDescriptorSetLayout layout, VkDeviceSize* pLayoutSizeInBytes);
 typedef void (VKAPI_PTR *PFN_vkGetDescriptorSetLayoutBindingOffsetEXT)(VkDevice device, VkDescriptorSetLayout layout, uint32_t binding, VkDeviceSize* pOffset);
@@ -14194,10 +14186,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkGetBufferOpaqueCaptureDescriptorDataEXT)(VkDe
 typedef VkResult (VKAPI_PTR *PFN_vkGetImageOpaqueCaptureDescriptorDataEXT)(VkDevice device, const VkImageCaptureDescriptorDataInfoEXT* pInfo, void* pData);
 typedef VkResult (VKAPI_PTR *PFN_vkGetImageViewOpaqueCaptureDescriptorDataEXT)(VkDevice device, const VkImageViewCaptureDescriptorDataInfoEXT* pInfo, void* pData);
 typedef VkResult (VKAPI_PTR *PFN_vkGetSamplerOpaqueCaptureDescriptorDataEXT)(VkDevice device, const VkSamplerCaptureDescriptorDataInfoEXT* pInfo, void* pData);
-
-#ifdef GO_INCLUDE_NV_ray_tracing
 typedef VkResult (VKAPI_PTR *PFN_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT)(VkDevice device, const VkAccelerationStructureCaptureDescriptorDataInfoEXT* pInfo, void* pData);
-#endif // GO_INCLUDE_NV_ray_tracing
 
 #ifndef VK_NO_PROTOTYPES
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSizeEXT(
@@ -14364,7 +14353,6 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetFragmentShadingRateEnumNV(
     const VkFragmentShadingRateCombinerOpKHR    combinerOps[2]);
 #endif
 
-#ifdef GO_INCLUDE_NV_ray_tracing
 
 #define VK_NV_ray_tracing_motion_blur 1
 #define VK_NV_RAY_TRACING_MOTION_BLUR_SPEC_VERSION 1
@@ -14454,7 +14442,7 @@ typedef struct VkPhysicalDeviceRayTracingMotionBlurFeaturesNV {
     VkBool32           rayTracingMotionBlurPipelineTraceRaysIndirect;
 } VkPhysicalDeviceRayTracingMotionBlurFeaturesNV;
 
-#endif // GO_INCLUDE_NV_ray_tracing
+
 
 #define VK_EXT_ycbcr_2plane_444_formats 1
 #define VK_EXT_YCBCR_2PLANE_444_FORMATS_SPEC_VERSION 1
@@ -14613,7 +14601,6 @@ typedef struct VkPhysicalDevice4444FormatsFeaturesEXT {
 } VkPhysicalDevice4444FormatsFeaturesEXT;
 
 
-#ifdef GO_INCLUDE_NV_ray_tracing
 
 #define VK_EXT_device_fault 1
 #define VK_EXT_DEVICE_FAULT_SPEC_VERSION  1
@@ -16416,6 +16403,17 @@ typedef struct VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM {
 
 
 
+#define VK_EXT_pipeline_library_group_handles 1
+#define VK_EXT_PIPELINE_LIBRARY_GROUP_HANDLES_SPEC_VERSION 1
+#define VK_EXT_PIPELINE_LIBRARY_GROUP_HANDLES_EXTENSION_NAME "VK_EXT_pipeline_library_group_handles"
+typedef struct VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT {
+    VkStructureType    sType;
+    void*              pNext;
+    VkBool32           pipelineLibraryGroupHandles;
+} VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT;
+
+
+
 #define VK_KHR_acceleration_structure 1
 #define VK_KHR_ACCELERATION_STRUCTURE_SPEC_VERSION 13
 #define VK_KHR_ACCELERATION_STRUCTURE_EXTENSION_NAME "VK_KHR_acceleration_structure"
@@ -16923,6 +16921,3 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectCountEXT(
 #endif
 
 #endif
-
-#endif // GO_INCLUDE_NV_ray_tracing
-

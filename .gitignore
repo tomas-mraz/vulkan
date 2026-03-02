@@ -1,3 +1,5 @@
+*.zip
+
 # JetBrains IDE
 .idea/
 *.iml
