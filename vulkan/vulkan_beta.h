@@ -49,8 +49,7 @@ typedef struct VkPhysicalDevicePortabilitySubsetPropertiesKHR {
 } VkPhysicalDevicePortabilitySubsetPropertiesKHR;
 
 
-#ifdef GO_INCLUDE_video_decode
-
+/*
 #define VK_KHR_video_encode_queue 1
 #define VK_KHR_VIDEO_ENCODE_QUEUE_SPEC_VERSION 7
 #define VK_KHR_VIDEO_ENCODE_QUEUE_EXTENSION_NAME "VK_KHR_video_encode_queue"
@@ -158,6 +157,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEncodeVideoKHR(
     VkCommandBuffer                             commandBuffer,
     const VkVideoEncodeInfoKHR*                 pEncodeInfo);
 #endif
+
 
 #define VK_EXT_video_encode_h264 1
 #include "vk_video/vulkan_video_codec_h264std.h"
@@ -544,8 +544,7 @@ typedef struct VkVideoEncodeH265RateControlLayerInfoEXT {
     VkBool32                         useMaxFrameSize;
     VkVideoEncodeH265FrameSizeEXT    maxFrameSize;
 } VkVideoEncodeH265RateControlLayerInfoEXT;
-
-#endif // GO_INCLUDE_video_decode
+*/
 
 #ifdef __cplusplus
 }

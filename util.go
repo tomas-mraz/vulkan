@@ -17,7 +17,7 @@ var (
 )
 
 func (b Bool32) B() bool {
-	return b == True
+	return b == Bool32(True)
 }
 
 type Version uint32
