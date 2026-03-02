@@ -25,7 +25,7 @@ PARSER:
     # - moltenVK/vk_mvk_moltenvk.h
   Defines:
     VK_NO_PROTOTYPES: 1
-    VK_ENABLE_BETA_EXTENSIONS: 1
+    VK_ENABLE_BETA_EXTENSIONS: 0
     VK_USE_PLATFORM_ANDROID_KHR: null
     VK_USE_PLATFORM_WIN32_KHR: null
     VK_USE_PLATFORM_IOS_MVK: null
@@ -61,7 +61,8 @@ TRANSLATOR:
       - {transform: lower}
       - {action: accept, from: "(?i)^VK_"}
       - {action: replace, from: "(?i)^VK_", to: "_"}
-      - {action: replace, from: PipelineCacheHeaderVersionOne, to: PipelineCacheHeaderVersion1}
+      - {action: replace, from: "pipeline_cache_header_version_one$", to: "pipeline_cache_header_version_1"}
+      - {action: replace, from: "device_fault_vendor_binary_header_version_one_?$", to: "device_fault_vendor_binary_header_version_1"}
       - {load: snakecase}
     private:
       - {transform: unexport}
@@ -84,6 +85,13 @@ TRANSLATOR:
     - {target: VkAllocationCallbacks, self: raw}
     - {target: DebugUtilsMessengerCallback, self: raw}
     - {target: ANativeWindow, self: raw}
+    # bit-field structs: CGo cannot access bit fields by name
+    - {target: VkAccelerationStructureInstanceKHR, self: raw}
+    - {target: VkAccelerationStructureInstanceNV, self: raw}
+    - {target: VkAccelerationStructureMatrixMotionInstanceNV, self: raw}
+    - {target: VkAccelerationStructureSRTMotionInstanceNV, self: raw}
+    # struct with untranslatable PFN_vkGetInstanceProcAddrLUNARG function pointer field
+    - {target: VkDirectDriverLoadingInfoLUNARG, self: raw}
   PtrTips:
     function:
       - {target: ^callVkEnumeratePhysicalDevices$, tips: [0,ref,arr]}
