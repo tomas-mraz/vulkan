@@ -1,6 +1,27 @@
+# Update from Mar 4, 2026:
+
+I forked c-for-go to [github.com/tomas-mraz/c-for-go](https://github.com/tomas-mraz/c-for-go) and patched to handle Vulkan constants with macro.  
+Now it is possible to use the latest version of [c-for-go from xlab](https://github.com/xlab/c-for-go).
+
+I made the update from 1.3.239 to 1.3.240 and later on 1.3.241.  
+After few tweeakings is now possible upgrade only with change version in Makefile and run `make install-tool && make run`.  
+
+It does ...
+- downloads headers from the official Khronos Vulkan repository https://github.com/KhronosGroup/Vulkan-Headers
+- unpack
+- patch headers files
+- generate Go bindings
+- patch Go file const.go
+- verify by building project
+
+Some details to make commands can be obtained by run `make help`.
+The .patch files have been updated.
+
+
 # Update from Feb 9, 2023:
 
 Just updated to the current 1.3.239.0 version of https://vulkan.lunarg.com/sdk/home and included the `vulkan_beta.h` file which includes the `PhysicalDevicePortabilitySubsetFeatures` struct that is needed to configure features on MoltenVK on the mac.  Everything else more-or-less worked from the original conversion notes below.  The .patch files have been updated.
+
 
 # Original conversion notes from May 11, 2022:
 
