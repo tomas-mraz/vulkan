@@ -1,4 +1,4 @@
-VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.240.zip
+VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.241.zip
 
 help:
 	@echo "Available targets:"
@@ -24,7 +24,7 @@ patch-headers:
 	patch -N -d vulkan -p0 < vulkan/vulkan_beta_h.patch
 
 install-tool:
-	go install github.com/xlab/c-for-go@latest
+	go install github.com/tomas-mraz/c-for-go@latest
 
 generate:
 	c-for-go -ccdefs vulkan.yml
