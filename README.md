@@ -1,16 +1,23 @@
 <img src="https://cl.ly/2H2E3c0T1X16/Vulkan_500px_Mar15.png" width="200">
 
-# Golang Bindings for Vulkan API ![version-1.3.239](https://img.shields.io/badge/version-1.3.239-lightgrey.svg) [![GoDoc](https://pkg.go.dev/badge/github.com/goki/vulkan.svg)](https://pkg.go.dev/github.com/goki/vulkan)
+# Golang Bindings for Vulkan API ![version-1.3.241](https://img.shields.io/badge/version-1.3.241-red.svg) [![GoDoc](https://pkg.go.dev/badge/github.com/goki/vulkan.svg)](https://pkg.go.dev/github.com/goki/vulkan)
 
-Package [vulkan](https://github.com/goki/vulkan) provides Go bindings for [Vulkan](https://www.khronos.org/vulkan/) — a low-overhead, cross-platform 3D graphics and compute API. Updated February 9, 2023 — Vulkan 1.3.239.
+Package provides Go bindings for [Vulkan API](https://www.khronos.org/vulkan/) a low-overhead, cross-platform 3D graphics and compute API.  
+The Vulkan API is a cross-platform industry standard enabling developers to target a wide range of devices with the same graphics API.
+
+Original repository - https://github.com/vulkan-go/vulkan (from https://github.com/xlab)  
+Forked and upgraded - https://github.com/goki/vulkan (from https://github.com/cogentcore)  
+Forked goki fork - https://github.com/tomas-mraz/vulkan  
+
+See [UPDATING](UPDATING.md) for extensive notes on how to update to newer vulkan versions as they are released.  
+See [README_Apple](README_Apple.md) for information about support for Vulkan on Apple platforms.
 
 ## Introduction
 
-The [Vulkan API](https://www.vulkan.org) is a cross-platform industry standard enabling developers to target a wide range of devices with the same graphics API.
 
-This Go binding allows one to use Vulkan API directly within Go code, avoiding adding lots of C/C++ in the projects.  The original version is at https://github.com/vulkan-go/vulkan (still on 1.1.88 from 2018) and a fork at https://github.com/goki/vulkan is being more actively maintained at this point.
+This Go binding allows one to use Vulkan API directly within Go code, avoiding adding lots of C/C++ in the projects.
+The original version is at https://github.com/vulkan-go/vulkan (still on 1.1.88 from 2018), and a fork at https://github.com/goki/vulkan (still on 1.3.239 from 2023) was abandoned in favor of the WebGPU wrapper in Rust.
 
-See [UPDATING](UPDATING.md) for extensive notes on how to update to newer vulkan versions as they are released.
 
 ## Examples and usage
 
@@ -48,154 +55,7 @@ if err := vk.Init(); err != nil {
 
 And you're set. I must warn you that using the API properly is not an easy task at all, so beware and follow the official documentation: https://www.khronos.org/registry/vulkan/specs/1.0/html/vkspec.html
 
-In order to simplify development, I created a high-level framework that manages Vulkan platform state and initialization. It is called [asche](https://github.com/vulkan-go/asche) because when you throw a gopher into volcano you get a pile of ash. Currently it's used in [VulkanCube](https://github.com/vulkan-go/demos/blob/master/vulkancube/vulkancube_android/main.go) demo app.
-
-## MoltenVK os macOS
-
-MoltenVK provides a `MoltenVK.xcframework` which contains static libraries for all Apple platforms. Unfortuantely, linking with a xcframework outside of XCode is not possible.
-
-Instead vulkan-go expects the dylibs to be present in the library search path. 
-
-Follow the [build instructions](https://github.com/KhronosGroup/MoltenVK#building), but instead of `make install` manually copy `./Package/Latest/MoltenVK/dylib/macOS/libMoltenVK.dylib` to `/usr/local/lib`
-
-**IMPORTANT:** be sure to remove any existing `libMoltenVK.dylib` file *before* copying a new one, otherwise you'll have to reboot your computer due to the way the gatekeeper mechanism works!
-
-## MoltenVK on iOS
-
-The following steps are needed when developing for iOS and **not** using the `goki` tool. When using the `goki` tool, it will do all of these steps for you; you just need to run `goki setup ios` once to create the framework and then `goki build` will always copy the framework and set the environment variables for you. This information only exists for reference if you are not using the `goki` tool, and should not be relevant for most people.
-
-Download the MoltenVK iOS asset from [the MoltenVK GitHub releases](https://github.com/KhronosGroup/MoltenVK/releases/latest/download/MoltenVK-ios.tar). Then, copy it to your `~/Library/goki` directory, and make a `.framework` by running:
-
-```sh
-install_name_tool -id @executable_path/MoltenVK.framework/MoltenVK libMoltenVK.dylib
-lipo -create libMoltenVK.dylib -output MoltenVK
-mkdir MoltenVK.framework
-mv MoltenVK MoltenVK.framework
-# now copy the Info.plist for MoltenVK.framework below into MoltenVK.framework/Info.plist
-codesign --force --deep --verbose=2 --sign "rcoreilly@me.com" MoltenVK.framework
-codesign -vvvv MoltenVK.framework
-```
-
-When building apps, build the app with the environment variable `CGO_LDFLAGS=-F/Users/{{you}}/Library/goki`. Then, after you build the app, run:
-```
-cp -r ~/Library/goki/MoltenVK.framework {{appname}}.app
-```
-For example:
-```
-cp -r ~/Library/goki/MoltenVK.framework drawtri.app
-```
-
-Info.plist for `MoltenVK.framework` (needs to be copied when making a framework above)
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>BuildMachineOSBuild</key>
-	<string>22F82</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleExecutable</key>
-	<string>MoltenVK</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.goki.MoltenVK</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>MoltenVK</string>
-	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleSupportedPlatforms</key>
-	<array>
-		<string>iPhoneOS</string>
-	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-</dict>
-</plist>
-```
-
-main Info.plist for reference:
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>BuildMachineOSBuild</key>
-	<string>22F82</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleExecutable</key>
-	<string>main</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.example.test.widgets</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>Widgets</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleSupportedPlatforms</key>
-	<array>
-		<string>iPhoneOS</string>
-	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>DTCompiler</key>
-	<string>com.apple.compilers.llvm.clang.1_0</string>
-	<key>DTPlatformBuild</key>
-	<string>20E238</string>
-	<key>DTPlatformName</key>
-	<string>iphoneos</string>
-	<key>DTPlatformVersion</key>
-	<string>16.4</string>
-	<key>DTSDKBuild</key>
-	<string>20E238</string>
-	<key>DTSDKName</key>
-	<string>iphoneos16.4</string>
-	<key>DTXcode</key>
-	<string>1431</string>
-	<key>DTXcodeBuild</key>
-	<string>14E300c</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>MinimumOSVersion</key>
-	<string>16.4</string>
-	<key>UIDeviceFamily</key>
-	<array>
-		<integer>1</integer>
-		<integer>2</integer>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>arm64</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-</dict>
-</plist>
-```
+To simplify development, I created a high-level framework that manages Vulkan platform state and initialization. It is called [asche](https://github.com/vulkan-go/asche) because when you throw a gopher into volcano you get a pile of ash. Currently it's used in [VulkanCube](https://github.com/vulkan-go/demos/blob/master/vulkancube/vulkancube_android/main.go) demo app.
 
 
 
@@ -203,7 +63,7 @@ main Info.plist for reference:
 
 A good brief of the current state of Vulkan validation layers: [Explore the Vulkan Loader and Validation Layers](https://lunarg.com/wp-content/uploads/2016/07/lunarg-birds-feather-session-siggraph-july-26-2016.pdf) (PDF).
 
-There is a full support of validation layers with custom callbacks in Go. For my Android experiments I got the standard pack of layers from https://github.com/LunarG/VulkanTools and built them like this:
+There is full support of validation layers with custom callbacks in Go. For my Android experiments I got the standard pack of layers from https://github.com/LunarG/VulkanTools and built them like this:
 
 ```
 $ cd build-android
@@ -231,7 +91,7 @@ After that you'd copy the files to `android/jni/libs` in your project and activa
 ## Useful links
 
 * [vulkanGo.com](https://vulkanGo.com)
-* [SaschaWillems Demos (C++)](https://github.com/SaschaWillems/Vulkan)
+* [Sascha Willem's demos (C++)](https://github.com/SaschaWillems/Vulkan)
 * [LunarG Vulkan Samples](https://github.com/LunarG/VulkanSamples) (archived)
 * [Vulkan Samples from Khronos Group](https://github.com/KhronosGroup/Vulkan-Samples)
 * [Official list of Vulkan resources](https://www.khronos.org/vulkan/resources)
