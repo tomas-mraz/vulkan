@@ -1,15 +1,10 @@
 //go:build android
-// +build android
 
 package vulkan
 
 /*
 #cgo android LDFLAGS: -Wl,--no-warn-mismatch
-#if defined(__x86_64__) || defined(_M_X64) || defined(i386) || defined(__i386__) || defined(__i386) || defined(_M_IX86)
-	#cgo android CFLAGS: -DVK_USE_PLATFORM_ANDROID_KHR -arch amd64
-#else
-    #cgo android CFLAGS: -DVK_USE_PLATFORM_ANDROID_KHR -arch arm64
-#endif
+#cgo android CFLAGS: -DVK_USE_PLATFORM_ANDROID_KHR
 
 #include <android/native_window.h>
 
