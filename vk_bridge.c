@@ -8,6 +8,15 @@ VkResult callVkCreateInstance(
     return vgo_vkCreateInstance(pCreateInfo, pAllocator, pInstance);
 }
 
+VkResult callVkEnumerateInstanceVersion(
+    uint32_t*                                   pApiVersion) {
+    if (vgo_vkEnumerateInstanceVersion == NULL) {
+        *pApiVersion = VK_API_VERSION_1_0;
+        return VK_SUCCESS;
+    }
+    return vgo_vkEnumerateInstanceVersion(pApiVersion);
+}
+
 void callVkDestroyInstance(
     VkInstance                                  instance,
     const VkAllocationCallbacks*                pAllocator) {
@@ -1422,4 +1431,3 @@ VkResult callVkGetPastPresentationTimingGOOGLE(
     VkPastPresentationTimingGOOGLE*             pPresentationTimings) {
     return vgo_vkGetPastPresentationTimingGOOGLE(device, swapchain, pPresentationTimingCount, pPresentationTimings);
 }
-

@@ -20,6 +20,7 @@ int isProcAddrSet() {
 
 int vkInit() {
     vgo_vkCreateInstance = (PFN_vkCreateInstance)((*getInstanceProcAddress)(NULL, "vkCreateInstance"));
+    vgo_vkEnumerateInstanceVersion = (PFN_vkEnumerateInstanceVersion)((*getInstanceProcAddress)(NULL, "vkEnumerateInstanceVersion"));
     vgo_vkEnumerateInstanceExtensionProperties = (PFN_vkEnumerateInstanceExtensionProperties)((*getInstanceProcAddress)(NULL, "vkEnumerateInstanceExtensionProperties"));
     vgo_vkEnumerateInstanceLayerProperties = (PFN_vkEnumerateInstanceLayerProperties)((*getInstanceProcAddress)(NULL, "vkEnumerateInstanceLayerProperties"));
 
@@ -225,6 +226,7 @@ int vkInitInstance(VkInstance instance) {
 
 PFN_vkCreateInstance vgo_vkCreateInstance;
 PFN_vkDestroyInstance vgo_vkDestroyInstance;
+PFN_vkEnumerateInstanceVersion vgo_vkEnumerateInstanceVersion;
 PFN_vkEnumeratePhysicalDevices vgo_vkEnumeratePhysicalDevices;
 PFN_vkGetPhysicalDeviceFeatures vgo_vkGetPhysicalDeviceFeatures;
 PFN_vkGetPhysicalDeviceFormatProperties vgo_vkGetPhysicalDeviceFormatProperties;
@@ -418,4 +420,3 @@ PFN_vkDebugReportMessageEXT vgo_vkDebugReportMessageEXT;
 
 PFN_vkGetRefreshCycleDurationGOOGLE vgo_vkGetRefreshCycleDurationGOOGLE;
 PFN_vkGetPastPresentationTimingGOOGLE vgo_vkGetPastPresentationTimingGOOGLE;
-
