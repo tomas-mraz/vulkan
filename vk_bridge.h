@@ -17,6 +17,9 @@ VkResult callVkCreateInstance(
     const VkAllocationCallbacks*                pAllocator,
     VkInstance*                                 pInstance);
 
+VkResult callVkEnumerateInstanceVersion(
+    uint32_t*                                   pApiVersion);
+
 void callVkDestroyInstance(
     VkInstance                                  instance,
     const VkAllocationCallbacks*                pAllocator);

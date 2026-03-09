@@ -18,6 +18,7 @@ int vkInit(void) {
         return -1;
     }
     vgo_vkCreateInstance = (PFN_vkCreateInstance)(dlsym(RTLD_DEFAULT, "vkCreateInstance"));
+    vgo_vkEnumerateInstanceVersion = (PFN_vkEnumerateInstanceVersion)(dlsym(RTLD_DEFAULT, "vkEnumerateInstanceVersion"));
     vgo_vkEnumerateInstanceExtensionProperties = (PFN_vkEnumerateInstanceExtensionProperties)(dlsym(RTLD_DEFAULT, "vkEnumerateInstanceExtensionProperties"));
     vgo_vkEnumerateInstanceLayerProperties = (PFN_vkEnumerateInstanceLayerProperties)(dlsym(RTLD_DEFAULT, "vkEnumerateInstanceLayerProperties"));
     return 0;
@@ -223,6 +224,7 @@ int vkInitInstance(VkInstance instance) {
 
 PFN_vkCreateInstance vgo_vkCreateInstance;
 PFN_vkDestroyInstance vgo_vkDestroyInstance;
+PFN_vkEnumerateInstanceVersion vgo_vkEnumerateInstanceVersion;
 PFN_vkEnumeratePhysicalDevices vgo_vkEnumeratePhysicalDevices;
 PFN_vkGetPhysicalDeviceFeatures vgo_vkGetPhysicalDeviceFeatures;
 PFN_vkGetPhysicalDeviceFormatProperties vgo_vkGetPhysicalDeviceFormatProperties;
@@ -394,4 +396,3 @@ PFN_vkDebugReportMessageEXT vgo_vkDebugReportMessageEXT;
 
 PFN_vkGetRefreshCycleDurationGOOGLE vgo_vkGetRefreshCycleDurationGOOGLE;
 PFN_vkGetPastPresentationTimingGOOGLE vgo_vkGetPastPresentationTimingGOOGLE;
-

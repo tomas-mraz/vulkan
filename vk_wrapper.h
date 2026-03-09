@@ -17,6 +17,7 @@ int vkInitInstance(VkInstance instance);
 // VK_core
 extern PFN_vkCreateInstance vgo_vkCreateInstance;
 extern PFN_vkDestroyInstance vgo_vkDestroyInstance;
+extern PFN_vkEnumerateInstanceVersion vgo_vkEnumerateInstanceVersion;
 extern PFN_vkEnumeratePhysicalDevices vgo_vkEnumeratePhysicalDevices;
 extern PFN_vkGetPhysicalDeviceFeatures vgo_vkGetPhysicalDeviceFeatures;
 extern PFN_vkGetPhysicalDeviceFormatProperties vgo_vkGetPhysicalDeviceFormatProperties;
