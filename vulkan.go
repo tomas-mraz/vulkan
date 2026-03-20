@@ -1947,13 +1947,13 @@ func GetAccelerationStructureDeviceAddress(device Device, pInfo *AccelerationStr
 }
 
 // CmdBuildAccelerationStructures function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkCmdBuildAccelerationStructuresKHR
-func CmdBuildAccelerationStructures(commandBuffer CommandBuffer, infoCount uint32, pInfos *AccelerationStructureBuildGeometryInfo, ppBuildRangeInfos []*AccelerationStructureBuildRangeInfo) {
+func CmdBuildAccelerationStructures(commandBuffer CommandBuffer, infoCount uint32, pInfos *AccelerationStructureBuildGeometryInfo, ppBuildRangeInfos [][]AccelerationStructureBuildRangeInfo) {
 	ccommandBuffer, ccommandBufferAllocMap := *(*C.VkCommandBuffer)(unsafe.Pointer(&commandBuffer)), cgoAllocsUnknown
 	cinfoCount, cinfoCountAllocMap := (C.uint32_t)(infoCount), cgoAllocsUnknown
 	cpInfos, cpInfosAllocMap := pInfos.PassRef()
-	cppBuildRangeInfos, cppBuildRangeInfosAllocMap := unpackArgSPAccelerationStructureBuildRangeInfo(ppBuildRangeInfos)
+	cppBuildRangeInfos, cppBuildRangeInfosAllocMap := unpackSSAccelerationStructureBuildRangeInfo(ppBuildRangeInfos)
 	C.callVkCmdBuildAccelerationStructuresKHR(ccommandBuffer, cinfoCount, cpInfos, cppBuildRangeInfos)
-	packSPAccelerationStructureBuildRangeInfo(ppBuildRangeInfos, cppBuildRangeInfos)
+	packSSAccelerationStructureBuildRangeInfo(ppBuildRangeInfos, cppBuildRangeInfos)
 	runtime.KeepAlive(cppBuildRangeInfosAllocMap)
 	runtime.KeepAlive(cpInfosAllocMap)
 	runtime.KeepAlive(cinfoCountAllocMap)
