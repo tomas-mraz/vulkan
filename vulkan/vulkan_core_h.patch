@@ -1,5 +1,5 @@
 +++ vulkan_core.h	2026-03-02 14:38:47.422484009 +0100
-@@ -8189,7 +8189,7 @@
+@@ -8190,7 +8190,7 @@
      const VkVideoDecodeInfoKHR*                 pDecodeInfo);
  #endif
  
@@ -8,7 +8,7 @@
  #define VK_KHR_video_decode_h264 1
  #include "vk_video/vulkan_video_codec_h264std.h"
  #include "vk_video/vulkan_video_codec_h264std_decode.h"
-@@ -8247,7 +8247,7 @@
+@@ -8248,7 +8248,7 @@
      const void*                               pNext;
      const StdVideoDecodeH264ReferenceInfo*    pStdReferenceInfo;
  } VkVideoDecodeH264DpbSlotInfoKHR;
@@ -17,7 +17,7 @@
  
  
  #define VK_KHR_dynamic_rendering 1
-@@ -9362,7 +9362,7 @@
+@@ -9363,7 +9363,7 @@
  } VkPhysicalDeviceShaderClockFeaturesKHR;
  
  
@@ -26,7 +26,7 @@
  #define VK_KHR_video_decode_h265 1
  #include "vk_video/vulkan_video_codec_h265std.h"
  #include "vk_video/vulkan_video_codec_h265std_decode.h"
-@@ -9413,7 +9413,7 @@
+@@ -9414,7 +9414,7 @@
      const void*                               pNext;
      const StdVideoDecodeH265ReferenceInfo*    pStdReferenceInfo;
  } VkVideoDecodeH265DpbSlotInfoKHR;

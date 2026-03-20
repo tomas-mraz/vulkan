@@ -1,6 +1,6 @@
 <img src="https://cl.ly/2H2E3c0T1X16/Vulkan_500px_Mar15.png" width="200">
 
-# Golang Bindings for Vulkan API ![version-1.3.241](https://img.shields.io/badge/version-1.3.241-red.svg) [![GoDoc](https://pkg.go.dev/badge/github.com/tomas-mraz/vulkan.svg)](https://pkg.go.dev/github.com/tomas-mraz/vulkan)
+# Golang Bindings for Vulkan API ![version-1.3.242](https://img.shields.io/badge/version-1.3.242-red.svg) [![GoDoc](https://pkg.go.dev/badge/github.com/tomas-mraz/vulkan.svg)](https://pkg.go.dev/github.com/tomas-mraz/vulkan)
 
 Package provides Go bindings for [Vulkan API](https://www.khronos.org/vulkan/) a low-overhead, cross-platform 3D graphics and compute API.  
 The Vulkan API is a cross-platform industry standard enabling developers to target a wide range of devices with the same graphics API.
