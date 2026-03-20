@@ -131,6 +131,7 @@ TRANSLATOR:
       - {target: ^callVkCmdWaitEvents$, tips: [0,size,arr,0,0,size,arr,size,arr,size,arr]}
       - {target: ^callVkCmdPipelineBarrier$, tips: [0,0,0,0,size,arr,size,arr,size,arr]}
       - {target: ^callVkCmdExecuteCommands$, tips: [0,size,arr]}
+      - {target: ^callVkCmdBuildAccelerationStructuresKHR$, tips: [0,0,sref,ref]}
       - {target: ^callVkGetPhysicalDeviceSurfaceFormatsKHR$, tips: [0,0,ref,arr]}
       - {target: ^callVkGetPhysicalDeviceSurfacePresentModesKHR$, tips: [0,0,ref,arr]}
       - {target: ^callVkGetSwapchainImagesKHR$, tips: [0,0,ref,arr]}

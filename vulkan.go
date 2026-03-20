@@ -1883,6 +1883,144 @@ func CmdExecuteCommands(commandBuffer CommandBuffer, commandBufferCount uint32, 
 	runtime.KeepAlive(ccommandBufferAllocMap)
 }
 
+// GetBufferDeviceAddress function as declared in https://www.khronos.org/registry/vulkan/specs/1.0/man/html/vkGetBufferDeviceAddress.html
+func GetBufferDeviceAddress(device Device, pInfo *BufferDeviceAddressInfo) DeviceAddress {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cpInfo, cpInfoAllocMap := pInfo.PassRef()
+	__ret := C.callVkGetBufferDeviceAddress(cdevice, cpInfo)
+	runtime.KeepAlive(cpInfoAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+	__v := (DeviceAddress)(__ret)
+	return __v
+}
+
+// CreateAccelerationStructure function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkCreateAccelerationStructureKHR
+func CreateAccelerationStructure(device Device, pCreateInfo *AccelerationStructureCreateInfo, pAllocator *AllocationCallbacks, pAccelerationStructure *AccelerationStructure) Result {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cpCreateInfo, cpCreateInfoAllocMap := pCreateInfo.PassRef()
+	cpAllocator, cpAllocatorAllocMap := (*C.VkAllocationCallbacks)(unsafe.Pointer(pAllocator)), cgoAllocsUnknown
+	cpAccelerationStructure, cpAccelerationStructureAllocMap := (*C.VkAccelerationStructureKHR)(unsafe.Pointer(pAccelerationStructure)), cgoAllocsUnknown
+	__ret := C.callVkCreateAccelerationStructureKHR(cdevice, cpCreateInfo, cpAllocator, cpAccelerationStructure)
+	runtime.KeepAlive(cpAccelerationStructureAllocMap)
+	runtime.KeepAlive(cpAllocatorAllocMap)
+	runtime.KeepAlive(cpCreateInfoAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+	__v := (Result)(__ret)
+	return __v
+}
+
+// DestroyAccelerationStructure function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkDestroyAccelerationStructureKHR
+func DestroyAccelerationStructure(device Device, accelerationStructure AccelerationStructure, pAllocator *AllocationCallbacks) {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	caccelerationStructure, caccelerationStructureAllocMap := *(*C.VkAccelerationStructureKHR)(unsafe.Pointer(&accelerationStructure)), cgoAllocsUnknown
+	cpAllocator, cpAllocatorAllocMap := (*C.VkAllocationCallbacks)(unsafe.Pointer(pAllocator)), cgoAllocsUnknown
+	C.callVkDestroyAccelerationStructureKHR(cdevice, caccelerationStructure, cpAllocator)
+	runtime.KeepAlive(cpAllocatorAllocMap)
+	runtime.KeepAlive(caccelerationStructureAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+}
+
+// GetAccelerationStructureBuildSizes function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkGetAccelerationStructureBuildSizesKHR
+func GetAccelerationStructureBuildSizes(device Device, buildType AccelerationStructureBuildType, pBuildInfo *AccelerationStructureBuildGeometryInfo, pMaxPrimitiveCounts *uint32, pSizeInfo *AccelerationStructureBuildSizesInfo) {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cbuildType, cbuildTypeAllocMap := (C.VkAccelerationStructureBuildTypeKHR)(buildType), cgoAllocsUnknown
+	cpBuildInfo, cpBuildInfoAllocMap := pBuildInfo.PassRef()
+	cpMaxPrimitiveCounts, cpMaxPrimitiveCountsAllocMap := (*C.uint32_t)(unsafe.Pointer(pMaxPrimitiveCounts)), cgoAllocsUnknown
+	cpSizeInfo, cpSizeInfoAllocMap := pSizeInfo.PassRef()
+	C.callVkGetAccelerationStructureBuildSizesKHR(cdevice, cbuildType, cpBuildInfo, cpMaxPrimitiveCounts, cpSizeInfo)
+	runtime.KeepAlive(cpSizeInfoAllocMap)
+	runtime.KeepAlive(cpMaxPrimitiveCountsAllocMap)
+	runtime.KeepAlive(cpBuildInfoAllocMap)
+	runtime.KeepAlive(cbuildTypeAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+}
+
+// GetAccelerationStructureDeviceAddress function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkGetAccelerationStructureDeviceAddressKHR
+func GetAccelerationStructureDeviceAddress(device Device, pInfo *AccelerationStructureDeviceAddressInfo) DeviceAddress {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cpInfo, cpInfoAllocMap := pInfo.PassRef()
+	__ret := C.callVkGetAccelerationStructureDeviceAddressKHR(cdevice, cpInfo)
+	runtime.KeepAlive(cpInfoAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+	__v := (DeviceAddress)(__ret)
+	return __v
+}
+
+// CmdBuildAccelerationStructures function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkCmdBuildAccelerationStructuresKHR
+func CmdBuildAccelerationStructures(commandBuffer CommandBuffer, infoCount uint32, pInfos *AccelerationStructureBuildGeometryInfo, ppBuildRangeInfos []*AccelerationStructureBuildRangeInfo) {
+	ccommandBuffer, ccommandBufferAllocMap := *(*C.VkCommandBuffer)(unsafe.Pointer(&commandBuffer)), cgoAllocsUnknown
+	cinfoCount, cinfoCountAllocMap := (C.uint32_t)(infoCount), cgoAllocsUnknown
+	cpInfos, cpInfosAllocMap := pInfos.PassRef()
+	cppBuildRangeInfos, cppBuildRangeInfosAllocMap := unpackArgSPAccelerationStructureBuildRangeInfo(ppBuildRangeInfos)
+	C.callVkCmdBuildAccelerationStructuresKHR(ccommandBuffer, cinfoCount, cpInfos, cppBuildRangeInfos)
+	packSPAccelerationStructureBuildRangeInfo(ppBuildRangeInfos, cppBuildRangeInfos)
+	runtime.KeepAlive(cppBuildRangeInfosAllocMap)
+	runtime.KeepAlive(cpInfosAllocMap)
+	runtime.KeepAlive(cinfoCountAllocMap)
+	runtime.KeepAlive(ccommandBufferAllocMap)
+}
+
+// CreateRayTracingPipelines function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkCreateRayTracingPipelinesKHR
+func CreateRayTracingPipelines(device Device, deferredOperation DeferredOperation, pipelineCache PipelineCache, createInfoCount uint32, pCreateInfos *RayTracingPipelineCreateInfo, pAllocator *AllocationCallbacks, pPipelines *Pipeline) Result {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cdeferredOperation, cdeferredOperationAllocMap := *(*C.VkDeferredOperationKHR)(unsafe.Pointer(&deferredOperation)), cgoAllocsUnknown
+	cpipelineCache, cpipelineCacheAllocMap := *(*C.VkPipelineCache)(unsafe.Pointer(&pipelineCache)), cgoAllocsUnknown
+	ccreateInfoCount, ccreateInfoCountAllocMap := (C.uint32_t)(createInfoCount), cgoAllocsUnknown
+	cpCreateInfos, cpCreateInfosAllocMap := pCreateInfos.PassRef()
+	cpAllocator, cpAllocatorAllocMap := (*C.VkAllocationCallbacks)(unsafe.Pointer(pAllocator)), cgoAllocsUnknown
+	cpPipelines, cpPipelinesAllocMap := (*C.VkPipeline)(unsafe.Pointer(pPipelines)), cgoAllocsUnknown
+	__ret := C.callVkCreateRayTracingPipelinesKHR(cdevice, cdeferredOperation, cpipelineCache, ccreateInfoCount, cpCreateInfos, cpAllocator, cpPipelines)
+	runtime.KeepAlive(cpPipelinesAllocMap)
+	runtime.KeepAlive(cpAllocatorAllocMap)
+	runtime.KeepAlive(cpCreateInfosAllocMap)
+	runtime.KeepAlive(ccreateInfoCountAllocMap)
+	runtime.KeepAlive(cpipelineCacheAllocMap)
+	runtime.KeepAlive(cdeferredOperationAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+	__v := (Result)(__ret)
+	return __v
+}
+
+// GetRayTracingShaderGroupHandles function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkGetRayTracingShaderGroupHandlesKHR
+func GetRayTracingShaderGroupHandles(device Device, pipeline Pipeline, firstGroup uint32, groupCount uint32, dataSize uint64, pData unsafe.Pointer) Result {
+	cdevice, cdeviceAllocMap := *(*C.VkDevice)(unsafe.Pointer(&device)), cgoAllocsUnknown
+	cpipeline, cpipelineAllocMap := *(*C.VkPipeline)(unsafe.Pointer(&pipeline)), cgoAllocsUnknown
+	cfirstGroup, cfirstGroupAllocMap := (C.uint32_t)(firstGroup), cgoAllocsUnknown
+	cgroupCount, cgroupCountAllocMap := (C.uint32_t)(groupCount), cgoAllocsUnknown
+	cdataSize, cdataSizeAllocMap := (C.size_t)(dataSize), cgoAllocsUnknown
+	cpData, cpDataAllocMap := pData, cgoAllocsUnknown
+	__ret := C.callVkGetRayTracingShaderGroupHandlesKHR(cdevice, cpipeline, cfirstGroup, cgroupCount, cdataSize, cpData)
+	runtime.KeepAlive(cpDataAllocMap)
+	runtime.KeepAlive(cdataSizeAllocMap)
+	runtime.KeepAlive(cgroupCountAllocMap)
+	runtime.KeepAlive(cfirstGroupAllocMap)
+	runtime.KeepAlive(cpipelineAllocMap)
+	runtime.KeepAlive(cdeviceAllocMap)
+	__v := (Result)(__ret)
+	return __v
+}
+
+// CmdTraceRays function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkCmdTraceRaysKHR
+func CmdTraceRays(commandBuffer CommandBuffer, pRaygenShaderBindingTable *StridedDeviceAddressRegion, pMissShaderBindingTable *StridedDeviceAddressRegion, pHitShaderBindingTable *StridedDeviceAddressRegion, pCallableShaderBindingTable *StridedDeviceAddressRegion, width uint32, height uint32, depth uint32) {
+	ccommandBuffer, ccommandBufferAllocMap := *(*C.VkCommandBuffer)(unsafe.Pointer(&commandBuffer)), cgoAllocsUnknown
+	cpRaygenShaderBindingTable, cpRaygenShaderBindingTableAllocMap := pRaygenShaderBindingTable.PassRef()
+	cpMissShaderBindingTable, cpMissShaderBindingTableAllocMap := pMissShaderBindingTable.PassRef()
+	cpHitShaderBindingTable, cpHitShaderBindingTableAllocMap := pHitShaderBindingTable.PassRef()
+	cpCallableShaderBindingTable, cpCallableShaderBindingTableAllocMap := pCallableShaderBindingTable.PassRef()
+	cwidth, cwidthAllocMap := (C.uint32_t)(width), cgoAllocsUnknown
+	cheight, cheightAllocMap := (C.uint32_t)(height), cgoAllocsUnknown
+	cdepth, cdepthAllocMap := (C.uint32_t)(depth), cgoAllocsUnknown
+	C.callVkCmdTraceRaysKHR(ccommandBuffer, cpRaygenShaderBindingTable, cpMissShaderBindingTable, cpHitShaderBindingTable, cpCallableShaderBindingTable, cwidth, cheight, cdepth)
+	runtime.KeepAlive(cdepthAllocMap)
+	runtime.KeepAlive(cheightAllocMap)
+	runtime.KeepAlive(cwidthAllocMap)
+	runtime.KeepAlive(cpCallableShaderBindingTableAllocMap)
+	runtime.KeepAlive(cpHitShaderBindingTableAllocMap)
+	runtime.KeepAlive(cpMissShaderBindingTableAllocMap)
+	runtime.KeepAlive(cpRaygenShaderBindingTableAllocMap)
+	runtime.KeepAlive(ccommandBufferAllocMap)
+}
+
 // DestroySurface function as declared in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkDestroySurfaceKHR
 func DestroySurface(instance Instance, surface Surface, pAllocator *AllocationCallbacks) {
 	cinstance, cinstanceAllocMap := *(*C.VkInstance)(unsafe.Pointer(&instance)), cgoAllocsUnknown

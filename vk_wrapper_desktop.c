@@ -167,6 +167,22 @@ int vkInitInstance(VkInstance instance) {
     vgo_vkCmdNextSubpass = (PFN_vkCmdNextSubpass)((*getInstanceProcAddress)(instance, "vkCmdNextSubpass"));
     vgo_vkCmdEndRenderPass = (PFN_vkCmdEndRenderPass)((*getInstanceProcAddress)(instance, "vkCmdEndRenderPass"));
     vgo_vkCmdExecuteCommands = (PFN_vkCmdExecuteCommands)((*getInstanceProcAddress)(instance, "vkCmdExecuteCommands"));
+
+    // VK_KHR_buffer_device_address
+    vgo_vkGetBufferDeviceAddress = (PFN_vkGetBufferDeviceAddress)((*getInstanceProcAddress)(instance, "vkGetBufferDeviceAddress"));
+
+    // VK_KHR_acceleration_structure
+    vgo_vkCreateAccelerationStructureKHR = (PFN_vkCreateAccelerationStructureKHR)((*getInstanceProcAddress)(instance, "vkCreateAccelerationStructureKHR"));
+    vgo_vkDestroyAccelerationStructureKHR = (PFN_vkDestroyAccelerationStructureKHR)((*getInstanceProcAddress)(instance, "vkDestroyAccelerationStructureKHR"));
+    vgo_vkGetAccelerationStructureBuildSizesKHR = (PFN_vkGetAccelerationStructureBuildSizesKHR)((*getInstanceProcAddress)(instance, "vkGetAccelerationStructureBuildSizesKHR"));
+    vgo_vkGetAccelerationStructureDeviceAddressKHR = (PFN_vkGetAccelerationStructureDeviceAddressKHR)((*getInstanceProcAddress)(instance, "vkGetAccelerationStructureDeviceAddressKHR"));
+    vgo_vkCmdBuildAccelerationStructuresKHR = (PFN_vkCmdBuildAccelerationStructuresKHR)((*getInstanceProcAddress)(instance, "vkCmdBuildAccelerationStructuresKHR"));
+
+    // VK_KHR_ray_tracing_pipeline
+    vgo_vkCreateRayTracingPipelinesKHR = (PFN_vkCreateRayTracingPipelinesKHR)((*getInstanceProcAddress)(instance, "vkCreateRayTracingPipelinesKHR"));
+    vgo_vkGetRayTracingShaderGroupHandlesKHR = (PFN_vkGetRayTracingShaderGroupHandlesKHR)((*getInstanceProcAddress)(instance, "vkGetRayTracingShaderGroupHandlesKHR"));
+    vgo_vkCmdTraceRaysKHR = (PFN_vkCmdTraceRaysKHR)((*getInstanceProcAddress)(instance, "vkCmdTraceRaysKHR"));
+
     vgo_vkDestroySurfaceKHR = (PFN_vkDestroySurfaceKHR)((*getInstanceProcAddress)(instance, "vkDestroySurfaceKHR"));
     vgo_vkGetPhysicalDeviceSurfaceSupportKHR = (PFN_vkGetPhysicalDeviceSurfaceSupportKHR)((*getInstanceProcAddress)(instance, "vkGetPhysicalDeviceSurfaceSupportKHR"));
     vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR = (PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR)((*getInstanceProcAddress)(instance, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR"));
@@ -362,6 +378,17 @@ PFN_vkCmdBeginRenderPass vgo_vkCmdBeginRenderPass;
 PFN_vkCmdNextSubpass vgo_vkCmdNextSubpass;
 PFN_vkCmdEndRenderPass vgo_vkCmdEndRenderPass;
 PFN_vkCmdExecuteCommands vgo_vkCmdExecuteCommands;
+
+PFN_vkGetBufferDeviceAddress vgo_vkGetBufferDeviceAddress;
+PFN_vkCreateAccelerationStructureKHR vgo_vkCreateAccelerationStructureKHR;
+PFN_vkDestroyAccelerationStructureKHR vgo_vkDestroyAccelerationStructureKHR;
+PFN_vkGetAccelerationStructureBuildSizesKHR vgo_vkGetAccelerationStructureBuildSizesKHR;
+PFN_vkGetAccelerationStructureDeviceAddressKHR vgo_vkGetAccelerationStructureDeviceAddressKHR;
+PFN_vkCmdBuildAccelerationStructuresKHR vgo_vkCmdBuildAccelerationStructuresKHR;
+PFN_vkCreateRayTracingPipelinesKHR vgo_vkCreateRayTracingPipelinesKHR;
+PFN_vkGetRayTracingShaderGroupHandlesKHR vgo_vkGetRayTracingShaderGroupHandlesKHR;
+PFN_vkCmdTraceRaysKHR vgo_vkCmdTraceRaysKHR;
+
 PFN_vkDestroySurfaceKHR vgo_vkDestroySurfaceKHR;
 PFN_vkGetPhysicalDeviceSurfaceSupportKHR vgo_vkGetPhysicalDeviceSurfaceSupportKHR;
 PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR;

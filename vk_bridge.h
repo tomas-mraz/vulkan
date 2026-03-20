@@ -804,6 +804,68 @@ void callVkCmdExecuteCommands(
     uint32_t                                    commandBufferCount,
     const VkCommandBuffer*                      pCommandBuffers);
 
+// VK_KHR_buffer_device_address
+VkDeviceAddress callVkGetBufferDeviceAddress(
+    VkDevice                                    device,
+    const VkBufferDeviceAddressInfo*            pInfo);
+
+// VK_KHR_acceleration_structure
+VkResult callVkCreateAccelerationStructureKHR(
+    VkDevice                                    device,
+    const VkAccelerationStructureCreateInfoKHR* pCreateInfo,
+    const VkAllocationCallbacks*                pAllocator,
+    VkAccelerationStructureKHR*                 pAccelerationStructure);
+
+void callVkDestroyAccelerationStructureKHR(
+    VkDevice                                    device,
+    VkAccelerationStructureKHR                  accelerationStructure,
+    const VkAllocationCallbacks*                pAllocator);
+
+void callVkGetAccelerationStructureBuildSizesKHR(
+    VkDevice                                    device,
+    VkAccelerationStructureBuildTypeKHR         buildType,
+    const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo,
+    const uint32_t*                             pMaxPrimitiveCounts,
+    VkAccelerationStructureBuildSizesInfoKHR*   pSizeInfo);
+
+VkDeviceAddress callVkGetAccelerationStructureDeviceAddressKHR(
+    VkDevice                                    device,
+    const VkAccelerationStructureDeviceAddressInfoKHR* pInfo);
+
+void callVkCmdBuildAccelerationStructuresKHR(
+    VkCommandBuffer                             commandBuffer,
+    uint32_t                                    infoCount,
+    const VkAccelerationStructureBuildGeometryInfoKHR* pInfos,
+    const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos);
+
+// VK_KHR_ray_tracing_pipeline
+VkResult callVkCreateRayTracingPipelinesKHR(
+    VkDevice                                    device,
+    VkDeferredOperationKHR                      deferredOperation,
+    VkPipelineCache                             pipelineCache,
+    uint32_t                                    createInfoCount,
+    const VkRayTracingPipelineCreateInfoKHR*    pCreateInfos,
+    const VkAllocationCallbacks*                pAllocator,
+    VkPipeline*                                 pPipelines);
+
+VkResult callVkGetRayTracingShaderGroupHandlesKHR(
+    VkDevice                                    device,
+    VkPipeline                                  pipeline,
+    uint32_t                                    firstGroup,
+    uint32_t                                    groupCount,
+    size_t                                      dataSize,
+    void*                                       pData);
+
+void callVkCmdTraceRaysKHR(
+    VkCommandBuffer                             commandBuffer,
+    const VkStridedDeviceAddressRegionKHR*      pRaygenShaderBindingTable,
+    const VkStridedDeviceAddressRegionKHR*      pMissShaderBindingTable,
+    const VkStridedDeviceAddressRegionKHR*      pHitShaderBindingTable,
+    const VkStridedDeviceAddressRegionKHR*      pCallableShaderBindingTable,
+    uint32_t                                    width,
+    uint32_t                                    height,
+    uint32_t                                    depth);
+
 void callVkDestroySurfaceKHR(
     VkInstance                                  instance,
     VkSurfaceKHR                                surface,

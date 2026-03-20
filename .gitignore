@@ -1,6 +1,9 @@
+# binary
 *.zip
 
-# JetBrains IDE
+# AI agents
+.claude
+
+# IDE
 .idea/
 *.iml
-

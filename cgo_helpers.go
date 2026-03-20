@@ -86733,6 +86733,54 @@ func packSImageMemoryBarrier(v []ImageMemoryBarrier, ptr0 *C.VkImageMemoryBarrie
 	}
 }
 
+// allocPAccelerationStructureBuildRangeInfoMemory allocates memory for type *C.VkAccelerationStructureBuildRangeInfoKHR in C.
+// The caller is responsible for freeing the this memory via C.free.
+func allocPAccelerationStructureBuildRangeInfoMemory(n int) unsafe.Pointer {
+	mem, err := C.calloc(C.size_t(n), (C.size_t)(sizeOfPAccelerationStructureBuildRangeInfoValue))
+	if mem == nil {
+		panic(fmt.Sprintln("memory alloc error: ", err))
+	}
+	return mem
+}
+
+const sizeOfPAccelerationStructureBuildRangeInfoValue = unsafe.Sizeof([1]*C.VkAccelerationStructureBuildRangeInfoKHR{})
+
+// unpackArgSPAccelerationStructureBuildRangeInfo transforms a sliced Go data structure into plain C format.
+func unpackArgSPAccelerationStructureBuildRangeInfo(x []*AccelerationStructureBuildRangeInfo) (unpacked **C.VkAccelerationStructureBuildRangeInfoKHR, allocs *cgoAllocMap) {
+	if x == nil {
+		return nil, nil
+	}
+	allocs = new(cgoAllocMap)
+	defer runtime.SetFinalizer(allocs, func(a *cgoAllocMap) {
+		go a.Free()
+	})
+
+	len0 := len(x)
+	mem0 := allocPAccelerationStructureBuildRangeInfoMemory(len0)
+	allocs.Add(mem0)
+	h0 := &sliceHeader{
+		Data: mem0,
+		Cap:  len0,
+		Len:  len0,
+	}
+	v0 := *(*[]*C.VkAccelerationStructureBuildRangeInfoKHR)(unsafe.Pointer(h0))
+	for i0 := range x {
+		v0[i0], _ = x[i0].PassRef()
+	}
+	h := (*sliceHeader)(unsafe.Pointer(&v0))
+	unpacked = (**C.VkAccelerationStructureBuildRangeInfoKHR)(h.Data)
+	return
+}
+
+// packSPAccelerationStructureBuildRangeInfo reads sliced Go data structure out from plain C format.
+func packSPAccelerationStructureBuildRangeInfo(v []*AccelerationStructureBuildRangeInfo, ptr0 **C.VkAccelerationStructureBuildRangeInfoKHR) {
+	const m = 0x7fffffff
+	for i0 := range v {
+		ptr1 := (*(*[m / sizeOfPtr]*C.VkAccelerationStructureBuildRangeInfoKHR)(unsafe.Pointer(ptr0)))[i0]
+		v[i0] = NewAccelerationStructureBuildRangeInfoRef(unsafe.Pointer(ptr1))
+	}
+}
+
 // unpackArgSSurfaceFormat transforms a sliced Go data structure into plain C format.
 func unpackArgSSurfaceFormat(x []SurfaceFormat) (unpacked *C.VkSurfaceFormatKHR, allocs *cgoAllocMap) {
 	if x == nil {
