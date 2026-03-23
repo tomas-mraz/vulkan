@@ -1,10 +1,11 @@
 VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.242.zip
+HEADERS_DIR=headers
 
 help:
 	@echo "Available targets:"
 	@echo "  help          - show this help"
 	@echo "  run           - execute full pipeline: download, patch-headers, generate, patch-go, test"
-	@echo "  download      - download Vulkan headers ZIP and extract *.h into ./vulkan"
+	@echo "  download      - download Vulkan headers ZIP and extract *.h into ./$(HEADERS_DIR)"
 	@echo "  patch-headers - apply local patches to downloaded Vulkan headers (comments H264 and H265 stuff)"
 	@echo "  install-tool  - install c-for-go generator tool"
 	@echo "  generate      - generate bindings from vulkan.yml"
@@ -17,11 +18,11 @@ run: download patch-headers generate patch-go test
 
 download:
 	curl -L -O $(VULKAN_HEADERS_URL)
-	unzip -j -o $(notdir $(VULKAN_HEADERS_URL)) 'Vulkan-Headers-*/include/vulkan/*.h' -d ./vulkan
+	unzip -j -o $(notdir $(VULKAN_HEADERS_URL)) 'Vulkan-Headers-*/include/vulkan/*.h' -d ./$(HEADERS_DIR)
 
 patch-headers:
-	patch -N -d vulkan -p0 < vulkan/vulkan_core_h.patch
-	patch -N -d vulkan -p0 < vulkan/vulkan_beta_h.patch
+	patch -N -d $(HEADERS_DIR) -p0 < $(HEADERS_DIR)/vulkan_core_h.patch
+	patch -N -d $(HEADERS_DIR) -p0 < $(HEADERS_DIR)/vulkan_beta_h.patch
 
 install-tool:
 	go install github.com/tomas-mraz/c-for-go@latest

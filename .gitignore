@@ -7,3 +7,7 @@
 # IDE
 .idea/
 *.iml
+
+# Go
+.gocache
+.gomodcache
