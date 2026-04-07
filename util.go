@@ -120,3 +120,13 @@ func (cv *ClearValue) SetDepthStencil(depth float32, stencil uint32) {
 func SurfaceFromPointer(surface uintptr) Surface {
 	return *(*Surface)(unsafe.Pointer(surface))
 }
+
+// SetDeviceAddress writes a DeviceAddress into a DeviceOrHostAddress union.
+func SetDeviceAddress(addr *DeviceOrHostAddress, da DeviceAddress) {
+	*(*DeviceAddress)(unsafe.Pointer(&addr[0])) = da
+}
+
+// SetDeviceAddressConst writes a DeviceAddress into a DeviceOrHostAddressConst union.
+func SetDeviceAddressConst(addr *DeviceOrHostAddressConst, da DeviceAddress) {
+	*(*DeviceAddress)(unsafe.Pointer(&addr[0])) = da
+}
