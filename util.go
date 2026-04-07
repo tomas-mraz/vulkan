@@ -130,3 +130,11 @@ func SetDeviceAddress(addr *DeviceOrHostAddress, da DeviceAddress) {
 func SetDeviceAddressConst(addr *DeviceOrHostAddressConst, da DeviceAddress) {
 	*(*DeviceAddress)(unsafe.Pointer(&addr[0])) = da
 }
+
+// SetGeometryTriangles writes AccelerationStructureGeometryTrianglesData into
+// the AccelerationStructureGeometryData union.
+func SetGeometryTriangles(data *AccelerationStructureGeometryData, tri *AccelerationStructureGeometryTrianglesData) {
+	cTri, _ := tri.PassRef()
+	src := unsafe.Slice((*byte)(unsafe.Pointer(cTri)), len(*data))
+	copy((*data)[:], src)
+}
