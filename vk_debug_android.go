@@ -5,7 +5,7 @@ package vulkan
 /*
 #cgo android LDFLAGS: -llog
 
-#include "vulkan/vulkan.h"
+#include "headers/vulkan.h"
 #include <android/log.h>
 
 VkBool32 debugReportCallback(
