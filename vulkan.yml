@@ -15,8 +15,10 @@ GENERATOR:
     ]}
    
 PARSER:
-  IncludePaths: [/usr/local/include, /usr/local/stdinclude]
+  IncludePaths: [/usr/local/include, /usr/local/stdinclude, android]
   # IncludePaths: [windows/, /usr/include]
+  IgnoredPaths:
+    - vulkan_android.h
   SourcesPaths:
     - headers/vulkan.h
     - headers/vulkan_beta.h
@@ -25,8 +27,8 @@ PARSER:
     # - moltenVK/vk_mvk_moltenvk.h
   Defines:
     VK_NO_PROTOTYPES: 1
-    VK_ENABLE_BETA_EXTENSIONS: 0
-    VK_USE_PLATFORM_ANDROID_KHR: null
+    VK_ENABLE_BETA_EXTENSIONS: 1
+    VK_USE_PLATFORM_ANDROID_KHR: 1
     VK_USE_PLATFORM_WIN32_KHR: null
     VK_USE_PLATFORM_IOS_MVK: null
 
@@ -44,11 +46,14 @@ TRANSLATOR:
       - {action: accept, from: PFN_vkDeviceMemoryReportCallback}
       - {action: replace, from: PFN_vkDeviceMemoryReportCallback, to: DeviceMemoryReportCallbackFunc}
       - {action: ignore, from: DebugUtilsMessenger}
+      # Android bridge functions are handled in vulkan_android.go
+      - {action: ignore, from: callVkCreateAndroidSurfaceKHR}
       # these in global section so doc will work
       - {action: accept, from: ^callVk}
       - {action: replace, from: ^callVk}
     type:
       - {action: accept, from: "^ANativeWindow$"}
+      - {action: accept, from: "^AHardwareBuffer$"}
       - {action: replace, from: "KHR$"}
       - {action: replace, from: "EXT$"}
     function:
@@ -56,6 +61,7 @@ TRANSLATOR:
       - {action: replace, from: "EXT$"}
     const:
       - {action: ignore, from: NULL_HANDLE$}
+      - {action: ignore, from: USE_PLATFORM_ANDROID}
       - {action: replace, from: "KHR$"}
       - {action: replace, from: "EXT$"}
       - {transform: lower}
@@ -85,6 +91,7 @@ TRANSLATOR:
     - {target: VkAllocationCallbacks, self: raw}
     - {target: DebugUtilsMessengerCallback, self: raw}
     - {target: ANativeWindow, self: raw}
+    - {target: AHardwareBuffer, self: raw}
     # bit-field structs: CGo cannot access bit fields by name
     - {target: VkAccelerationStructureInstanceKHR, self: raw}
     - {target: VkAccelerationStructureInstanceNV, self: raw}
