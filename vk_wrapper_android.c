@@ -217,6 +217,22 @@ int vkInit(void) {
 
     vgo_vkGetRefreshCycleDurationGOOGLE = (PFN_vkGetRefreshCycleDurationGOOGLE)(dlsym(libvulkan, "vkGetRefreshCycleDurationGOOGLE"));
     vgo_vkGetPastPresentationTimingGOOGLE = (PFN_vkGetPastPresentationTimingGOOGLE)(dlsym(libvulkan, "vkGetPastPresentationTimingGOOGLE"));
+
+    // VK_KHR_buffer_device_address
+    vgo_vkGetBufferDeviceAddress = (PFN_vkGetBufferDeviceAddress)(dlsym(libvulkan, "vkGetBufferDeviceAddress"));
+
+    // VK_KHR_acceleration_structure
+    vgo_vkCreateAccelerationStructureKHR = (PFN_vkCreateAccelerationStructureKHR)(dlsym(libvulkan, "vkCreateAccelerationStructureKHR"));
+    vgo_vkDestroyAccelerationStructureKHR = (PFN_vkDestroyAccelerationStructureKHR)(dlsym(libvulkan, "vkDestroyAccelerationStructureKHR"));
+    vgo_vkGetAccelerationStructureBuildSizesKHR = (PFN_vkGetAccelerationStructureBuildSizesKHR)(dlsym(libvulkan, "vkGetAccelerationStructureBuildSizesKHR"));
+    vgo_vkGetAccelerationStructureDeviceAddressKHR = (PFN_vkGetAccelerationStructureDeviceAddressKHR)(dlsym(libvulkan, "vkGetAccelerationStructureDeviceAddressKHR"));
+    vgo_vkCmdBuildAccelerationStructuresKHR = (PFN_vkCmdBuildAccelerationStructuresKHR)(dlsym(libvulkan, "vkCmdBuildAccelerationStructuresKHR"));
+
+    // VK_KHR_ray_tracing_pipeline
+    vgo_vkCreateRayTracingPipelinesKHR = (PFN_vkCreateRayTracingPipelinesKHR)(dlsym(libvulkan, "vkCreateRayTracingPipelinesKHR"));
+    vgo_vkGetRayTracingShaderGroupHandlesKHR = (PFN_vkGetRayTracingShaderGroupHandlesKHR)(dlsym(libvulkan, "vkGetRayTracingShaderGroupHandlesKHR"));
+    vgo_vkCmdTraceRaysKHR = (PFN_vkCmdTraceRaysKHR)(dlsym(libvulkan, "vkCmdTraceRaysKHR"));
+
     return 0;
 }
 
@@ -387,3 +403,18 @@ PFN_vkDebugReportMessageEXT vgo_vkDebugReportMessageEXT;
 
 PFN_vkGetRefreshCycleDurationGOOGLE vgo_vkGetRefreshCycleDurationGOOGLE;
 PFN_vkGetPastPresentationTimingGOOGLE vgo_vkGetPastPresentationTimingGOOGLE;
+
+// VK_KHR_buffer_device_address
+PFN_vkGetBufferDeviceAddress vgo_vkGetBufferDeviceAddress;
+
+// VK_KHR_acceleration_structure
+PFN_vkCreateAccelerationStructureKHR vgo_vkCreateAccelerationStructureKHR;
+PFN_vkDestroyAccelerationStructureKHR vgo_vkDestroyAccelerationStructureKHR;
+PFN_vkGetAccelerationStructureBuildSizesKHR vgo_vkGetAccelerationStructureBuildSizesKHR;
+PFN_vkGetAccelerationStructureDeviceAddressKHR vgo_vkGetAccelerationStructureDeviceAddressKHR;
+PFN_vkCmdBuildAccelerationStructuresKHR vgo_vkCmdBuildAccelerationStructuresKHR;
+
+// VK_KHR_ray_tracing_pipeline
+PFN_vkCreateRayTracingPipelinesKHR vgo_vkCreateRayTracingPipelinesKHR;
+PFN_vkGetRayTracingShaderGroupHandlesKHR vgo_vkGetRayTracingShaderGroupHandlesKHR;
+PFN_vkCmdTraceRaysKHR vgo_vkCmdTraceRaysKHR;
