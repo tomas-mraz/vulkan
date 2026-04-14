@@ -13,15 +13,23 @@ GENERATOR:
         "-I.",
         "-DVK_NO_PROTOTYPES",
     ]}
+  PlatformFiles:
+    - header: vulkan_android.h
+      nameMatch: [Android, ANativeWindow, AHardwareBuffer]
+      output: vulkan_android
+      buildTag: android
+      extraPreamble: |
+        #cgo android LDFLAGS: -Wl,--no-warn-mismatch
+        #cgo android CFLAGS: -DVK_USE_PLATFORM_ANDROID_KHR
+        #include <android/native_window.h>
    
 PARSER:
   IncludePaths: [/usr/local/include, /usr/local/stdinclude, android]
   # IncludePaths: [windows/, /usr/include]
-  IgnoredPaths:
-    - vulkan_android.h
   SourcesPaths:
     - headers/vulkan.h
     - headers/vulkan_beta.h
+    - headers/vulkan_android.h
     - vk_wrapper.h
     - vk_bridge.h
     # - moltenVK/vk_mvk_moltenvk.h
@@ -46,8 +54,6 @@ TRANSLATOR:
       - {action: accept, from: PFN_vkDeviceMemoryReportCallback}
       - {action: replace, from: PFN_vkDeviceMemoryReportCallback, to: DeviceMemoryReportCallbackFunc}
       - {action: ignore, from: DebugUtilsMessenger}
-      # Android bridge functions are handled in vulkan_android.go
-      - {action: ignore, from: callVkCreateAndroidSurfaceKHR}
       # these in global section so doc will work
       - {action: accept, from: ^callVk}
       - {action: replace, from: ^callVk}
@@ -61,7 +67,6 @@ TRANSLATOR:
       - {action: replace, from: "EXT$"}
     const:
       - {action: ignore, from: NULL_HANDLE$}
-      - {action: ignore, from: USE_PLATFORM_ANDROID}
       - {action: replace, from: "KHR$"}
       - {action: replace, from: "EXT$"}
       - {transform: lower}

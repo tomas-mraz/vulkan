@@ -114,3 +114,11 @@ func SetGeometryTriangles(data *AccelerationStructureGeometryData, tri *Accelera
 	src := unsafe.Slice((*byte)(unsafe.Pointer(cTri)), len(*data))
 	copy((*data)[:], src)
 }
+
+// GetAndroidRequiredInstanceExtensions should be used to query instance extensions required for surface initialization on Android.
+func GetAndroidRequiredInstanceExtensions() []string {
+	return []string{
+		KhrSurfaceExtensionName + "\x00",
+		KhrAndroidSurfaceExtensionName + "\x00",
+	}
+}

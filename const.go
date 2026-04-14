@@ -17,6 +17,18 @@ package vulkan
 import "C"
 
 const (
+	// KhrAndroidSurface as defined in vulkan_android.h:22
+	KhrAndroidSurface = 1
+	// KhrAndroidSurfaceSpecVersion as defined in vulkan_android.h:24
+	KhrAndroidSurfaceSpecVersion = 6
+	// KhrAndroidSurfaceExtensionName as defined in vulkan_android.h:25
+	KhrAndroidSurfaceExtensionName = "VK_KHR_android_surface"
+	// AndroidExternalMemoryAndroidHardwareBuffer as defined in vulkan_android.h:45
+	AndroidExternalMemoryAndroidHardwareBuffer = 1
+	// AndroidExternalMemoryAndroidHardwareBufferSpecVersion as defined in vulkan_android.h:47
+	AndroidExternalMemoryAndroidHardwareBufferSpecVersion = 5
+	// AndroidExternalMemoryAndroidHardwareBufferExtensionName as defined in vulkan_android.h:48
+	AndroidExternalMemoryAndroidHardwareBufferExtensionName = "VK_ANDROID_external_memory_android_hardware_buffer"
 	// KhrPortabilitySubset as defined in vulkan_beta.h:22
 	KhrPortabilitySubset = 1
 	// KhrPortabilitySubsetSpecVersion as defined in vulkan_beta.h:23
@@ -1815,7 +1827,9 @@ const (
 	ExtMeshShaderExtensionName = "VK_EXT_mesh_shader"
 	// NoPrototypes as defined in vk_bridge.h:4
 	NoPrototypes = 1
-	// EnableBetaExtensions as defined in vulkan.yml:30
+	// UsePlatformAndroid as defined in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkVK_USE_PLATFORM_ANDROID_KHR
+	UsePlatformAndroid = 1
+	// EnableBetaExtensions as defined in vulkan.yml:38
 	EnableBetaExtensions = 1
 )
 
