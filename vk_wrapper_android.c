@@ -2,240 +2,239 @@
 
 #include "vk_wrapper.h"
 #include <dlfcn.h>
+#include <android/log.h>
+#define VKLOG(...) __android_log_print(ANDROID_LOG_INFO, "VkWrapper", __VA_ARGS__)
 
-// No-op on Android, get the ProcAddr in vkInit()
-void setProcAddr(void* getProcAddr) {}
+static PFN_vkGetInstanceProcAddr getInstanceProcAddress = NULL;
 
-// no-op??
+void setProcAddr(void* getProcAddr) {
+    getInstanceProcAddress = (PFN_vkGetInstanceProcAddr)getProcAddr;
+}
+
 void setDefaultProcAddr() {
-
+    void* libvulkan = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
+    if (!libvulkan) {
+        return;
+    }
+    getInstanceProcAddress = (PFN_vkGetInstanceProcAddr)(dlsym(libvulkan, "vkGetInstanceProcAddr"));
 }
 
 int isProcAddrSet() {
-    return 1;
-}
-
-int vkInitInstance(VkInstance instance) {
-    return 0;
+    return getInstanceProcAddress == NULL ? 0 : 1;
 }
 
 int vkInit(void) {
-    void* libvulkan = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
-    if (!libvulkan) {
-        return -1;
+    if (!getInstanceProcAddress) {
+        // Auto-init if not set explicitly
+        setDefaultProcAddr();
+        if (!getInstanceProcAddress) return -1;
     }
 
-    vgo_vkCreateInstance = (PFN_vkCreateInstance)(dlsym(libvulkan, "vkCreateInstance"));
-    vgo_vkDestroyInstance = (PFN_vkDestroyInstance)(dlsym(libvulkan, "vkDestroyInstance"));
-    vgo_vkEnumerateInstanceVersion = (PFN_vkEnumerateInstanceVersion)(dlsym(libvulkan, "vkEnumerateInstanceVersion"));
-    vgo_vkEnumeratePhysicalDevices = (PFN_vkEnumeratePhysicalDevices)(dlsym(libvulkan, "vkEnumeratePhysicalDevices"));
-    vgo_vkGetPhysicalDeviceFeatures = (PFN_vkGetPhysicalDeviceFeatures)(dlsym(libvulkan, "vkGetPhysicalDeviceFeatures"));
-    vgo_vkGetPhysicalDeviceFormatProperties = (PFN_vkGetPhysicalDeviceFormatProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceFormatProperties"));
-    vgo_vkGetPhysicalDeviceImageFormatProperties = (PFN_vkGetPhysicalDeviceImageFormatProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceImageFormatProperties"));
-    vgo_vkGetPhysicalDeviceProperties = (PFN_vkGetPhysicalDeviceProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceProperties"));
-    vgo_vkGetPhysicalDeviceQueueFamilyProperties = (PFN_vkGetPhysicalDeviceQueueFamilyProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceQueueFamilyProperties"));
-    vgo_vkGetPhysicalDeviceMemoryProperties = (PFN_vkGetPhysicalDeviceMemoryProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceMemoryProperties"));
-    vgo_vkGetInstanceProcAddr = (PFN_vkGetInstanceProcAddr)(dlsym(libvulkan, "vkGetInstanceProcAddr"));
-    vgo_vkGetDeviceProcAddr = (PFN_vkGetDeviceProcAddr)(dlsym(libvulkan, "vkGetDeviceProcAddr"));
-    vgo_vkCreateDevice = (PFN_vkCreateDevice)(dlsym(libvulkan, "vkCreateDevice"));
-    vgo_vkDestroyDevice = (PFN_vkDestroyDevice)(dlsym(libvulkan, "vkDestroyDevice"));
-    vgo_vkEnumerateInstanceExtensionProperties = (PFN_vkEnumerateInstanceExtensionProperties)(dlsym(libvulkan, "vkEnumerateInstanceExtensionProperties"));
-    vgo_vkEnumerateDeviceExtensionProperties = (PFN_vkEnumerateDeviceExtensionProperties)(dlsym(libvulkan, "vkEnumerateDeviceExtensionProperties"));
-    vgo_vkEnumerateInstanceLayerProperties = (PFN_vkEnumerateInstanceLayerProperties)(dlsym(libvulkan, "vkEnumerateInstanceLayerProperties"));
-    vgo_vkEnumerateDeviceLayerProperties = (PFN_vkEnumerateDeviceLayerProperties)(dlsym(libvulkan, "vkEnumerateDeviceLayerProperties"));
-    vgo_vkGetDeviceQueue = (PFN_vkGetDeviceQueue)(dlsym(libvulkan, "vkGetDeviceQueue"));
-    vgo_vkQueueSubmit = (PFN_vkQueueSubmit)(dlsym(libvulkan, "vkQueueSubmit"));
-    vgo_vkQueueWaitIdle = (PFN_vkQueueWaitIdle)(dlsym(libvulkan, "vkQueueWaitIdle"));
-    vgo_vkDeviceWaitIdle = (PFN_vkDeviceWaitIdle)(dlsym(libvulkan, "vkDeviceWaitIdle"));
-    vgo_vkAllocateMemory = (PFN_vkAllocateMemory)(dlsym(libvulkan, "vkAllocateMemory"));
-    vgo_vkFreeMemory = (PFN_vkFreeMemory)(dlsym(libvulkan, "vkFreeMemory"));
-    vgo_vkMapMemory = (PFN_vkMapMemory)(dlsym(libvulkan, "vkMapMemory"));
-    vgo_vkUnmapMemory = (PFN_vkUnmapMemory)(dlsym(libvulkan, "vkUnmapMemory"));
-    vgo_vkFlushMappedMemoryRanges = (PFN_vkFlushMappedMemoryRanges)(dlsym(libvulkan, "vkFlushMappedMemoryRanges"));
-    vgo_vkInvalidateMappedMemoryRanges = (PFN_vkInvalidateMappedMemoryRanges)(dlsym(libvulkan, "vkInvalidateMappedMemoryRanges"));
-    vgo_vkGetDeviceMemoryCommitment = (PFN_vkGetDeviceMemoryCommitment)(dlsym(libvulkan, "vkGetDeviceMemoryCommitment"));
-    vgo_vkBindBufferMemory = (PFN_vkBindBufferMemory)(dlsym(libvulkan, "vkBindBufferMemory"));
-    vgo_vkBindImageMemory = (PFN_vkBindImageMemory)(dlsym(libvulkan, "vkBindImageMemory"));
-    vgo_vkGetBufferMemoryRequirements = (PFN_vkGetBufferMemoryRequirements)(dlsym(libvulkan, "vkGetBufferMemoryRequirements"));
-    vgo_vkGetImageMemoryRequirements = (PFN_vkGetImageMemoryRequirements)(dlsym(libvulkan, "vkGetImageMemoryRequirements"));
-    vgo_vkGetImageSparseMemoryRequirements = (PFN_vkGetImageSparseMemoryRequirements)(dlsym(libvulkan, "vkGetImageSparseMemoryRequirements"));
-    vgo_vkGetPhysicalDeviceSparseImageFormatProperties = (PFN_vkGetPhysicalDeviceSparseImageFormatProperties)(dlsym(libvulkan, "vkGetPhysicalDeviceSparseImageFormatProperties"));
-    vgo_vkQueueBindSparse = (PFN_vkQueueBindSparse)(dlsym(libvulkan, "vkQueueBindSparse"));
-    vgo_vkCreateFence = (PFN_vkCreateFence)(dlsym(libvulkan, "vkCreateFence"));
-    vgo_vkDestroyFence = (PFN_vkDestroyFence)(dlsym(libvulkan, "vkDestroyFence"));
-    vgo_vkResetFences = (PFN_vkResetFences)(dlsym(libvulkan, "vkResetFences"));
-    vgo_vkGetFenceStatus = (PFN_vkGetFenceStatus)(dlsym(libvulkan, "vkGetFenceStatus"));
-    vgo_vkWaitForFences = (PFN_vkWaitForFences)(dlsym(libvulkan, "vkWaitForFences"));
-    vgo_vkCreateSemaphore = (PFN_vkCreateSemaphore)(dlsym(libvulkan, "vkCreateSemaphore"));
-    vgo_vkDestroySemaphore = (PFN_vkDestroySemaphore)(dlsym(libvulkan, "vkDestroySemaphore"));
-    vgo_vkCreateEvent = (PFN_vkCreateEvent)(dlsym(libvulkan, "vkCreateEvent"));
-    vgo_vkDestroyEvent = (PFN_vkDestroyEvent)(dlsym(libvulkan, "vkDestroyEvent"));
-    vgo_vkGetEventStatus = (PFN_vkGetEventStatus)(dlsym(libvulkan, "vkGetEventStatus"));
-    vgo_vkSetEvent = (PFN_vkSetEvent)(dlsym(libvulkan, "vkSetEvent"));
-    vgo_vkResetEvent = (PFN_vkResetEvent)(dlsym(libvulkan, "vkResetEvent"));
-    vgo_vkCreateQueryPool = (PFN_vkCreateQueryPool)(dlsym(libvulkan, "vkCreateQueryPool"));
-    vgo_vkDestroyQueryPool = (PFN_vkDestroyQueryPool)(dlsym(libvulkan, "vkDestroyQueryPool"));
-    vgo_vkGetQueryPoolResults = (PFN_vkGetQueryPoolResults)(dlsym(libvulkan, "vkGetQueryPoolResults"));
-    vgo_vkCreateBuffer = (PFN_vkCreateBuffer)(dlsym(libvulkan, "vkCreateBuffer"));
-    vgo_vkDestroyBuffer = (PFN_vkDestroyBuffer)(dlsym(libvulkan, "vkDestroyBuffer"));
-    vgo_vkCreateBufferView = (PFN_vkCreateBufferView)(dlsym(libvulkan, "vkCreateBufferView"));
-    vgo_vkDestroyBufferView = (PFN_vkDestroyBufferView)(dlsym(libvulkan, "vkDestroyBufferView"));
-    vgo_vkCreateImage = (PFN_vkCreateImage)(dlsym(libvulkan, "vkCreateImage"));
-    vgo_vkDestroyImage = (PFN_vkDestroyImage)(dlsym(libvulkan, "vkDestroyImage"));
-    vgo_vkGetImageSubresourceLayout = (PFN_vkGetImageSubresourceLayout)(dlsym(libvulkan, "vkGetImageSubresourceLayout"));
-    vgo_vkCreateImageView = (PFN_vkCreateImageView)(dlsym(libvulkan, "vkCreateImageView"));
-    vgo_vkDestroyImageView = (PFN_vkDestroyImageView)(dlsym(libvulkan, "vkDestroyImageView"));
-    vgo_vkCreateShaderModule = (PFN_vkCreateShaderModule)(dlsym(libvulkan, "vkCreateShaderModule"));
-    vgo_vkDestroyShaderModule = (PFN_vkDestroyShaderModule)(dlsym(libvulkan, "vkDestroyShaderModule"));
-    vgo_vkCreatePipelineCache = (PFN_vkCreatePipelineCache)(dlsym(libvulkan, "vkCreatePipelineCache"));
-    vgo_vkDestroyPipelineCache = (PFN_vkDestroyPipelineCache)(dlsym(libvulkan, "vkDestroyPipelineCache"));
-    vgo_vkGetPipelineCacheData = (PFN_vkGetPipelineCacheData)(dlsym(libvulkan, "vkGetPipelineCacheData"));
-    vgo_vkMergePipelineCaches = (PFN_vkMergePipelineCaches)(dlsym(libvulkan, "vkMergePipelineCaches"));
-    vgo_vkCreateGraphicsPipelines = (PFN_vkCreateGraphicsPipelines)(dlsym(libvulkan, "vkCreateGraphicsPipelines"));
-    vgo_vkCreateComputePipelines = (PFN_vkCreateComputePipelines)(dlsym(libvulkan, "vkCreateComputePipelines"));
-    vgo_vkDestroyPipeline = (PFN_vkDestroyPipeline)(dlsym(libvulkan, "vkDestroyPipeline"));
-    vgo_vkCreatePipelineLayout = (PFN_vkCreatePipelineLayout)(dlsym(libvulkan, "vkCreatePipelineLayout"));
-    vgo_vkDestroyPipelineLayout = (PFN_vkDestroyPipelineLayout)(dlsym(libvulkan, "vkDestroyPipelineLayout"));
-    vgo_vkCreateSampler = (PFN_vkCreateSampler)(dlsym(libvulkan, "vkCreateSampler"));
-    vgo_vkDestroySampler = (PFN_vkDestroySampler)(dlsym(libvulkan, "vkDestroySampler"));
-    vgo_vkCreateDescriptorSetLayout = (PFN_vkCreateDescriptorSetLayout)(dlsym(libvulkan, "vkCreateDescriptorSetLayout"));
-    vgo_vkDestroyDescriptorSetLayout = (PFN_vkDestroyDescriptorSetLayout)(dlsym(libvulkan, "vkDestroyDescriptorSetLayout"));
-    vgo_vkCreateDescriptorPool = (PFN_vkCreateDescriptorPool)(dlsym(libvulkan, "vkCreateDescriptorPool"));
-    vgo_vkDestroyDescriptorPool = (PFN_vkDestroyDescriptorPool)(dlsym(libvulkan, "vkDestroyDescriptorPool"));
-    vgo_vkResetDescriptorPool = (PFN_vkResetDescriptorPool)(dlsym(libvulkan, "vkResetDescriptorPool"));
-    vgo_vkAllocateDescriptorSets = (PFN_vkAllocateDescriptorSets)(dlsym(libvulkan, "vkAllocateDescriptorSets"));
-    vgo_vkFreeDescriptorSets = (PFN_vkFreeDescriptorSets)(dlsym(libvulkan, "vkFreeDescriptorSets"));
-    vgo_vkUpdateDescriptorSets = (PFN_vkUpdateDescriptorSets)(dlsym(libvulkan, "vkUpdateDescriptorSets"));
-    vgo_vkCreateFramebuffer = (PFN_vkCreateFramebuffer)(dlsym(libvulkan, "vkCreateFramebuffer"));
-    vgo_vkDestroyFramebuffer = (PFN_vkDestroyFramebuffer)(dlsym(libvulkan, "vkDestroyFramebuffer"));
-    vgo_vkCreateRenderPass = (PFN_vkCreateRenderPass)(dlsym(libvulkan, "vkCreateRenderPass"));
-    vgo_vkDestroyRenderPass = (PFN_vkDestroyRenderPass)(dlsym(libvulkan, "vkDestroyRenderPass"));
-    vgo_vkGetRenderAreaGranularity = (PFN_vkGetRenderAreaGranularity)(dlsym(libvulkan, "vkGetRenderAreaGranularity"));
-    vgo_vkCreateCommandPool = (PFN_vkCreateCommandPool)(dlsym(libvulkan, "vkCreateCommandPool"));
-    vgo_vkDestroyCommandPool = (PFN_vkDestroyCommandPool)(dlsym(libvulkan, "vkDestroyCommandPool"));
-    vgo_vkResetCommandPool = (PFN_vkResetCommandPool)(dlsym(libvulkan, "vkResetCommandPool"));
-    vgo_vkAllocateCommandBuffers = (PFN_vkAllocateCommandBuffers)(dlsym(libvulkan, "vkAllocateCommandBuffers"));
-    vgo_vkFreeCommandBuffers = (PFN_vkFreeCommandBuffers)(dlsym(libvulkan, "vkFreeCommandBuffers"));
-    vgo_vkBeginCommandBuffer = (PFN_vkBeginCommandBuffer)(dlsym(libvulkan, "vkBeginCommandBuffer"));
-    vgo_vkEndCommandBuffer = (PFN_vkEndCommandBuffer)(dlsym(libvulkan, "vkEndCommandBuffer"));
-    vgo_vkResetCommandBuffer = (PFN_vkResetCommandBuffer)(dlsym(libvulkan, "vkResetCommandBuffer"));
-    vgo_vkCmdBindPipeline = (PFN_vkCmdBindPipeline)(dlsym(libvulkan, "vkCmdBindPipeline"));
-    vgo_vkCmdSetViewport = (PFN_vkCmdSetViewport)(dlsym(libvulkan, "vkCmdSetViewport"));
-    vgo_vkCmdSetScissor = (PFN_vkCmdSetScissor)(dlsym(libvulkan, "vkCmdSetScissor"));
-    vgo_vkCmdSetLineWidth = (PFN_vkCmdSetLineWidth)(dlsym(libvulkan, "vkCmdSetLineWidth"));
-    vgo_vkCmdSetDepthBias = (PFN_vkCmdSetDepthBias)(dlsym(libvulkan, "vkCmdSetDepthBias"));
-    vgo_vkCmdSetBlendConstants = (PFN_vkCmdSetBlendConstants)(dlsym(libvulkan, "vkCmdSetBlendConstants"));
-    vgo_vkCmdSetDepthBounds = (PFN_vkCmdSetDepthBounds)(dlsym(libvulkan, "vkCmdSetDepthBounds"));
-    vgo_vkCmdSetStencilCompareMask = (PFN_vkCmdSetStencilCompareMask)(dlsym(libvulkan, "vkCmdSetStencilCompareMask"));
-    vgo_vkCmdSetStencilWriteMask = (PFN_vkCmdSetStencilWriteMask)(dlsym(libvulkan, "vkCmdSetStencilWriteMask"));
-    vgo_vkCmdSetStencilReference = (PFN_vkCmdSetStencilReference)(dlsym(libvulkan, "vkCmdSetStencilReference"));
-    vgo_vkCmdBindDescriptorSets = (PFN_vkCmdBindDescriptorSets)(dlsym(libvulkan, "vkCmdBindDescriptorSets"));
-    vgo_vkCmdBindIndexBuffer = (PFN_vkCmdBindIndexBuffer)(dlsym(libvulkan, "vkCmdBindIndexBuffer"));
-    vgo_vkCmdBindVertexBuffers = (PFN_vkCmdBindVertexBuffers)(dlsym(libvulkan, "vkCmdBindVertexBuffers"));
-    vgo_vkCmdDraw = (PFN_vkCmdDraw)(dlsym(libvulkan, "vkCmdDraw"));
-    vgo_vkCmdDrawIndexed = (PFN_vkCmdDrawIndexed)(dlsym(libvulkan, "vkCmdDrawIndexed"));
-    vgo_vkCmdDrawIndirect = (PFN_vkCmdDrawIndirect)(dlsym(libvulkan, "vkCmdDrawIndirect"));
-    vgo_vkCmdDrawIndexedIndirect = (PFN_vkCmdDrawIndexedIndirect)(dlsym(libvulkan, "vkCmdDrawIndexedIndirect"));
-    vgo_vkCmdDispatch = (PFN_vkCmdDispatch)(dlsym(libvulkan, "vkCmdDispatch"));
-    vgo_vkCmdDispatchIndirect = (PFN_vkCmdDispatchIndirect)(dlsym(libvulkan, "vkCmdDispatchIndirect"));
-    vgo_vkCmdCopyBuffer = (PFN_vkCmdCopyBuffer)(dlsym(libvulkan, "vkCmdCopyBuffer"));
-    vgo_vkCmdCopyImage = (PFN_vkCmdCopyImage)(dlsym(libvulkan, "vkCmdCopyImage"));
-    vgo_vkCmdBlitImage = (PFN_vkCmdBlitImage)(dlsym(libvulkan, "vkCmdBlitImage"));
-    vgo_vkCmdCopyBufferToImage = (PFN_vkCmdCopyBufferToImage)(dlsym(libvulkan, "vkCmdCopyBufferToImage"));
-    vgo_vkCmdCopyImageToBuffer = (PFN_vkCmdCopyImageToBuffer)(dlsym(libvulkan, "vkCmdCopyImageToBuffer"));
-    vgo_vkCmdUpdateBuffer = (PFN_vkCmdUpdateBuffer)(dlsym(libvulkan, "vkCmdUpdateBuffer"));
-    vgo_vkCmdFillBuffer = (PFN_vkCmdFillBuffer)(dlsym(libvulkan, "vkCmdFillBuffer"));
-    vgo_vkCmdClearColorImage = (PFN_vkCmdClearColorImage)(dlsym(libvulkan, "vkCmdClearColorImage"));
-    vgo_vkCmdClearDepthStencilImage = (PFN_vkCmdClearDepthStencilImage)(dlsym(libvulkan, "vkCmdClearDepthStencilImage"));
-    vgo_vkCmdClearAttachments = (PFN_vkCmdClearAttachments)(dlsym(libvulkan, "vkCmdClearAttachments"));
-    vgo_vkCmdResolveImage = (PFN_vkCmdResolveImage)(dlsym(libvulkan, "vkCmdResolveImage"));
-    vgo_vkCmdSetEvent = (PFN_vkCmdSetEvent)(dlsym(libvulkan, "vkCmdSetEvent"));
-    vgo_vkCmdResetEvent = (PFN_vkCmdResetEvent)(dlsym(libvulkan, "vkCmdResetEvent"));
-    vgo_vkCmdWaitEvents = (PFN_vkCmdWaitEvents)(dlsym(libvulkan, "vkCmdWaitEvents"));
-    vgo_vkCmdPipelineBarrier = (PFN_vkCmdPipelineBarrier)(dlsym(libvulkan, "vkCmdPipelineBarrier"));
-    vgo_vkCmdBeginQuery = (PFN_vkCmdBeginQuery)(dlsym(libvulkan, "vkCmdBeginQuery"));
-    vgo_vkCmdEndQuery = (PFN_vkCmdEndQuery)(dlsym(libvulkan, "vkCmdEndQuery"));
-    vgo_vkCmdResetQueryPool = (PFN_vkCmdResetQueryPool)(dlsym(libvulkan, "vkCmdResetQueryPool"));
-    vgo_vkCmdWriteTimestamp = (PFN_vkCmdWriteTimestamp)(dlsym(libvulkan, "vkCmdWriteTimestamp"));
-    vgo_vkCmdCopyQueryPoolResults = (PFN_vkCmdCopyQueryPoolResults)(dlsym(libvulkan, "vkCmdCopyQueryPoolResults"));
-    vgo_vkCmdPushConstants = (PFN_vkCmdPushConstants)(dlsym(libvulkan, "vkCmdPushConstants"));
-    vgo_vkCmdBeginRenderPass = (PFN_vkCmdBeginRenderPass)(dlsym(libvulkan, "vkCmdBeginRenderPass"));
-    vgo_vkCmdNextSubpass = (PFN_vkCmdNextSubpass)(dlsym(libvulkan, "vkCmdNextSubpass"));
-    vgo_vkCmdEndRenderPass = (PFN_vkCmdEndRenderPass)(dlsym(libvulkan, "vkCmdEndRenderPass"));
-    vgo_vkCmdExecuteCommands = (PFN_vkCmdExecuteCommands)(dlsym(libvulkan, "vkCmdExecuteCommands"));
-    vgo_vkDestroySurfaceKHR = (PFN_vkDestroySurfaceKHR)(dlsym(libvulkan, "vkDestroySurfaceKHR"));
-    vgo_vkGetPhysicalDeviceSurfaceSupportKHR = (PFN_vkGetPhysicalDeviceSurfaceSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceSurfaceSupportKHR"));
-    vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR = (PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR"));
-    vgo_vkGetPhysicalDeviceSurfaceFormatsKHR = (PFN_vkGetPhysicalDeviceSurfaceFormatsKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceSurfaceFormatsKHR"));
-    vgo_vkGetPhysicalDeviceSurfacePresentModesKHR = (PFN_vkGetPhysicalDeviceSurfacePresentModesKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceSurfacePresentModesKHR"));
-    vgo_vkCreateSwapchainKHR = (PFN_vkCreateSwapchainKHR)(dlsym(libvulkan, "vkCreateSwapchainKHR"));
-    vgo_vkDestroySwapchainKHR = (PFN_vkDestroySwapchainKHR)(dlsym(libvulkan, "vkDestroySwapchainKHR"));
-    vgo_vkGetSwapchainImagesKHR = (PFN_vkGetSwapchainImagesKHR)(dlsym(libvulkan, "vkGetSwapchainImagesKHR"));
-    vgo_vkAcquireNextImageKHR = (PFN_vkAcquireNextImageKHR)(dlsym(libvulkan, "vkAcquireNextImageKHR"));
-    vgo_vkQueuePresentKHR = (PFN_vkQueuePresentKHR)(dlsym(libvulkan, "vkQueuePresentKHR"));
-    vgo_vkGetPhysicalDeviceDisplayPropertiesKHR = (PFN_vkGetPhysicalDeviceDisplayPropertiesKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceDisplayPropertiesKHR"));
-    vgo_vkGetPhysicalDeviceDisplayPlanePropertiesKHR = (PFN_vkGetPhysicalDeviceDisplayPlanePropertiesKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceDisplayPlanePropertiesKHR"));
-    vgo_vkGetDisplayPlaneSupportedDisplaysKHR = (PFN_vkGetDisplayPlaneSupportedDisplaysKHR)(dlsym(libvulkan, "vkGetDisplayPlaneSupportedDisplaysKHR"));
-    vgo_vkGetDisplayModePropertiesKHR = (PFN_vkGetDisplayModePropertiesKHR)(dlsym(libvulkan, "vkGetDisplayModePropertiesKHR"));
-    vgo_vkCreateDisplayModeKHR = (PFN_vkCreateDisplayModeKHR)(dlsym(libvulkan, "vkCreateDisplayModeKHR"));
-    vgo_vkGetDisplayPlaneCapabilitiesKHR = (PFN_vkGetDisplayPlaneCapabilitiesKHR)(dlsym(libvulkan, "vkGetDisplayPlaneCapabilitiesKHR"));
-    vgo_vkCreateDisplayPlaneSurfaceKHR = (PFN_vkCreateDisplayPlaneSurfaceKHR)(dlsym(libvulkan, "vkCreateDisplayPlaneSurfaceKHR"));
-    vgo_vkCreateSharedSwapchainsKHR = (PFN_vkCreateSharedSwapchainsKHR)(dlsym(libvulkan, "vkCreateSharedSwapchainsKHR"));
-
-#ifdef VK_USE_PLATFORM_XLIB_KHR
-    vgo_vkCreateXlibSurfaceKHR = (PFN_vkCreateXlibSurfaceKHR)(dlsym(libvulkan, "vkCreateXlibSurfaceKHR"));
-    vgo_vkGetPhysicalDeviceXlibPresentationSupportKHR = (PFN_vkGetPhysicalDeviceXlibPresentationSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceXlibPresentationSupportKHR"));
-#endif
-
-#ifdef VK_USE_PLATFORM_XCB_KHR
-    vgo_vkCreateXcbSurfaceKHR = (PFN_vkCreateXcbSurfaceKHR)(dlsym(libvulkan, "vkCreateXcbSurfaceKHR"));
-    vgo_vkGetPhysicalDeviceXcbPresentationSupportKHR = (PFN_vkGetPhysicalDeviceXcbPresentationSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceXcbPresentationSupportKHR"));
-#endif
-
-#ifdef VK_USE_PLATFORM_WAYLAND_KHR
-    vgo_vkCreateWaylandSurfaceKHR = (PFN_vkCreateWaylandSurfaceKHR)(dlsym(libvulkan, "vkCreateWaylandSurfaceKHR"));
-    vgo_vkGetPhysicalDeviceWaylandPresentationSupportKHR = (PFN_vkGetPhysicalDeviceWaylandPresentationSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceWaylandPresentationSupportKHR"));
-#endif
-
-#ifdef VK_USE_PLATFORM_MIR_KHR
-    vgo_vkCreateMirSurfaceKHR = (PFN_vkCreateMirSurfaceKHR)(dlsym(libvulkan, "vkCreateMirSurfaceKHR"));
-    vgo_vkGetPhysicalDeviceMirPresentationSupportKHR = (PFN_vkGetPhysicalDeviceMirPresentationSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceMirPresentationSupportKHR"));
-#endif
-
-#ifdef VK_USE_PLATFORM_ANDROID_KHR
-    vgo_vkCreateAndroidSurfaceKHR = (PFN_vkCreateAndroidSurfaceKHR)(dlsym(libvulkan, "vkCreateAndroidSurfaceKHR"));
-#endif
-
-#ifdef VK_USE_PLATFORM_WIN32_KHR
-    vgo_vkCreateWin32SurfaceKHR = (PFN_vkCreateWin32SurfaceKHR)(dlsym(libvulkan, "vkCreateWin32SurfaceKHR"));
-    vgo_vkGetPhysicalDeviceWin32PresentationSupportKHR = (PFN_vkGetPhysicalDeviceWin32PresentationSupportKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceWin32PresentationSupportKHR"));
-#endif
-
-    vgo_vkCreateDebugReportCallbackEXT = (PFN_vkCreateDebugReportCallbackEXT)(dlsym(libvulkan, "vkCreateDebugReportCallbackEXT"));
-    vgo_vkDestroyDebugReportCallbackEXT = (PFN_vkDestroyDebugReportCallbackEXT)(dlsym(libvulkan, "vkDestroyDebugReportCallbackEXT"));
-    vgo_vkDebugReportMessageEXT = (PFN_vkDebugReportMessageEXT)(dlsym(libvulkan, "vkDebugReportMessageEXT"));
-
-    vgo_vkGetRefreshCycleDurationGOOGLE = (PFN_vkGetRefreshCycleDurationGOOGLE)(dlsym(libvulkan, "vkGetRefreshCycleDurationGOOGLE"));
-    vgo_vkGetPastPresentationTimingGOOGLE = (PFN_vkGetPastPresentationTimingGOOGLE)(dlsym(libvulkan, "vkGetPastPresentationTimingGOOGLE"));
-
-    // VK_KHR_buffer_device_address
-    vgo_vkGetBufferDeviceAddress = (PFN_vkGetBufferDeviceAddress)(dlsym(libvulkan, "vkGetBufferDeviceAddress"));
-
-    // VK_KHR_acceleration_structure
-    vgo_vkCreateAccelerationStructureKHR = (PFN_vkCreateAccelerationStructureKHR)(dlsym(libvulkan, "vkCreateAccelerationStructureKHR"));
-    vgo_vkDestroyAccelerationStructureKHR = (PFN_vkDestroyAccelerationStructureKHR)(dlsym(libvulkan, "vkDestroyAccelerationStructureKHR"));
-    vgo_vkGetAccelerationStructureBuildSizesKHR = (PFN_vkGetAccelerationStructureBuildSizesKHR)(dlsym(libvulkan, "vkGetAccelerationStructureBuildSizesKHR"));
-    vgo_vkGetAccelerationStructureDeviceAddressKHR = (PFN_vkGetAccelerationStructureDeviceAddressKHR)(dlsym(libvulkan, "vkGetAccelerationStructureDeviceAddressKHR"));
-    vgo_vkCmdBuildAccelerationStructuresKHR = (PFN_vkCmdBuildAccelerationStructuresKHR)(dlsym(libvulkan, "vkCmdBuildAccelerationStructuresKHR"));
-
-    // VK_KHR_ray_tracing_pipeline
-    vgo_vkCreateRayTracingPipelinesKHR = (PFN_vkCreateRayTracingPipelinesKHR)(dlsym(libvulkan, "vkCreateRayTracingPipelinesKHR"));
-    vgo_vkGetRayTracingShaderGroupHandlesKHR = (PFN_vkGetRayTracingShaderGroupHandlesKHR)(dlsym(libvulkan, "vkGetRayTracingShaderGroupHandlesKHR"));
-    vgo_vkCmdTraceRaysKHR = (PFN_vkCmdTraceRaysKHR)(dlsym(libvulkan, "vkCmdTraceRaysKHR"));
+    // Global functions (instance = NULL)
+    vgo_vkCreateInstance = (PFN_vkCreateInstance)(getInstanceProcAddress(NULL, "vkCreateInstance"));
+    vgo_vkEnumerateInstanceVersion = (PFN_vkEnumerateInstanceVersion)(getInstanceProcAddress(NULL, "vkEnumerateInstanceVersion"));
+    vgo_vkEnumerateInstanceExtensionProperties = (PFN_vkEnumerateInstanceExtensionProperties)(getInstanceProcAddress(NULL, "vkEnumerateInstanceExtensionProperties"));
+    vgo_vkEnumerateInstanceLayerProperties = (PFN_vkEnumerateInstanceLayerProperties)(getInstanceProcAddress(NULL, "vkEnumerateInstanceLayerProperties"));
+    vgo_vkGetInstanceProcAddr = getInstanceProcAddress;
 
     return 0;
 }
 
+int vkInitInstance(VkInstance instance) {
+    PFN_vkGetInstanceProcAddr gpa = getInstanceProcAddress;
+    VKLOG("vkInitInstance called, gpa=%p, instance=%p", gpa, instance);
+    if (!gpa) return -1;
+
+    // Core instance functions
+    vgo_vkDestroyInstance = (PFN_vkDestroyInstance)(gpa(instance, "vkDestroyInstance"));
+    vgo_vkEnumeratePhysicalDevices = (PFN_vkEnumeratePhysicalDevices)(gpa(instance, "vkEnumeratePhysicalDevices"));
+    vgo_vkGetPhysicalDeviceFeatures = (PFN_vkGetPhysicalDeviceFeatures)(gpa(instance, "vkGetPhysicalDeviceFeatures"));
+    vgo_vkGetPhysicalDeviceFormatProperties = (PFN_vkGetPhysicalDeviceFormatProperties)(gpa(instance, "vkGetPhysicalDeviceFormatProperties"));
+    vgo_vkGetPhysicalDeviceImageFormatProperties = (PFN_vkGetPhysicalDeviceImageFormatProperties)(gpa(instance, "vkGetPhysicalDeviceImageFormatProperties"));
+    vgo_vkGetPhysicalDeviceProperties = (PFN_vkGetPhysicalDeviceProperties)(gpa(instance, "vkGetPhysicalDeviceProperties"));
+    vgo_vkGetPhysicalDeviceQueueFamilyProperties = (PFN_vkGetPhysicalDeviceQueueFamilyProperties)(gpa(instance, "vkGetPhysicalDeviceQueueFamilyProperties"));
+    vgo_vkGetPhysicalDeviceMemoryProperties = (PFN_vkGetPhysicalDeviceMemoryProperties)(gpa(instance, "vkGetPhysicalDeviceMemoryProperties"));
+    vgo_vkGetDeviceProcAddr = (PFN_vkGetDeviceProcAddr)(gpa(instance, "vkGetDeviceProcAddr"));
+    vgo_vkCreateDevice = (PFN_vkCreateDevice)(gpa(instance, "vkCreateDevice"));
+    vgo_vkDestroyDevice = (PFN_vkDestroyDevice)(gpa(instance, "vkDestroyDevice"));
+    vgo_vkEnumerateDeviceExtensionProperties = (PFN_vkEnumerateDeviceExtensionProperties)(gpa(instance, "vkEnumerateDeviceExtensionProperties"));
+    vgo_vkEnumerateDeviceLayerProperties = (PFN_vkEnumerateDeviceLayerProperties)(gpa(instance, "vkEnumerateDeviceLayerProperties"));
+    vgo_vkGetDeviceQueue = (PFN_vkGetDeviceQueue)(gpa(instance, "vkGetDeviceQueue"));
+    vgo_vkQueueSubmit = (PFN_vkQueueSubmit)(gpa(instance, "vkQueueSubmit"));
+    vgo_vkQueueWaitIdle = (PFN_vkQueueWaitIdle)(gpa(instance, "vkQueueWaitIdle"));
+    vgo_vkDeviceWaitIdle = (PFN_vkDeviceWaitIdle)(gpa(instance, "vkDeviceWaitIdle"));
+    vgo_vkAllocateMemory = (PFN_vkAllocateMemory)(gpa(instance, "vkAllocateMemory"));
+    vgo_vkFreeMemory = (PFN_vkFreeMemory)(gpa(instance, "vkFreeMemory"));
+    vgo_vkMapMemory = (PFN_vkMapMemory)(gpa(instance, "vkMapMemory"));
+    vgo_vkUnmapMemory = (PFN_vkUnmapMemory)(gpa(instance, "vkUnmapMemory"));
+    vgo_vkFlushMappedMemoryRanges = (PFN_vkFlushMappedMemoryRanges)(gpa(instance, "vkFlushMappedMemoryRanges"));
+    vgo_vkInvalidateMappedMemoryRanges = (PFN_vkInvalidateMappedMemoryRanges)(gpa(instance, "vkInvalidateMappedMemoryRanges"));
+    vgo_vkGetDeviceMemoryCommitment = (PFN_vkGetDeviceMemoryCommitment)(gpa(instance, "vkGetDeviceMemoryCommitment"));
+    vgo_vkBindBufferMemory = (PFN_vkBindBufferMemory)(gpa(instance, "vkBindBufferMemory"));
+    vgo_vkBindImageMemory = (PFN_vkBindImageMemory)(gpa(instance, "vkBindImageMemory"));
+    vgo_vkGetBufferMemoryRequirements = (PFN_vkGetBufferMemoryRequirements)(gpa(instance, "vkGetBufferMemoryRequirements"));
+    vgo_vkGetImageMemoryRequirements = (PFN_vkGetImageMemoryRequirements)(gpa(instance, "vkGetImageMemoryRequirements"));
+    vgo_vkGetImageSparseMemoryRequirements = (PFN_vkGetImageSparseMemoryRequirements)(gpa(instance, "vkGetImageSparseMemoryRequirements"));
+    vgo_vkGetPhysicalDeviceSparseImageFormatProperties = (PFN_vkGetPhysicalDeviceSparseImageFormatProperties)(gpa(instance, "vkGetPhysicalDeviceSparseImageFormatProperties"));
+    vgo_vkQueueBindSparse = (PFN_vkQueueBindSparse)(gpa(instance, "vkQueueBindSparse"));
+    vgo_vkCreateFence = (PFN_vkCreateFence)(gpa(instance, "vkCreateFence"));
+    vgo_vkDestroyFence = (PFN_vkDestroyFence)(gpa(instance, "vkDestroyFence"));
+    vgo_vkResetFences = (PFN_vkResetFences)(gpa(instance, "vkResetFences"));
+    vgo_vkGetFenceStatus = (PFN_vkGetFenceStatus)(gpa(instance, "vkGetFenceStatus"));
+    vgo_vkWaitForFences = (PFN_vkWaitForFences)(gpa(instance, "vkWaitForFences"));
+    vgo_vkCreateSemaphore = (PFN_vkCreateSemaphore)(gpa(instance, "vkCreateSemaphore"));
+    vgo_vkDestroySemaphore = (PFN_vkDestroySemaphore)(gpa(instance, "vkDestroySemaphore"));
+    vgo_vkCreateEvent = (PFN_vkCreateEvent)(gpa(instance, "vkCreateEvent"));
+    vgo_vkDestroyEvent = (PFN_vkDestroyEvent)(gpa(instance, "vkDestroyEvent"));
+    vgo_vkGetEventStatus = (PFN_vkGetEventStatus)(gpa(instance, "vkGetEventStatus"));
+    vgo_vkSetEvent = (PFN_vkSetEvent)(gpa(instance, "vkSetEvent"));
+    vgo_vkResetEvent = (PFN_vkResetEvent)(gpa(instance, "vkResetEvent"));
+    vgo_vkCreateQueryPool = (PFN_vkCreateQueryPool)(gpa(instance, "vkCreateQueryPool"));
+    vgo_vkDestroyQueryPool = (PFN_vkDestroyQueryPool)(gpa(instance, "vkDestroyQueryPool"));
+    vgo_vkGetQueryPoolResults = (PFN_vkGetQueryPoolResults)(gpa(instance, "vkGetQueryPoolResults"));
+    vgo_vkCreateBuffer = (PFN_vkCreateBuffer)(gpa(instance, "vkCreateBuffer"));
+    vgo_vkDestroyBuffer = (PFN_vkDestroyBuffer)(gpa(instance, "vkDestroyBuffer"));
+    vgo_vkCreateBufferView = (PFN_vkCreateBufferView)(gpa(instance, "vkCreateBufferView"));
+    vgo_vkDestroyBufferView = (PFN_vkDestroyBufferView)(gpa(instance, "vkDestroyBufferView"));
+    vgo_vkCreateImage = (PFN_vkCreateImage)(gpa(instance, "vkCreateImage"));
+    vgo_vkDestroyImage = (PFN_vkDestroyImage)(gpa(instance, "vkDestroyImage"));
+    vgo_vkGetImageSubresourceLayout = (PFN_vkGetImageSubresourceLayout)(gpa(instance, "vkGetImageSubresourceLayout"));
+    vgo_vkCreateImageView = (PFN_vkCreateImageView)(gpa(instance, "vkCreateImageView"));
+    vgo_vkDestroyImageView = (PFN_vkDestroyImageView)(gpa(instance, "vkDestroyImageView"));
+    vgo_vkCreateShaderModule = (PFN_vkCreateShaderModule)(gpa(instance, "vkCreateShaderModule"));
+    vgo_vkDestroyShaderModule = (PFN_vkDestroyShaderModule)(gpa(instance, "vkDestroyShaderModule"));
+    vgo_vkCreatePipelineCache = (PFN_vkCreatePipelineCache)(gpa(instance, "vkCreatePipelineCache"));
+    vgo_vkDestroyPipelineCache = (PFN_vkDestroyPipelineCache)(gpa(instance, "vkDestroyPipelineCache"));
+    vgo_vkGetPipelineCacheData = (PFN_vkGetPipelineCacheData)(gpa(instance, "vkGetPipelineCacheData"));
+    vgo_vkMergePipelineCaches = (PFN_vkMergePipelineCaches)(gpa(instance, "vkMergePipelineCaches"));
+    vgo_vkCreateGraphicsPipelines = (PFN_vkCreateGraphicsPipelines)(gpa(instance, "vkCreateGraphicsPipelines"));
+    vgo_vkCreateComputePipelines = (PFN_vkCreateComputePipelines)(gpa(instance, "vkCreateComputePipelines"));
+    vgo_vkDestroyPipeline = (PFN_vkDestroyPipeline)(gpa(instance, "vkDestroyPipeline"));
+    vgo_vkCreatePipelineLayout = (PFN_vkCreatePipelineLayout)(gpa(instance, "vkCreatePipelineLayout"));
+    vgo_vkDestroyPipelineLayout = (PFN_vkDestroyPipelineLayout)(gpa(instance, "vkDestroyPipelineLayout"));
+    vgo_vkCreateSampler = (PFN_vkCreateSampler)(gpa(instance, "vkCreateSampler"));
+    vgo_vkDestroySampler = (PFN_vkDestroySampler)(gpa(instance, "vkDestroySampler"));
+    vgo_vkCreateDescriptorSetLayout = (PFN_vkCreateDescriptorSetLayout)(gpa(instance, "vkCreateDescriptorSetLayout"));
+    vgo_vkDestroyDescriptorSetLayout = (PFN_vkDestroyDescriptorSetLayout)(gpa(instance, "vkDestroyDescriptorSetLayout"));
+    vgo_vkCreateDescriptorPool = (PFN_vkCreateDescriptorPool)(gpa(instance, "vkCreateDescriptorPool"));
+    vgo_vkDestroyDescriptorPool = (PFN_vkDestroyDescriptorPool)(gpa(instance, "vkDestroyDescriptorPool"));
+    vgo_vkResetDescriptorPool = (PFN_vkResetDescriptorPool)(gpa(instance, "vkResetDescriptorPool"));
+    vgo_vkAllocateDescriptorSets = (PFN_vkAllocateDescriptorSets)(gpa(instance, "vkAllocateDescriptorSets"));
+    vgo_vkFreeDescriptorSets = (PFN_vkFreeDescriptorSets)(gpa(instance, "vkFreeDescriptorSets"));
+    vgo_vkUpdateDescriptorSets = (PFN_vkUpdateDescriptorSets)(gpa(instance, "vkUpdateDescriptorSets"));
+    vgo_vkCreateFramebuffer = (PFN_vkCreateFramebuffer)(gpa(instance, "vkCreateFramebuffer"));
+    vgo_vkDestroyFramebuffer = (PFN_vkDestroyFramebuffer)(gpa(instance, "vkDestroyFramebuffer"));
+    vgo_vkCreateRenderPass = (PFN_vkCreateRenderPass)(gpa(instance, "vkCreateRenderPass"));
+    vgo_vkDestroyRenderPass = (PFN_vkDestroyRenderPass)(gpa(instance, "vkDestroyRenderPass"));
+    vgo_vkGetRenderAreaGranularity = (PFN_vkGetRenderAreaGranularity)(gpa(instance, "vkGetRenderAreaGranularity"));
+    vgo_vkCreateCommandPool = (PFN_vkCreateCommandPool)(gpa(instance, "vkCreateCommandPool"));
+    vgo_vkDestroyCommandPool = (PFN_vkDestroyCommandPool)(gpa(instance, "vkDestroyCommandPool"));
+    vgo_vkResetCommandPool = (PFN_vkResetCommandPool)(gpa(instance, "vkResetCommandPool"));
+    vgo_vkAllocateCommandBuffers = (PFN_vkAllocateCommandBuffers)(gpa(instance, "vkAllocateCommandBuffers"));
+    vgo_vkFreeCommandBuffers = (PFN_vkFreeCommandBuffers)(gpa(instance, "vkFreeCommandBuffers"));
+    vgo_vkBeginCommandBuffer = (PFN_vkBeginCommandBuffer)(gpa(instance, "vkBeginCommandBuffer"));
+    vgo_vkEndCommandBuffer = (PFN_vkEndCommandBuffer)(gpa(instance, "vkEndCommandBuffer"));
+    vgo_vkResetCommandBuffer = (PFN_vkResetCommandBuffer)(gpa(instance, "vkResetCommandBuffer"));
+    vgo_vkCmdBindPipeline = (PFN_vkCmdBindPipeline)(gpa(instance, "vkCmdBindPipeline"));
+    vgo_vkCmdSetViewport = (PFN_vkCmdSetViewport)(gpa(instance, "vkCmdSetViewport"));
+    vgo_vkCmdSetScissor = (PFN_vkCmdSetScissor)(gpa(instance, "vkCmdSetScissor"));
+    vgo_vkCmdSetLineWidth = (PFN_vkCmdSetLineWidth)(gpa(instance, "vkCmdSetLineWidth"));
+    vgo_vkCmdSetDepthBias = (PFN_vkCmdSetDepthBias)(gpa(instance, "vkCmdSetDepthBias"));
+    vgo_vkCmdSetBlendConstants = (PFN_vkCmdSetBlendConstants)(gpa(instance, "vkCmdSetBlendConstants"));
+    vgo_vkCmdSetDepthBounds = (PFN_vkCmdSetDepthBounds)(gpa(instance, "vkCmdSetDepthBounds"));
+    vgo_vkCmdSetStencilCompareMask = (PFN_vkCmdSetStencilCompareMask)(gpa(instance, "vkCmdSetStencilCompareMask"));
+    vgo_vkCmdSetStencilWriteMask = (PFN_vkCmdSetStencilWriteMask)(gpa(instance, "vkCmdSetStencilWriteMask"));
+    vgo_vkCmdSetStencilReference = (PFN_vkCmdSetStencilReference)(gpa(instance, "vkCmdSetStencilReference"));
+    vgo_vkCmdBindDescriptorSets = (PFN_vkCmdBindDescriptorSets)(gpa(instance, "vkCmdBindDescriptorSets"));
+    vgo_vkCmdBindIndexBuffer = (PFN_vkCmdBindIndexBuffer)(gpa(instance, "vkCmdBindIndexBuffer"));
+    vgo_vkCmdBindVertexBuffers = (PFN_vkCmdBindVertexBuffers)(gpa(instance, "vkCmdBindVertexBuffers"));
+    vgo_vkCmdDraw = (PFN_vkCmdDraw)(gpa(instance, "vkCmdDraw"));
+    vgo_vkCmdDrawIndexed = (PFN_vkCmdDrawIndexed)(gpa(instance, "vkCmdDrawIndexed"));
+    vgo_vkCmdDrawIndirect = (PFN_vkCmdDrawIndirect)(gpa(instance, "vkCmdDrawIndirect"));
+    vgo_vkCmdDrawIndexedIndirect = (PFN_vkCmdDrawIndexedIndirect)(gpa(instance, "vkCmdDrawIndexedIndirect"));
+    vgo_vkCmdDispatch = (PFN_vkCmdDispatch)(gpa(instance, "vkCmdDispatch"));
+    vgo_vkCmdDispatchIndirect = (PFN_vkCmdDispatchIndirect)(gpa(instance, "vkCmdDispatchIndirect"));
+    vgo_vkCmdCopyBuffer = (PFN_vkCmdCopyBuffer)(gpa(instance, "vkCmdCopyBuffer"));
+    vgo_vkCmdCopyImage = (PFN_vkCmdCopyImage)(gpa(instance, "vkCmdCopyImage"));
+    vgo_vkCmdBlitImage = (PFN_vkCmdBlitImage)(gpa(instance, "vkCmdBlitImage"));
+    vgo_vkCmdCopyBufferToImage = (PFN_vkCmdCopyBufferToImage)(gpa(instance, "vkCmdCopyBufferToImage"));
+    vgo_vkCmdCopyImageToBuffer = (PFN_vkCmdCopyImageToBuffer)(gpa(instance, "vkCmdCopyImageToBuffer"));
+    vgo_vkCmdUpdateBuffer = (PFN_vkCmdUpdateBuffer)(gpa(instance, "vkCmdUpdateBuffer"));
+    vgo_vkCmdFillBuffer = (PFN_vkCmdFillBuffer)(gpa(instance, "vkCmdFillBuffer"));
+    vgo_vkCmdClearColorImage = (PFN_vkCmdClearColorImage)(gpa(instance, "vkCmdClearColorImage"));
+    vgo_vkCmdClearDepthStencilImage = (PFN_vkCmdClearDepthStencilImage)(gpa(instance, "vkCmdClearDepthStencilImage"));
+    vgo_vkCmdClearAttachments = (PFN_vkCmdClearAttachments)(gpa(instance, "vkCmdClearAttachments"));
+    vgo_vkCmdResolveImage = (PFN_vkCmdResolveImage)(gpa(instance, "vkCmdResolveImage"));
+    vgo_vkCmdSetEvent = (PFN_vkCmdSetEvent)(gpa(instance, "vkCmdSetEvent"));
+    vgo_vkCmdResetEvent = (PFN_vkCmdResetEvent)(gpa(instance, "vkCmdResetEvent"));
+    vgo_vkCmdWaitEvents = (PFN_vkCmdWaitEvents)(gpa(instance, "vkCmdWaitEvents"));
+    vgo_vkCmdPipelineBarrier = (PFN_vkCmdPipelineBarrier)(gpa(instance, "vkCmdPipelineBarrier"));
+    vgo_vkCmdBeginQuery = (PFN_vkCmdBeginQuery)(gpa(instance, "vkCmdBeginQuery"));
+    vgo_vkCmdEndQuery = (PFN_vkCmdEndQuery)(gpa(instance, "vkCmdEndQuery"));
+    vgo_vkCmdResetQueryPool = (PFN_vkCmdResetQueryPool)(gpa(instance, "vkCmdResetQueryPool"));
+    vgo_vkCmdWriteTimestamp = (PFN_vkCmdWriteTimestamp)(gpa(instance, "vkCmdWriteTimestamp"));
+    vgo_vkCmdCopyQueryPoolResults = (PFN_vkCmdCopyQueryPoolResults)(gpa(instance, "vkCmdCopyQueryPoolResults"));
+    vgo_vkCmdPushConstants = (PFN_vkCmdPushConstants)(gpa(instance, "vkCmdPushConstants"));
+    vgo_vkCmdBeginRenderPass = (PFN_vkCmdBeginRenderPass)(gpa(instance, "vkCmdBeginRenderPass"));
+    vgo_vkCmdNextSubpass = (PFN_vkCmdNextSubpass)(gpa(instance, "vkCmdNextSubpass"));
+    vgo_vkCmdEndRenderPass = (PFN_vkCmdEndRenderPass)(gpa(instance, "vkCmdEndRenderPass"));
+    vgo_vkCmdExecuteCommands = (PFN_vkCmdExecuteCommands)(gpa(instance, "vkCmdExecuteCommands"));
+
+    // KHR surface / swapchain
+    vgo_vkDestroySurfaceKHR = (PFN_vkDestroySurfaceKHR)(gpa(instance, "vkDestroySurfaceKHR"));
+    vgo_vkGetPhysicalDeviceSurfaceSupportKHR = (PFN_vkGetPhysicalDeviceSurfaceSupportKHR)(gpa(instance, "vkGetPhysicalDeviceSurfaceSupportKHR"));
+    vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR = (PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR)(gpa(instance, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR"));
+    VKLOG("vkGetPhysicalDeviceSurfaceCapabilitiesKHR=%p", vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR);
+    vgo_vkGetPhysicalDeviceSurfaceFormatsKHR = (PFN_vkGetPhysicalDeviceSurfaceFormatsKHR)(gpa(instance, "vkGetPhysicalDeviceSurfaceFormatsKHR"));
+    vgo_vkGetPhysicalDeviceSurfacePresentModesKHR = (PFN_vkGetPhysicalDeviceSurfacePresentModesKHR)(gpa(instance, "vkGetPhysicalDeviceSurfacePresentModesKHR"));
+    vgo_vkCreateSwapchainKHR = (PFN_vkCreateSwapchainKHR)(gpa(instance, "vkCreateSwapchainKHR"));
+    vgo_vkDestroySwapchainKHR = (PFN_vkDestroySwapchainKHR)(gpa(instance, "vkDestroySwapchainKHR"));
+    vgo_vkGetSwapchainImagesKHR = (PFN_vkGetSwapchainImagesKHR)(gpa(instance, "vkGetSwapchainImagesKHR"));
+    vgo_vkAcquireNextImageKHR = (PFN_vkAcquireNextImageKHR)(gpa(instance, "vkAcquireNextImageKHR"));
+    vgo_vkQueuePresentKHR = (PFN_vkQueuePresentKHR)(gpa(instance, "vkQueuePresentKHR"));
+
+    // KHR display
+    vgo_vkGetPhysicalDeviceDisplayPropertiesKHR = (PFN_vkGetPhysicalDeviceDisplayPropertiesKHR)(gpa(instance, "vkGetPhysicalDeviceDisplayPropertiesKHR"));
+    vgo_vkGetPhysicalDeviceDisplayPlanePropertiesKHR = (PFN_vkGetPhysicalDeviceDisplayPlanePropertiesKHR)(gpa(instance, "vkGetPhysicalDeviceDisplayPlanePropertiesKHR"));
+    vgo_vkGetDisplayPlaneSupportedDisplaysKHR = (PFN_vkGetDisplayPlaneSupportedDisplaysKHR)(gpa(instance, "vkGetDisplayPlaneSupportedDisplaysKHR"));
+    vgo_vkGetDisplayModePropertiesKHR = (PFN_vkGetDisplayModePropertiesKHR)(gpa(instance, "vkGetDisplayModePropertiesKHR"));
+    vgo_vkCreateDisplayModeKHR = (PFN_vkCreateDisplayModeKHR)(gpa(instance, "vkCreateDisplayModeKHR"));
+    vgo_vkGetDisplayPlaneCapabilitiesKHR = (PFN_vkGetDisplayPlaneCapabilitiesKHR)(gpa(instance, "vkGetDisplayPlaneCapabilitiesKHR"));
+    vgo_vkCreateDisplayPlaneSurfaceKHR = (PFN_vkCreateDisplayPlaneSurfaceKHR)(gpa(instance, "vkCreateDisplayPlaneSurfaceKHR"));
+    vgo_vkCreateSharedSwapchainsKHR = (PFN_vkCreateSharedSwapchainsKHR)(gpa(instance, "vkCreateSharedSwapchainsKHR"));
+
+#ifdef VK_USE_PLATFORM_ANDROID_KHR
+    vgo_vkCreateAndroidSurfaceKHR = (PFN_vkCreateAndroidSurfaceKHR)(gpa(instance, "vkCreateAndroidSurfaceKHR"));
+#endif
+
+    // EXT debug
+    vgo_vkCreateDebugReportCallbackEXT = (PFN_vkCreateDebugReportCallbackEXT)(gpa(instance, "vkCreateDebugReportCallbackEXT"));
+    vgo_vkDestroyDebugReportCallbackEXT = (PFN_vkDestroyDebugReportCallbackEXT)(gpa(instance, "vkDestroyDebugReportCallbackEXT"));
+    vgo_vkDebugReportMessageEXT = (PFN_vkDebugReportMessageEXT)(gpa(instance, "vkDebugReportMessageEXT"));
+
+    // GOOGLE display timing
+    vgo_vkGetRefreshCycleDurationGOOGLE = (PFN_vkGetRefreshCycleDurationGOOGLE)(gpa(instance, "vkGetRefreshCycleDurationGOOGLE"));
+    vgo_vkGetPastPresentationTimingGOOGLE = (PFN_vkGetPastPresentationTimingGOOGLE)(gpa(instance, "vkGetPastPresentationTimingGOOGLE"));
+
+    // VK_KHR_buffer_device_address
+    vgo_vkGetBufferDeviceAddress = (PFN_vkGetBufferDeviceAddress)(gpa(instance, "vkGetBufferDeviceAddress"));
+
+    // VK_KHR_acceleration_structure
+    vgo_vkCreateAccelerationStructureKHR = (PFN_vkCreateAccelerationStructureKHR)(gpa(instance, "vkCreateAccelerationStructureKHR"));
+    vgo_vkDestroyAccelerationStructureKHR = (PFN_vkDestroyAccelerationStructureKHR)(gpa(instance, "vkDestroyAccelerationStructureKHR"));
+    vgo_vkGetAccelerationStructureBuildSizesKHR = (PFN_vkGetAccelerationStructureBuildSizesKHR)(gpa(instance, "vkGetAccelerationStructureBuildSizesKHR"));
+    vgo_vkGetAccelerationStructureDeviceAddressKHR = (PFN_vkGetAccelerationStructureDeviceAddressKHR)(gpa(instance, "vkGetAccelerationStructureDeviceAddressKHR"));
+    vgo_vkCmdBuildAccelerationStructuresKHR = (PFN_vkCmdBuildAccelerationStructuresKHR)(gpa(instance, "vkCmdBuildAccelerationStructuresKHR"));
+
+    // VK_KHR_ray_tracing_pipeline
+    vgo_vkCreateRayTracingPipelinesKHR = (PFN_vkCreateRayTracingPipelinesKHR)(gpa(instance, "vkCreateRayTracingPipelinesKHR"));
+    vgo_vkGetRayTracingShaderGroupHandlesKHR = (PFN_vkGetRayTracingShaderGroupHandlesKHR)(gpa(instance, "vkGetRayTracingShaderGroupHandlesKHR"));
+    vgo_vkCmdTraceRaysKHR = (PFN_vkCmdTraceRaysKHR)(gpa(instance, "vkCmdTraceRaysKHR"));
+
+    return 0;
+}
+
+// Global variable definitions
 PFN_vkCreateInstance vgo_vkCreateInstance;
 PFN_vkDestroyInstance vgo_vkDestroyInstance;
 PFN_vkEnumerateInstanceVersion vgo_vkEnumerateInstanceVersion;

@@ -1,6 +1,14 @@
 #include "vk_wrapper.h"
 #include "vk_bridge.h"
 
+#ifdef __ANDROID__
+#include <android/log.h>
+#include <dlfcn.h>
+#define BRIDGE_LOG(...) __android_log_print(ANDROID_LOG_INFO, "VkBridge", __VA_ARGS__)
+#else
+#define BRIDGE_LOG(...)
+#endif
+
 VkResult callVkCreateInstance(
     const VkInstanceCreateInfo*                 pCreateInfo,
     const VkAllocationCallbacks*                pAllocator,
@@ -1197,6 +1205,18 @@ VkResult callVkGetPhysicalDeviceSurfaceCapabilitiesKHR(
     VkPhysicalDevice                            physicalDevice,
     VkSurfaceKHR                                surface,
     VkSurfaceCapabilitiesKHR*                   pSurfaceCapabilities) {
+    // Try loading fresh from dlsym to compare
+    void* libvulkan = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
+    PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR dlsymFn =
+        (PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR)(dlsym(libvulkan, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR"));
+    BRIDGE_LOG("SurfaceCaps: cached=%p dlsym=%p gpu=%p surface=%p",
+        vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR, dlsymFn, physicalDevice, surface);
+    if (dlsymFn) {
+        BRIDGE_LOG("calling via dlsym pointer...");
+        VkResult res = dlsymFn(physicalDevice, surface, pSurfaceCapabilities);
+        BRIDGE_LOG("dlsym call returned %d", res);
+        return res;
+    }
     return vgo_vkGetPhysicalDeviceSurfaceCapabilitiesKHR(physicalDevice,
             surface, pSurfaceCapabilities);
 }
