@@ -97,6 +97,8 @@ TRANSLATOR:
     - {target: DebugUtilsMessengerCallback, self: raw}
     - {target: ANativeWindow, self: raw}
     - {target: AHardwareBuffer, self: raw}
+    - {target: ^callVkEnumerateInstanceExtensionProperties$, tips: [empty-string-nil,0,0]}
+    - {target: ^callVkEnumerateDeviceExtensionProperties$, tips: [0,empty-string-nil,0,0]}
     # bit-field structs: CGo cannot access bit fields by name
     - {target: VkAccelerationStructureInstanceKHR, self: raw}
     - {target: VkAccelerationStructureInstanceNV, self: raw}
