@@ -16,6 +16,26 @@ int isProcAddrSet() {
 }
 
 int vkInitInstance(VkInstance instance) {
+    // Android's libvulkan.so exports only the core Vulkan entry points as dlsym symbols.
+    // Device-level extension functions (VK_GOOGLE_display_timing, VK_KHR_acceleration_structure,
+    // VK_KHR_ray_tracing_pipeline, ...) must be resolved via vkGetInstanceProcAddr against
+    // the live instance
+    // dlsym against libvulkan.so returns NULL for them, and bridge trampoline in
+    // vk_bridge.c calls the pointer without a null guard, so any missing extension fn would
+    // SIGSEGV the first time the app tries to use it.
+    if (vgo_vkGetInstanceProcAddr == NULL) {
+        return 0;
+    }
+    #define RESOLVE_IF_NULL(name) \
+        if (vgo_##name == NULL) { \
+            vgo_##name = (PFN_##name)vgo_vkGetInstanceProcAddr(instance, #name); \
+        }
+
+    // VK_GOOGLE_display_timing
+    RESOLVE_IF_NULL(vkGetRefreshCycleDurationGOOGLE)
+    RESOLVE_IF_NULL(vkGetPastPresentationTimingGOOGLE)
+
+    #undef RESOLVE_IF_NULL
     return 0;
 }
 
