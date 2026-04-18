@@ -76276,6 +76276,10 @@ func (x *PhysicalDeviceClusterCullingShaderPropertiesHUAWEI) PassRef() (*C.VkPhy
 	reffe4e545d.maxOutputClusterCount, cmaxOutputClusterCount_allocs = (C.uint32_t)(x.MaxOutputClusterCount), cgoAllocsUnknown
 	allocsfe4e545d.Borrow(cmaxOutputClusterCount_allocs)
 
+	var cindirectBufferOffsetAlignment_allocs *cgoAllocMap
+	reffe4e545d.indirectBufferOffsetAlignment, cindirectBufferOffsetAlignment_allocs = (C.VkDeviceSize)(x.IndirectBufferOffsetAlignment), cgoAllocsUnknown
+	allocsfe4e545d.Borrow(cindirectBufferOffsetAlignment_allocs)
+
 	x.reffe4e545d = reffe4e545d
 	x.allocsfe4e545d = allocsfe4e545d
 	return reffe4e545d, allocsfe4e545d
@@ -76302,6 +76306,7 @@ func (x *PhysicalDeviceClusterCullingShaderPropertiesHUAWEI) Deref() {
 	x.MaxWorkGroupCount = *(*[3]uint32)(unsafe.Pointer(&x.reffe4e545d.maxWorkGroupCount))
 	x.MaxWorkGroupSize = *(*[3]uint32)(unsafe.Pointer(&x.reffe4e545d.maxWorkGroupSize))
 	x.MaxOutputClusterCount = (uint32)(x.reffe4e545d.maxOutputClusterCount)
+	x.IndirectBufferOffsetAlignment = (DeviceSize)(x.reffe4e545d.indirectBufferOffsetAlignment)
 }
 
 // allocPhysicalDeviceBorderColorSwizzleFeaturesMemory allocates memory for type C.VkPhysicalDeviceBorderColorSwizzleFeaturesEXT in C.

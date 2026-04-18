@@ -6,9 +6,9 @@
 -
 +/*
  #define VK_KHR_video_encode_queue 1
- #define VK_KHR_VIDEO_ENCODE_QUEUE_SPEC_VERSION 7
+ #define VK_KHR_VIDEO_ENCODE_QUEUE_SPEC_VERSION 8
  #define VK_KHR_VIDEO_ENCODE_QUEUE_EXTENSION_NAME "VK_KHR_video_encode_queue"
-@@ -544,7 +544,7 @@
+@@ -483,7 +483,7 @@
      VkBool32                         useMaxFrameSize;
      VkVideoEncodeH265FrameSizeEXT    maxFrameSize;
  } VkVideoEncodeH265RateControlLayerInfoEXT;

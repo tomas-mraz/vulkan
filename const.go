@@ -42,9 +42,9 @@ const (
 	// ApiVersion10 as defined in vulkan_core.h:68
 	ApiVersion10 = 4194304
 	// HeaderVersion as defined in vulkan_core.h:71
-	HeaderVersion = 242
+	HeaderVersion = 243
 	// HeaderVersionComplete as defined in vulkan_core.h:74
-	HeaderVersionComplete = 4206834
+	HeaderVersionComplete = 4206835
 	// AttachmentUnused as defined in vulkan_core.h:123
 	AttachmentUnused = (^uint32(0))
 	// False as defined in vulkan_core.h:124
@@ -75,1755 +75,1755 @@ const (
 	MaxDescriptionSize = uint32(256)
 	// MaxMemoryHeaps as defined in vulkan_core.h:137
 	MaxMemoryHeaps = uint32(16)
-	// Version11 as defined in vulkan_core.h:4761
+	// Version11 as defined in vulkan_core.h:4756
 	Version11 = 1
-	// ApiVersion11 as defined in vulkan_core.h:4763
+	// ApiVersion11 as defined in vulkan_core.h:4758
 	ApiVersion11 = 4198400
-	// MaxDeviceGroupSize as defined in vulkan_core.h:4767
+	// MaxDeviceGroupSize as defined in vulkan_core.h:4762
 	MaxDeviceGroupSize = uint32(32)
-	// LuidSize as defined in vulkan_core.h:4768
+	// LuidSize as defined in vulkan_core.h:4763
 	LuidSize = uint32(8)
-	// QueueFamilyExternal as defined in vulkan_core.h:4769
+	// QueueFamilyExternal as defined in vulkan_core.h:4764
 	QueueFamilyExternal = (^uint32(1))
-	// Version12 as defined in vulkan_core.h:5626
+	// Version12 as defined in vulkan_core.h:5621
 	Version12 = 1
-	// ApiVersion12 as defined in vulkan_core.h:5628
+	// ApiVersion12 as defined in vulkan_core.h:5623
 	ApiVersion12 = 4202496
-	// MaxDriverNameSize as defined in vulkan_core.h:5630
+	// MaxDriverNameSize as defined in vulkan_core.h:5625
 	MaxDriverNameSize = uint32(256)
-	// MaxDriverInfoSize as defined in vulkan_core.h:5631
+	// MaxDriverInfoSize as defined in vulkan_core.h:5626
 	MaxDriverInfoSize = uint32(256)
-	// Version13 as defined in vulkan_core.h:6380
+	// Version13 as defined in vulkan_core.h:6375
 	Version13 = 1
-	// ApiVersion13 as defined in vulkan_core.h:6382
+	// ApiVersion13 as defined in vulkan_core.h:6377
 	ApiVersion13 = 4206592
-	// KhrSurface as defined in vulkan_core.h:7421
+	// KhrSurface as defined in vulkan_core.h:7416
 	KhrSurface = 1
-	// KhrSurfaceSpecVersion as defined in vulkan_core.h:7423
+	// KhrSurfaceSpecVersion as defined in vulkan_core.h:7418
 	KhrSurfaceSpecVersion = 25
-	// KhrSurfaceExtensionName as defined in vulkan_core.h:7424
+	// KhrSurfaceExtensionName as defined in vulkan_core.h:7419
 	KhrSurfaceExtensionName = "VK_KHR_surface"
-	// KhrSwapchain as defined in vulkan_core.h:7535
+	// KhrSwapchain as defined in vulkan_core.h:7530
 	KhrSwapchain = 1
-	// KhrSwapchainSpecVersion as defined in vulkan_core.h:7537
+	// KhrSwapchainSpecVersion as defined in vulkan_core.h:7532
 	KhrSwapchainSpecVersion = 70
-	// KhrSwapchainExtensionName as defined in vulkan_core.h:7538
+	// KhrSwapchainExtensionName as defined in vulkan_core.h:7533
 	KhrSwapchainExtensionName = "VK_KHR_swapchain"
-	// KhrDisplay as defined in vulkan_core.h:7695
+	// KhrDisplay as defined in vulkan_core.h:7690
 	KhrDisplay = 1
-	// KhrDisplaySpecVersion as defined in vulkan_core.h:7698
+	// KhrDisplaySpecVersion as defined in vulkan_core.h:7693
 	KhrDisplaySpecVersion = 23
-	// KhrDisplayExtensionName as defined in vulkan_core.h:7699
+	// KhrDisplayExtensionName as defined in vulkan_core.h:7694
 	KhrDisplayExtensionName = "VK_KHR_display"
-	// KhrDisplaySwapchain as defined in vulkan_core.h:7820
+	// KhrDisplaySwapchain as defined in vulkan_core.h:7815
 	KhrDisplaySwapchain = 1
-	// KhrDisplaySwapchainSpecVersion as defined in vulkan_core.h:7821
+	// KhrDisplaySwapchainSpecVersion as defined in vulkan_core.h:7816
 	KhrDisplaySwapchainSpecVersion = 10
-	// KhrDisplaySwapchainExtensionName as defined in vulkan_core.h:7822
+	// KhrDisplaySwapchainExtensionName as defined in vulkan_core.h:7817
 	KhrDisplaySwapchainExtensionName = "VK_KHR_display_swapchain"
-	// KhrSamplerMirrorClampToEdge as defined in vulkan_core.h:7843
+	// KhrSamplerMirrorClampToEdge as defined in vulkan_core.h:7838
 	KhrSamplerMirrorClampToEdge = 1
-	// KhrSamplerMirrorClampToEdgeSpecVersion as defined in vulkan_core.h:7844
+	// KhrSamplerMirrorClampToEdgeSpecVersion as defined in vulkan_core.h:7839
 	KhrSamplerMirrorClampToEdgeSpecVersion = 3
-	// KhrSamplerMirrorClampToEdgeExtensionName as defined in vulkan_core.h:7845
+	// KhrSamplerMirrorClampToEdgeExtensionName as defined in vulkan_core.h:7840
 	KhrSamplerMirrorClampToEdgeExtensionName = "VK_KHR_sampler_mirror_clamp_to_edge"
-	// KhrVideoQueue as defined in vulkan_core.h:7848
+	// KhrVideoQueue as defined in vulkan_core.h:7843
 	KhrVideoQueue = 1
-	// KhrVideoQueueSpecVersion as defined in vulkan_core.h:7851
+	// KhrVideoQueueSpecVersion as defined in vulkan_core.h:7846
 	KhrVideoQueueSpecVersion = 8
-	// KhrVideoQueueExtensionName as defined in vulkan_core.h:7852
+	// KhrVideoQueueExtensionName as defined in vulkan_core.h:7847
 	KhrVideoQueueExtensionName = "VK_KHR_video_queue"
-	// KhrVideoDecodeQueue as defined in vulkan_core.h:8140
+	// KhrVideoDecodeQueue as defined in vulkan_core.h:8135
 	KhrVideoDecodeQueue = 1
-	// KhrVideoDecodeQueueSpecVersion as defined in vulkan_core.h:8141
+	// KhrVideoDecodeQueueSpecVersion as defined in vulkan_core.h:8136
 	KhrVideoDecodeQueueSpecVersion = 7
-	// KhrVideoDecodeQueueExtensionName as defined in vulkan_core.h:8142
+	// KhrVideoDecodeQueueExtensionName as defined in vulkan_core.h:8137
 	KhrVideoDecodeQueueExtensionName = "VK_KHR_video_decode_queue"
-	// KhrDynamicRendering as defined in vulkan_core.h:8254
+	// KhrDynamicRendering as defined in vulkan_core.h:8249
 	KhrDynamicRendering = 1
-	// KhrDynamicRenderingSpecVersion as defined in vulkan_core.h:8255
+	// KhrDynamicRenderingSpecVersion as defined in vulkan_core.h:8250
 	KhrDynamicRenderingSpecVersion = 1
-	// KhrDynamicRenderingExtensionName as defined in vulkan_core.h:8256
+	// KhrDynamicRenderingExtensionName as defined in vulkan_core.h:8251
 	KhrDynamicRenderingExtensionName = "VK_KHR_dynamic_rendering"
-	// KhrMultiview as defined in vulkan_core.h:8316
+	// KhrMultiview as defined in vulkan_core.h:8311
 	KhrMultiview = 1
-	// KhrMultiviewSpecVersion as defined in vulkan_core.h:8317
+	// KhrMultiviewSpecVersion as defined in vulkan_core.h:8312
 	KhrMultiviewSpecVersion = 1
-	// KhrMultiviewExtensionName as defined in vulkan_core.h:8318
+	// KhrMultiviewExtensionName as defined in vulkan_core.h:8313
 	KhrMultiviewExtensionName = "VK_KHR_multiview"
-	// KhrGetPhysicalDeviceProperties2 as defined in vulkan_core.h:8327
+	// KhrGetPhysicalDeviceProperties2 as defined in vulkan_core.h:8322
 	KhrGetPhysicalDeviceProperties2 = 1
-	// KhrGetPhysicalDeviceProperties2SpecVersion as defined in vulkan_core.h:8328
+	// KhrGetPhysicalDeviceProperties2SpecVersion as defined in vulkan_core.h:8323
 	KhrGetPhysicalDeviceProperties2SpecVersion = 2
-	// KhrGetPhysicalDeviceProperties2ExtensionName as defined in vulkan_core.h:8329
+	// KhrGetPhysicalDeviceProperties2ExtensionName as defined in vulkan_core.h:8324
 	KhrGetPhysicalDeviceProperties2ExtensionName = "VK_KHR_get_physical_device_properties2"
-	// KhrDeviceGroup as defined in vulkan_core.h:8392
+	// KhrDeviceGroup as defined in vulkan_core.h:8387
 	KhrDeviceGroup = 1
-	// KhrDeviceGroupSpecVersion as defined in vulkan_core.h:8393
+	// KhrDeviceGroupSpecVersion as defined in vulkan_core.h:8388
 	KhrDeviceGroupSpecVersion = 4
-	// KhrDeviceGroupExtensionName as defined in vulkan_core.h:8394
+	// KhrDeviceGroupExtensionName as defined in vulkan_core.h:8389
 	KhrDeviceGroupExtensionName = "VK_KHR_device_group"
-	// KhrShaderDrawParameters as defined in vulkan_core.h:8444
+	// KhrShaderDrawParameters as defined in vulkan_core.h:8439
 	KhrShaderDrawParameters = 1
-	// KhrShaderDrawParametersSpecVersion as defined in vulkan_core.h:8445
+	// KhrShaderDrawParametersSpecVersion as defined in vulkan_core.h:8440
 	KhrShaderDrawParametersSpecVersion = 1
-	// KhrShaderDrawParametersExtensionName as defined in vulkan_core.h:8446
+	// KhrShaderDrawParametersExtensionName as defined in vulkan_core.h:8441
 	KhrShaderDrawParametersExtensionName = "VK_KHR_shader_draw_parameters"
-	// KhrMaintenance1 as defined in vulkan_core.h:8449
+	// KhrMaintenance1 as defined in vulkan_core.h:8444
 	KhrMaintenance1 = 1
-	// KhrMaintenance1SpecVersion as defined in vulkan_core.h:8450
+	// KhrMaintenance1SpecVersion as defined in vulkan_core.h:8445
 	KhrMaintenance1SpecVersion = 2
-	// KhrMaintenance1ExtensionName as defined in vulkan_core.h:8451
+	// KhrMaintenance1ExtensionName as defined in vulkan_core.h:8446
 	KhrMaintenance1ExtensionName = "VK_KHR_maintenance1"
-	// KhrDeviceGroupCreation as defined in vulkan_core.h:8466
+	// KhrDeviceGroupCreation as defined in vulkan_core.h:8461
 	KhrDeviceGroupCreation = 1
-	// KhrDeviceGroupCreationSpecVersion as defined in vulkan_core.h:8467
+	// KhrDeviceGroupCreationSpecVersion as defined in vulkan_core.h:8462
 	KhrDeviceGroupCreationSpecVersion = 1
-	// KhrDeviceGroupCreationExtensionName as defined in vulkan_core.h:8468
+	// KhrDeviceGroupCreationExtensionName as defined in vulkan_core.h:8463
 	KhrDeviceGroupCreationExtensionName = "VK_KHR_device_group_creation"
-	// KhrExternalMemoryCapabilities as defined in vulkan_core.h:8484
+	// KhrExternalMemoryCapabilities as defined in vulkan_core.h:8479
 	KhrExternalMemoryCapabilities = 1
-	// KhrExternalMemoryCapabilitiesSpecVersion as defined in vulkan_core.h:8485
+	// KhrExternalMemoryCapabilitiesSpecVersion as defined in vulkan_core.h:8480
 	KhrExternalMemoryCapabilitiesSpecVersion = 1
-	// KhrExternalMemoryCapabilitiesExtensionName as defined in vulkan_core.h:8486
+	// KhrExternalMemoryCapabilitiesExtensionName as defined in vulkan_core.h:8481
 	KhrExternalMemoryCapabilitiesExtensionName = "VK_KHR_external_memory_capabilities"
-	// KhrExternalMemory as defined in vulkan_core.h:8518
+	// KhrExternalMemory as defined in vulkan_core.h:8513
 	KhrExternalMemory = 1
-	// KhrExternalMemorySpecVersion as defined in vulkan_core.h:8519
+	// KhrExternalMemorySpecVersion as defined in vulkan_core.h:8514
 	KhrExternalMemorySpecVersion = 1
-	// KhrExternalMemoryExtensionName as defined in vulkan_core.h:8520
+	// KhrExternalMemoryExtensionName as defined in vulkan_core.h:8515
 	KhrExternalMemoryExtensionName = "VK_KHR_external_memory"
-	// KhrExternalMemoryFd as defined in vulkan_core.h:8530
+	// KhrExternalMemoryFd as defined in vulkan_core.h:8525
 	KhrExternalMemoryFd = 1
-	// KhrExternalMemoryFdSpecVersion as defined in vulkan_core.h:8531
+	// KhrExternalMemoryFdSpecVersion as defined in vulkan_core.h:8526
 	KhrExternalMemoryFdSpecVersion = 1
-	// KhrExternalMemoryFdExtensionName as defined in vulkan_core.h:8532
+	// KhrExternalMemoryFdExtensionName as defined in vulkan_core.h:8527
 	KhrExternalMemoryFdExtensionName = "VK_KHR_external_memory_fd"
-	// KhrExternalSemaphoreCapabilities as defined in vulkan_core.h:8570
+	// KhrExternalSemaphoreCapabilities as defined in vulkan_core.h:8565
 	KhrExternalSemaphoreCapabilities = 1
-	// KhrExternalSemaphoreCapabilitiesSpecVersion as defined in vulkan_core.h:8571
+	// KhrExternalSemaphoreCapabilitiesSpecVersion as defined in vulkan_core.h:8566
 	KhrExternalSemaphoreCapabilitiesSpecVersion = 1
-	// KhrExternalSemaphoreCapabilitiesExtensionName as defined in vulkan_core.h:8572
+	// KhrExternalSemaphoreCapabilitiesExtensionName as defined in vulkan_core.h:8567
 	KhrExternalSemaphoreCapabilitiesExtensionName = "VK_KHR_external_semaphore_capabilities"
-	// KhrExternalSemaphore as defined in vulkan_core.h:8595
+	// KhrExternalSemaphore as defined in vulkan_core.h:8590
 	KhrExternalSemaphore = 1
-	// KhrExternalSemaphoreSpecVersion as defined in vulkan_core.h:8596
+	// KhrExternalSemaphoreSpecVersion as defined in vulkan_core.h:8591
 	KhrExternalSemaphoreSpecVersion = 1
-	// KhrExternalSemaphoreExtensionName as defined in vulkan_core.h:8597
+	// KhrExternalSemaphoreExtensionName as defined in vulkan_core.h:8592
 	KhrExternalSemaphoreExtensionName = "VK_KHR_external_semaphore"
-	// KhrExternalSemaphoreFd as defined in vulkan_core.h:8606
+	// KhrExternalSemaphoreFd as defined in vulkan_core.h:8601
 	KhrExternalSemaphoreFd = 1
-	// KhrExternalSemaphoreFdSpecVersion as defined in vulkan_core.h:8607
+	// KhrExternalSemaphoreFdSpecVersion as defined in vulkan_core.h:8602
 	KhrExternalSemaphoreFdSpecVersion = 1
-	// KhrExternalSemaphoreFdExtensionName as defined in vulkan_core.h:8608
+	// KhrExternalSemaphoreFdExtensionName as defined in vulkan_core.h:8603
 	KhrExternalSemaphoreFdExtensionName = "VK_KHR_external_semaphore_fd"
-	// KhrPushDescriptor as defined in vulkan_core.h:8640
+	// KhrPushDescriptor as defined in vulkan_core.h:8635
 	KhrPushDescriptor = 1
-	// KhrPushDescriptorSpecVersion as defined in vulkan_core.h:8641
+	// KhrPushDescriptorSpecVersion as defined in vulkan_core.h:8636
 	KhrPushDescriptorSpecVersion = 2
-	// KhrPushDescriptorExtensionName as defined in vulkan_core.h:8642
+	// KhrPushDescriptorExtensionName as defined in vulkan_core.h:8637
 	KhrPushDescriptorExtensionName = "VK_KHR_push_descriptor"
-	// KhrShaderFloat16Int8 as defined in vulkan_core.h:8670
+	// KhrShaderFloat16Int8 as defined in vulkan_core.h:8665
 	KhrShaderFloat16Int8 = 1
-	// KhrShaderFloat16Int8SpecVersion as defined in vulkan_core.h:8671
+	// KhrShaderFloat16Int8SpecVersion as defined in vulkan_core.h:8666
 	KhrShaderFloat16Int8SpecVersion = 1
-	// KhrShaderFloat16Int8ExtensionName as defined in vulkan_core.h:8672
+	// KhrShaderFloat16Int8ExtensionName as defined in vulkan_core.h:8667
 	KhrShaderFloat16Int8ExtensionName = "VK_KHR_shader_float16_int8"
-	// Khr16bitStorage as defined in vulkan_core.h:8679
+	// Khr16bitStorage as defined in vulkan_core.h:8674
 	Khr16bitStorage = 1
-	// Khr16bitStorageSpecVersion as defined in vulkan_core.h:8680
+	// Khr16bitStorageSpecVersion as defined in vulkan_core.h:8675
 	Khr16bitStorageSpecVersion = 1
-	// Khr16bitStorageExtensionName as defined in vulkan_core.h:8681
+	// Khr16bitStorageExtensionName as defined in vulkan_core.h:8676
 	Khr16bitStorageExtensionName = "VK_KHR_16bit_storage"
-	// KhrIncrementalPresent as defined in vulkan_core.h:8686
+	// KhrIncrementalPresent as defined in vulkan_core.h:8681
 	KhrIncrementalPresent = 1
-	// KhrIncrementalPresentSpecVersion as defined in vulkan_core.h:8687
+	// KhrIncrementalPresentSpecVersion as defined in vulkan_core.h:8682
 	KhrIncrementalPresentSpecVersion = 2
-	// KhrIncrementalPresentExtensionName as defined in vulkan_core.h:8688
+	// KhrIncrementalPresentExtensionName as defined in vulkan_core.h:8683
 	KhrIncrementalPresentExtensionName = "VK_KHR_incremental_present"
-	// KhrDescriptorUpdateTemplate as defined in vulkan_core.h:8709
+	// KhrDescriptorUpdateTemplate as defined in vulkan_core.h:8704
 	KhrDescriptorUpdateTemplate = 1
-	// KhrDescriptorUpdateTemplateSpecVersion as defined in vulkan_core.h:8712
+	// KhrDescriptorUpdateTemplateSpecVersion as defined in vulkan_core.h:8707
 	KhrDescriptorUpdateTemplateSpecVersion = 1
-	// KhrDescriptorUpdateTemplateExtensionName as defined in vulkan_core.h:8713
+	// KhrDescriptorUpdateTemplateExtensionName as defined in vulkan_core.h:8708
 	KhrDescriptorUpdateTemplateExtensionName = "VK_KHR_descriptor_update_template"
-	// KhrImagelessFramebuffer as defined in vulkan_core.h:8746
+	// KhrImagelessFramebuffer as defined in vulkan_core.h:8741
 	KhrImagelessFramebuffer = 1
-	// KhrImagelessFramebufferSpecVersion as defined in vulkan_core.h:8747
+	// KhrImagelessFramebufferSpecVersion as defined in vulkan_core.h:8742
 	KhrImagelessFramebufferSpecVersion = 1
-	// KhrImagelessFramebufferExtensionName as defined in vulkan_core.h:8748
+	// KhrImagelessFramebufferExtensionName as defined in vulkan_core.h:8743
 	KhrImagelessFramebufferExtensionName = "VK_KHR_imageless_framebuffer"
-	// KhrCreateRenderpass2 as defined in vulkan_core.h:8759
+	// KhrCreateRenderpass2 as defined in vulkan_core.h:8754
 	KhrCreateRenderpass2 = 1
-	// KhrCreateRenderpass2SpecVersion as defined in vulkan_core.h:8760
+	// KhrCreateRenderpass2SpecVersion as defined in vulkan_core.h:8755
 	KhrCreateRenderpass2SpecVersion = 1
-	// KhrCreateRenderpass2ExtensionName as defined in vulkan_core.h:8761
+	// KhrCreateRenderpass2ExtensionName as defined in vulkan_core.h:8756
 	KhrCreateRenderpass2ExtensionName = "VK_KHR_create_renderpass2"
-	// KhrSharedPresentableImage as defined in vulkan_core.h:8804
+	// KhrSharedPresentableImage as defined in vulkan_core.h:8799
 	KhrSharedPresentableImage = 1
-	// KhrSharedPresentableImageSpecVersion as defined in vulkan_core.h:8805
+	// KhrSharedPresentableImageSpecVersion as defined in vulkan_core.h:8800
 	KhrSharedPresentableImageSpecVersion = 1
-	// KhrSharedPresentableImageExtensionName as defined in vulkan_core.h:8806
+	// KhrSharedPresentableImageExtensionName as defined in vulkan_core.h:8801
 	KhrSharedPresentableImageExtensionName = "VK_KHR_shared_presentable_image"
-	// KhrExternalFenceCapabilities as defined in vulkan_core.h:8822
+	// KhrExternalFenceCapabilities as defined in vulkan_core.h:8817
 	KhrExternalFenceCapabilities = 1
-	// KhrExternalFenceCapabilitiesSpecVersion as defined in vulkan_core.h:8823
+	// KhrExternalFenceCapabilitiesSpecVersion as defined in vulkan_core.h:8818
 	KhrExternalFenceCapabilitiesSpecVersion = 1
-	// KhrExternalFenceCapabilitiesExtensionName as defined in vulkan_core.h:8824
+	// KhrExternalFenceCapabilitiesExtensionName as defined in vulkan_core.h:8819
 	KhrExternalFenceCapabilitiesExtensionName = "VK_KHR_external_fence_capabilities"
-	// KhrExternalFence as defined in vulkan_core.h:8847
+	// KhrExternalFence as defined in vulkan_core.h:8842
 	KhrExternalFence = 1
-	// KhrExternalFenceSpecVersion as defined in vulkan_core.h:8848
+	// KhrExternalFenceSpecVersion as defined in vulkan_core.h:8843
 	KhrExternalFenceSpecVersion = 1
-	// KhrExternalFenceExtensionName as defined in vulkan_core.h:8849
+	// KhrExternalFenceExtensionName as defined in vulkan_core.h:8844
 	KhrExternalFenceExtensionName = "VK_KHR_external_fence"
-	// KhrExternalFenceFd as defined in vulkan_core.h:8858
+	// KhrExternalFenceFd as defined in vulkan_core.h:8853
 	KhrExternalFenceFd = 1
-	// KhrExternalFenceFdSpecVersion as defined in vulkan_core.h:8859
+	// KhrExternalFenceFdSpecVersion as defined in vulkan_core.h:8854
 	KhrExternalFenceFdSpecVersion = 1
-	// KhrExternalFenceFdExtensionName as defined in vulkan_core.h:8860
+	// KhrExternalFenceFdExtensionName as defined in vulkan_core.h:8855
 	KhrExternalFenceFdExtensionName = "VK_KHR_external_fence_fd"
-	// KhrPerformanceQuery as defined in vulkan_core.h:8892
+	// KhrPerformanceQuery as defined in vulkan_core.h:8887
 	KhrPerformanceQuery = 1
-	// KhrPerformanceQuerySpecVersion as defined in vulkan_core.h:8893
+	// KhrPerformanceQuerySpecVersion as defined in vulkan_core.h:8888
 	KhrPerformanceQuerySpecVersion = 1
-	// KhrPerformanceQueryExtensionName as defined in vulkan_core.h:8894
+	// KhrPerformanceQueryExtensionName as defined in vulkan_core.h:8889
 	KhrPerformanceQueryExtensionName = "VK_KHR_performance_query"
-	// KhrMaintenance2 as defined in vulkan_core.h:9032
+	// KhrMaintenance2 as defined in vulkan_core.h:9027
 	KhrMaintenance2 = 1
-	// KhrMaintenance2SpecVersion as defined in vulkan_core.h:9033
+	// KhrMaintenance2SpecVersion as defined in vulkan_core.h:9028
 	KhrMaintenance2SpecVersion = 1
-	// KhrMaintenance2ExtensionName as defined in vulkan_core.h:9034
+	// KhrMaintenance2ExtensionName as defined in vulkan_core.h:9029
 	KhrMaintenance2ExtensionName = "VK_KHR_maintenance2"
-	// KhrGetSurfaceCapabilities2 as defined in vulkan_core.h:9053
+	// KhrGetSurfaceCapabilities2 as defined in vulkan_core.h:9048
 	KhrGetSurfaceCapabilities2 = 1
-	// KhrGetSurfaceCapabilities2SpecVersion as defined in vulkan_core.h:9054
+	// KhrGetSurfaceCapabilities2SpecVersion as defined in vulkan_core.h:9049
 	KhrGetSurfaceCapabilities2SpecVersion = 1
-	// KhrGetSurfaceCapabilities2ExtensionName as defined in vulkan_core.h:9055
+	// KhrGetSurfaceCapabilities2ExtensionName as defined in vulkan_core.h:9050
 	KhrGetSurfaceCapabilities2ExtensionName = "VK_KHR_get_surface_capabilities2"
-	// KhrVariablePointers as defined in vulkan_core.h:9091
+	// KhrVariablePointers as defined in vulkan_core.h:9086
 	KhrVariablePointers = 1
-	// KhrVariablePointersSpecVersion as defined in vulkan_core.h:9092
+	// KhrVariablePointersSpecVersion as defined in vulkan_core.h:9087
 	KhrVariablePointersSpecVersion = 1
-	// KhrVariablePointersExtensionName as defined in vulkan_core.h:9093
+	// KhrVariablePointersExtensionName as defined in vulkan_core.h:9088
 	KhrVariablePointersExtensionName = "VK_KHR_variable_pointers"
-	// KhrGetDisplayProperties2 as defined in vulkan_core.h:9100
+	// KhrGetDisplayProperties2 as defined in vulkan_core.h:9095
 	KhrGetDisplayProperties2 = 1
-	// KhrGetDisplayProperties2SpecVersion as defined in vulkan_core.h:9101
+	// KhrGetDisplayProperties2SpecVersion as defined in vulkan_core.h:9096
 	KhrGetDisplayProperties2SpecVersion = 1
-	// KhrGetDisplayProperties2ExtensionName as defined in vulkan_core.h:9102
+	// KhrGetDisplayProperties2ExtensionName as defined in vulkan_core.h:9097
 	KhrGetDisplayProperties2ExtensionName = "VK_KHR_get_display_properties2"
-	// KhrDedicatedAllocation as defined in vulkan_core.h:9163
+	// KhrDedicatedAllocation as defined in vulkan_core.h:9158
 	KhrDedicatedAllocation = 1
-	// KhrDedicatedAllocationSpecVersion as defined in vulkan_core.h:9164
+	// KhrDedicatedAllocationSpecVersion as defined in vulkan_core.h:9159
 	KhrDedicatedAllocationSpecVersion = 3
-	// KhrDedicatedAllocationExtensionName as defined in vulkan_core.h:9165
+	// KhrDedicatedAllocationExtensionName as defined in vulkan_core.h:9160
 	KhrDedicatedAllocationExtensionName = "VK_KHR_dedicated_allocation"
-	// KhrStorageBufferStorageClass as defined in vulkan_core.h:9172
+	// KhrStorageBufferStorageClass as defined in vulkan_core.h:9167
 	KhrStorageBufferStorageClass = 1
-	// KhrStorageBufferStorageClassSpecVersion as defined in vulkan_core.h:9173
+	// KhrStorageBufferStorageClassSpecVersion as defined in vulkan_core.h:9168
 	KhrStorageBufferStorageClassSpecVersion = 1
-	// KhrStorageBufferStorageClassExtensionName as defined in vulkan_core.h:9174
+	// KhrStorageBufferStorageClassExtensionName as defined in vulkan_core.h:9169
 	KhrStorageBufferStorageClassExtensionName = "VK_KHR_storage_buffer_storage_class"
-	// KhrRelaxedBlockLayout as defined in vulkan_core.h:9177
+	// KhrRelaxedBlockLayout as defined in vulkan_core.h:9172
 	KhrRelaxedBlockLayout = 1
-	// KhrRelaxedBlockLayoutSpecVersion as defined in vulkan_core.h:9178
+	// KhrRelaxedBlockLayoutSpecVersion as defined in vulkan_core.h:9173
 	KhrRelaxedBlockLayoutSpecVersion = 1
-	// KhrRelaxedBlockLayoutExtensionName as defined in vulkan_core.h:9179
+	// KhrRelaxedBlockLayoutExtensionName as defined in vulkan_core.h:9174
 	KhrRelaxedBlockLayoutExtensionName = "VK_KHR_relaxed_block_layout"
-	// KhrGetMemoryRequirements2 as defined in vulkan_core.h:9182
+	// KhrGetMemoryRequirements2 as defined in vulkan_core.h:9177
 	KhrGetMemoryRequirements2 = 1
-	// KhrGetMemoryRequirements2SpecVersion as defined in vulkan_core.h:9183
+	// KhrGetMemoryRequirements2SpecVersion as defined in vulkan_core.h:9178
 	KhrGetMemoryRequirements2SpecVersion = 1
-	// KhrGetMemoryRequirements2ExtensionName as defined in vulkan_core.h:9184
+	// KhrGetMemoryRequirements2ExtensionName as defined in vulkan_core.h:9179
 	KhrGetMemoryRequirements2ExtensionName = "VK_KHR_get_memory_requirements2"
-	// KhrImageFormatList as defined in vulkan_core.h:9218
+	// KhrImageFormatList as defined in vulkan_core.h:9213
 	KhrImageFormatList = 1
-	// KhrImageFormatListSpecVersion as defined in vulkan_core.h:9219
+	// KhrImageFormatListSpecVersion as defined in vulkan_core.h:9214
 	KhrImageFormatListSpecVersion = 1
-	// KhrImageFormatListExtensionName as defined in vulkan_core.h:9220
+	// KhrImageFormatListExtensionName as defined in vulkan_core.h:9215
 	KhrImageFormatListExtensionName = "VK_KHR_image_format_list"
-	// KhrSamplerYcbcrConversion as defined in vulkan_core.h:9225
+	// KhrSamplerYcbcrConversion as defined in vulkan_core.h:9220
 	KhrSamplerYcbcrConversion = 1
-	// KhrSamplerYcbcrConversionSpecVersion as defined in vulkan_core.h:9228
+	// KhrSamplerYcbcrConversionSpecVersion as defined in vulkan_core.h:9223
 	KhrSamplerYcbcrConversionSpecVersion = 14
-	// KhrSamplerYcbcrConversionExtensionName as defined in vulkan_core.h:9229
+	// KhrSamplerYcbcrConversionExtensionName as defined in vulkan_core.h:9224
 	KhrSamplerYcbcrConversionExtensionName = "VK_KHR_sampler_ycbcr_conversion"
-	// KhrBindMemory2 as defined in vulkan_core.h:9265
+	// KhrBindMemory2 as defined in vulkan_core.h:9260
 	KhrBindMemory2 = 1
-	// KhrBindMemory2SpecVersion as defined in vulkan_core.h:9266
+	// KhrBindMemory2SpecVersion as defined in vulkan_core.h:9261
 	KhrBindMemory2SpecVersion = 1
-	// KhrBindMemory2ExtensionName as defined in vulkan_core.h:9267
+	// KhrBindMemory2ExtensionName as defined in vulkan_core.h:9262
 	KhrBindMemory2ExtensionName = "VK_KHR_bind_memory2"
-	// KhrMaintenance3 as defined in vulkan_core.h:9288
+	// KhrMaintenance3 as defined in vulkan_core.h:9283
 	KhrMaintenance3 = 1
-	// KhrMaintenance3SpecVersion as defined in vulkan_core.h:9289
+	// KhrMaintenance3SpecVersion as defined in vulkan_core.h:9284
 	KhrMaintenance3SpecVersion = 1
-	// KhrMaintenance3ExtensionName as defined in vulkan_core.h:9290
+	// KhrMaintenance3ExtensionName as defined in vulkan_core.h:9285
 	KhrMaintenance3ExtensionName = "VK_KHR_maintenance3"
-	// KhrDrawIndirectCount as defined in vulkan_core.h:9307
+	// KhrDrawIndirectCount as defined in vulkan_core.h:9302
 	KhrDrawIndirectCount = 1
-	// KhrDrawIndirectCountSpecVersion as defined in vulkan_core.h:9308
+	// KhrDrawIndirectCountSpecVersion as defined in vulkan_core.h:9303
 	KhrDrawIndirectCountSpecVersion = 1
-	// KhrDrawIndirectCountExtensionName as defined in vulkan_core.h:9309
+	// KhrDrawIndirectCountExtensionName as defined in vulkan_core.h:9304
 	KhrDrawIndirectCountExtensionName = "VK_KHR_draw_indirect_count"
-	// KhrShaderSubgroupExtendedTypes as defined in vulkan_core.h:9334
+	// KhrShaderSubgroupExtendedTypes as defined in vulkan_core.h:9329
 	KhrShaderSubgroupExtendedTypes = 1
-	// KhrShaderSubgroupExtendedTypesSpecVersion as defined in vulkan_core.h:9335
+	// KhrShaderSubgroupExtendedTypesSpecVersion as defined in vulkan_core.h:9330
 	KhrShaderSubgroupExtendedTypesSpecVersion = 1
-	// KhrShaderSubgroupExtendedTypesExtensionName as defined in vulkan_core.h:9336
+	// KhrShaderSubgroupExtendedTypesExtensionName as defined in vulkan_core.h:9331
 	KhrShaderSubgroupExtendedTypesExtensionName = "VK_KHR_shader_subgroup_extended_types"
-	// Khr8bitStorage as defined in vulkan_core.h:9341
+	// Khr8bitStorage as defined in vulkan_core.h:9336
 	Khr8bitStorage = 1
-	// Khr8bitStorageSpecVersion as defined in vulkan_core.h:9342
+	// Khr8bitStorageSpecVersion as defined in vulkan_core.h:9337
 	Khr8bitStorageSpecVersion = 1
-	// Khr8bitStorageExtensionName as defined in vulkan_core.h:9343
+	// Khr8bitStorageExtensionName as defined in vulkan_core.h:9338
 	Khr8bitStorageExtensionName = "VK_KHR_8bit_storage"
-	// KhrShaderAtomicInt64 as defined in vulkan_core.h:9348
+	// KhrShaderAtomicInt64 as defined in vulkan_core.h:9343
 	KhrShaderAtomicInt64 = 1
-	// KhrShaderAtomicInt64SpecVersion as defined in vulkan_core.h:9349
+	// KhrShaderAtomicInt64SpecVersion as defined in vulkan_core.h:9344
 	KhrShaderAtomicInt64SpecVersion = 1
-	// KhrShaderAtomicInt64ExtensionName as defined in vulkan_core.h:9350
+	// KhrShaderAtomicInt64ExtensionName as defined in vulkan_core.h:9345
 	KhrShaderAtomicInt64ExtensionName = "VK_KHR_shader_atomic_int64"
-	// KhrShaderClock as defined in vulkan_core.h:9355
+	// KhrShaderClock as defined in vulkan_core.h:9350
 	KhrShaderClock = 1
-	// KhrShaderClockSpecVersion as defined in vulkan_core.h:9356
+	// KhrShaderClockSpecVersion as defined in vulkan_core.h:9351
 	KhrShaderClockSpecVersion = 1
-	// KhrShaderClockExtensionName as defined in vulkan_core.h:9357
+	// KhrShaderClockExtensionName as defined in vulkan_core.h:9352
 	KhrShaderClockExtensionName = "VK_KHR_shader_clock"
-	// KhrGlobalPriority as defined in vulkan_core.h:9420
+	// KhrGlobalPriority as defined in vulkan_core.h:9415
 	KhrGlobalPriority = 1
 	// MaxGlobalPrioritySize as defined in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkVK_MAX_GLOBAL_PRIORITY_SIZE_KHR
 	MaxGlobalPrioritySize = uint32(16)
-	// KhrGlobalPrioritySpecVersion as defined in vulkan_core.h:9422
+	// KhrGlobalPrioritySpecVersion as defined in vulkan_core.h:9417
 	KhrGlobalPrioritySpecVersion = 1
-	// KhrGlobalPriorityExtensionName as defined in vulkan_core.h:9423
+	// KhrGlobalPriorityExtensionName as defined in vulkan_core.h:9418
 	KhrGlobalPriorityExtensionName = "VK_KHR_global_priority"
-	// KhrDriverProperties as defined in vulkan_core.h:9457
+	// KhrDriverProperties as defined in vulkan_core.h:9452
 	KhrDriverProperties = 1
-	// KhrDriverPropertiesSpecVersion as defined in vulkan_core.h:9458
+	// KhrDriverPropertiesSpecVersion as defined in vulkan_core.h:9453
 	KhrDriverPropertiesSpecVersion = 1
-	// KhrDriverPropertiesExtensionName as defined in vulkan_core.h:9459
+	// KhrDriverPropertiesExtensionName as defined in vulkan_core.h:9454
 	KhrDriverPropertiesExtensionName = "VK_KHR_driver_properties"
-	// KhrShaderFloatControls as defined in vulkan_core.h:9470
+	// KhrShaderFloatControls as defined in vulkan_core.h:9465
 	KhrShaderFloatControls = 1
-	// KhrShaderFloatControlsSpecVersion as defined in vulkan_core.h:9471
+	// KhrShaderFloatControlsSpecVersion as defined in vulkan_core.h:9466
 	KhrShaderFloatControlsSpecVersion = 4
-	// KhrShaderFloatControlsExtensionName as defined in vulkan_core.h:9472
+	// KhrShaderFloatControlsExtensionName as defined in vulkan_core.h:9467
 	KhrShaderFloatControlsExtensionName = "VK_KHR_shader_float_controls"
-	// KhrDepthStencilResolve as defined in vulkan_core.h:9479
+	// KhrDepthStencilResolve as defined in vulkan_core.h:9474
 	KhrDepthStencilResolve = 1
-	// KhrDepthStencilResolveSpecVersion as defined in vulkan_core.h:9480
+	// KhrDepthStencilResolveSpecVersion as defined in vulkan_core.h:9475
 	KhrDepthStencilResolveSpecVersion = 1
-	// KhrDepthStencilResolveExtensionName as defined in vulkan_core.h:9481
+	// KhrDepthStencilResolveExtensionName as defined in vulkan_core.h:9476
 	KhrDepthStencilResolveExtensionName = "VK_KHR_depth_stencil_resolve"
-	// KhrSwapchainMutableFormat as defined in vulkan_core.h:9492
+	// KhrSwapchainMutableFormat as defined in vulkan_core.h:9487
 	KhrSwapchainMutableFormat = 1
-	// KhrSwapchainMutableFormatSpecVersion as defined in vulkan_core.h:9493
+	// KhrSwapchainMutableFormatSpecVersion as defined in vulkan_core.h:9488
 	KhrSwapchainMutableFormatSpecVersion = 1
-	// KhrSwapchainMutableFormatExtensionName as defined in vulkan_core.h:9494
+	// KhrSwapchainMutableFormatExtensionName as defined in vulkan_core.h:9489
 	KhrSwapchainMutableFormatExtensionName = "VK_KHR_swapchain_mutable_format"
-	// KhrTimelineSemaphore as defined in vulkan_core.h:9497
+	// KhrTimelineSemaphore as defined in vulkan_core.h:9492
 	KhrTimelineSemaphore = 1
-	// KhrTimelineSemaphoreSpecVersion as defined in vulkan_core.h:9498
+	// KhrTimelineSemaphoreSpecVersion as defined in vulkan_core.h:9493
 	KhrTimelineSemaphoreSpecVersion = 2
-	// KhrTimelineSemaphoreExtensionName as defined in vulkan_core.h:9499
+	// KhrTimelineSemaphoreExtensionName as defined in vulkan_core.h:9494
 	KhrTimelineSemaphoreExtensionName = "VK_KHR_timeline_semaphore"
-	// KhrVulkanMemoryModel as defined in vulkan_core.h:9539
+	// KhrVulkanMemoryModel as defined in vulkan_core.h:9534
 	KhrVulkanMemoryModel = 1
-	// KhrVulkanMemoryModelSpecVersion as defined in vulkan_core.h:9540
+	// KhrVulkanMemoryModelSpecVersion as defined in vulkan_core.h:9535
 	KhrVulkanMemoryModelSpecVersion = 3
-	// KhrVulkanMemoryModelExtensionName as defined in vulkan_core.h:9541
+	// KhrVulkanMemoryModelExtensionName as defined in vulkan_core.h:9536
 	KhrVulkanMemoryModelExtensionName = "VK_KHR_vulkan_memory_model"
-	// KhrShaderTerminateInvocation as defined in vulkan_core.h:9546
+	// KhrShaderTerminateInvocation as defined in vulkan_core.h:9541
 	KhrShaderTerminateInvocation = 1
-	// KhrShaderTerminateInvocationSpecVersion as defined in vulkan_core.h:9547
+	// KhrShaderTerminateInvocationSpecVersion as defined in vulkan_core.h:9542
 	KhrShaderTerminateInvocationSpecVersion = 1
-	// KhrShaderTerminateInvocationExtensionName as defined in vulkan_core.h:9548
+	// KhrShaderTerminateInvocationExtensionName as defined in vulkan_core.h:9543
 	KhrShaderTerminateInvocationExtensionName = "VK_KHR_shader_terminate_invocation"
-	// KhrFragmentShadingRate as defined in vulkan_core.h:9553
+	// KhrFragmentShadingRate as defined in vulkan_core.h:9548
 	KhrFragmentShadingRate = 1
-	// KhrFragmentShadingRateSpecVersion as defined in vulkan_core.h:9554
+	// KhrFragmentShadingRateSpecVersion as defined in vulkan_core.h:9549
 	KhrFragmentShadingRateSpecVersion = 2
-	// KhrFragmentShadingRateExtensionName as defined in vulkan_core.h:9555
+	// KhrFragmentShadingRateExtensionName as defined in vulkan_core.h:9550
 	KhrFragmentShadingRateExtensionName = "VK_KHR_fragment_shading_rate"
-	// KhrSpirv14 as defined in vulkan_core.h:9632
+	// KhrSpirv14 as defined in vulkan_core.h:9627
 	KhrSpirv14 = 1
-	// KhrSpirv14SpecVersion as defined in vulkan_core.h:9633
+	// KhrSpirv14SpecVersion as defined in vulkan_core.h:9628
 	KhrSpirv14SpecVersion = 1
-	// KhrSpirv14ExtensionName as defined in vulkan_core.h:9634
+	// KhrSpirv14ExtensionName as defined in vulkan_core.h:9629
 	KhrSpirv14ExtensionName = "VK_KHR_spirv_1_4"
-	// KhrSurfaceProtectedCapabilities as defined in vulkan_core.h:9637
+	// KhrSurfaceProtectedCapabilities as defined in vulkan_core.h:9632
 	KhrSurfaceProtectedCapabilities = 1
-	// KhrSurfaceProtectedCapabilitiesSpecVersion as defined in vulkan_core.h:9638
+	// KhrSurfaceProtectedCapabilitiesSpecVersion as defined in vulkan_core.h:9633
 	KhrSurfaceProtectedCapabilitiesSpecVersion = 1
-	// KhrSurfaceProtectedCapabilitiesExtensionName as defined in vulkan_core.h:9639
+	// KhrSurfaceProtectedCapabilitiesExtensionName as defined in vulkan_core.h:9634
 	KhrSurfaceProtectedCapabilitiesExtensionName = "VK_KHR_surface_protected_capabilities"
-	// KhrSeparateDepthStencilLayouts as defined in vulkan_core.h:9648
+	// KhrSeparateDepthStencilLayouts as defined in vulkan_core.h:9643
 	KhrSeparateDepthStencilLayouts = 1
-	// KhrSeparateDepthStencilLayoutsSpecVersion as defined in vulkan_core.h:9649
+	// KhrSeparateDepthStencilLayoutsSpecVersion as defined in vulkan_core.h:9644
 	KhrSeparateDepthStencilLayoutsSpecVersion = 1
-	// KhrSeparateDepthStencilLayoutsExtensionName as defined in vulkan_core.h:9650
+	// KhrSeparateDepthStencilLayoutsExtensionName as defined in vulkan_core.h:9645
 	KhrSeparateDepthStencilLayoutsExtensionName = "VK_KHR_separate_depth_stencil_layouts"
-	// KhrPresentWait as defined in vulkan_core.h:9659
+	// KhrPresentWait as defined in vulkan_core.h:9654
 	KhrPresentWait = 1
-	// KhrPresentWaitSpecVersion as defined in vulkan_core.h:9660
+	// KhrPresentWaitSpecVersion as defined in vulkan_core.h:9655
 	KhrPresentWaitSpecVersion = 1
-	// KhrPresentWaitExtensionName as defined in vulkan_core.h:9661
+	// KhrPresentWaitExtensionName as defined in vulkan_core.h:9656
 	KhrPresentWaitExtensionName = "VK_KHR_present_wait"
-	// KhrUniformBufferStandardLayout as defined in vulkan_core.h:9679
+	// KhrUniformBufferStandardLayout as defined in vulkan_core.h:9674
 	KhrUniformBufferStandardLayout = 1
-	// KhrUniformBufferStandardLayoutSpecVersion as defined in vulkan_core.h:9680
+	// KhrUniformBufferStandardLayoutSpecVersion as defined in vulkan_core.h:9675
 	KhrUniformBufferStandardLayoutSpecVersion = 1
-	// KhrUniformBufferStandardLayoutExtensionName as defined in vulkan_core.h:9681
+	// KhrUniformBufferStandardLayoutExtensionName as defined in vulkan_core.h:9676
 	KhrUniformBufferStandardLayoutExtensionName = "VK_KHR_uniform_buffer_standard_layout"
-	// KhrBufferDeviceAddress as defined in vulkan_core.h:9686
+	// KhrBufferDeviceAddress as defined in vulkan_core.h:9681
 	KhrBufferDeviceAddress = 1
-	// KhrBufferDeviceAddressSpecVersion as defined in vulkan_core.h:9687
+	// KhrBufferDeviceAddressSpecVersion as defined in vulkan_core.h:9682
 	KhrBufferDeviceAddressSpecVersion = 1
-	// KhrBufferDeviceAddressExtensionName as defined in vulkan_core.h:9688
+	// KhrBufferDeviceAddressExtensionName as defined in vulkan_core.h:9683
 	KhrBufferDeviceAddressExtensionName = "VK_KHR_buffer_device_address"
-	// KhrDeferredHostOperations as defined in vulkan_core.h:9718
+	// KhrDeferredHostOperations as defined in vulkan_core.h:9713
 	KhrDeferredHostOperations = 1
-	// KhrDeferredHostOperationsSpecVersion as defined in vulkan_core.h:9720
+	// KhrDeferredHostOperationsSpecVersion as defined in vulkan_core.h:9715
 	KhrDeferredHostOperationsSpecVersion = 4
-	// KhrDeferredHostOperationsExtensionName as defined in vulkan_core.h:9721
+	// KhrDeferredHostOperationsExtensionName as defined in vulkan_core.h:9716
 	KhrDeferredHostOperationsExtensionName = "VK_KHR_deferred_host_operations"
-	// KhrPipelineExecutableProperties as defined in vulkan_core.h:9753
+	// KhrPipelineExecutableProperties as defined in vulkan_core.h:9748
 	KhrPipelineExecutableProperties = 1
-	// KhrPipelineExecutablePropertiesSpecVersion as defined in vulkan_core.h:9754
+	// KhrPipelineExecutablePropertiesSpecVersion as defined in vulkan_core.h:9749
 	KhrPipelineExecutablePropertiesSpecVersion = 1
-	// KhrPipelineExecutablePropertiesExtensionName as defined in vulkan_core.h:9755
+	// KhrPipelineExecutablePropertiesExtensionName as defined in vulkan_core.h:9750
 	KhrPipelineExecutablePropertiesExtensionName = "VK_KHR_pipeline_executable_properties"
-	// KhrShaderIntegerDotProduct as defined in vulkan_core.h:9843
+	// KhrShaderIntegerDotProduct as defined in vulkan_core.h:9838
 	KhrShaderIntegerDotProduct = 1
-	// KhrShaderIntegerDotProductSpecVersion as defined in vulkan_core.h:9844
+	// KhrShaderIntegerDotProductSpecVersion as defined in vulkan_core.h:9839
 	KhrShaderIntegerDotProductSpecVersion = 1
-	// KhrShaderIntegerDotProductExtensionName as defined in vulkan_core.h:9845
+	// KhrShaderIntegerDotProductExtensionName as defined in vulkan_core.h:9840
 	KhrShaderIntegerDotProductExtensionName = "VK_KHR_shader_integer_dot_product"
-	// KhrPipelineLibrary as defined in vulkan_core.h:9852
+	// KhrPipelineLibrary as defined in vulkan_core.h:9847
 	KhrPipelineLibrary = 1
-	// KhrPipelineLibrarySpecVersion as defined in vulkan_core.h:9853
+	// KhrPipelineLibrarySpecVersion as defined in vulkan_core.h:9848
 	KhrPipelineLibrarySpecVersion = 1
-	// KhrPipelineLibraryExtensionName as defined in vulkan_core.h:9854
+	// KhrPipelineLibraryExtensionName as defined in vulkan_core.h:9849
 	KhrPipelineLibraryExtensionName = "VK_KHR_pipeline_library"
-	// KhrShaderNonSemanticInfo as defined in vulkan_core.h:9864
+	// KhrShaderNonSemanticInfo as defined in vulkan_core.h:9859
 	KhrShaderNonSemanticInfo = 1
-	// KhrShaderNonSemanticInfoSpecVersion as defined in vulkan_core.h:9865
+	// KhrShaderNonSemanticInfoSpecVersion as defined in vulkan_core.h:9860
 	KhrShaderNonSemanticInfoSpecVersion = 1
-	// KhrShaderNonSemanticInfoExtensionName as defined in vulkan_core.h:9866
+	// KhrShaderNonSemanticInfoExtensionName as defined in vulkan_core.h:9861
 	KhrShaderNonSemanticInfoExtensionName = "VK_KHR_shader_non_semantic_info"
-	// KhrPresentId as defined in vulkan_core.h:9869
+	// KhrPresentId as defined in vulkan_core.h:9864
 	KhrPresentId = 1
-	// KhrPresentIdSpecVersion as defined in vulkan_core.h:9870
+	// KhrPresentIdSpecVersion as defined in vulkan_core.h:9865
 	KhrPresentIdSpecVersion = 1
-	// KhrPresentIdExtensionName as defined in vulkan_core.h:9871
+	// KhrPresentIdExtensionName as defined in vulkan_core.h:9866
 	KhrPresentIdExtensionName = "VK_KHR_present_id"
-	// KhrSynchronization2 as defined in vulkan_core.h:9887
+	// KhrSynchronization2 as defined in vulkan_core.h:9882
 	KhrSynchronization2 = 1
-	// KhrSynchronization2SpecVersion as defined in vulkan_core.h:9888
+	// KhrSynchronization2SpecVersion as defined in vulkan_core.h:9883
 	KhrSynchronization2SpecVersion = 1
-	// KhrSynchronization2ExtensionName as defined in vulkan_core.h:9889
+	// KhrSynchronization2ExtensionName as defined in vulkan_core.h:9884
 	KhrSynchronization2ExtensionName = "VK_KHR_synchronization2"
-	// KhrFragmentShaderBarycentric as defined in vulkan_core.h:9987
+	// KhrFragmentShaderBarycentric as defined in vulkan_core.h:9982
 	KhrFragmentShaderBarycentric = 1
-	// KhrFragmentShaderBarycentricSpecVersion as defined in vulkan_core.h:9988
+	// KhrFragmentShaderBarycentricSpecVersion as defined in vulkan_core.h:9983
 	KhrFragmentShaderBarycentricSpecVersion = 1
-	// KhrFragmentShaderBarycentricExtensionName as defined in vulkan_core.h:9989
+	// KhrFragmentShaderBarycentricExtensionName as defined in vulkan_core.h:9984
 	KhrFragmentShaderBarycentricExtensionName = "VK_KHR_fragment_shader_barycentric"
-	// KhrShaderSubgroupUniformControlFlow as defined in vulkan_core.h:10004
+	// KhrShaderSubgroupUniformControlFlow as defined in vulkan_core.h:9999
 	KhrShaderSubgroupUniformControlFlow = 1
-	// KhrShaderSubgroupUniformControlFlowSpecVersion as defined in vulkan_core.h:10005
+	// KhrShaderSubgroupUniformControlFlowSpecVersion as defined in vulkan_core.h:10000
 	KhrShaderSubgroupUniformControlFlowSpecVersion = 1
-	// KhrShaderSubgroupUniformControlFlowExtensionName as defined in vulkan_core.h:10006
+	// KhrShaderSubgroupUniformControlFlowExtensionName as defined in vulkan_core.h:10001
 	KhrShaderSubgroupUniformControlFlowExtensionName = "VK_KHR_shader_subgroup_uniform_control_flow"
-	// KhrZeroInitializeWorkgroupMemory as defined in vulkan_core.h:10015
+	// KhrZeroInitializeWorkgroupMemory as defined in vulkan_core.h:10010
 	KhrZeroInitializeWorkgroupMemory = 1
-	// KhrZeroInitializeWorkgroupMemorySpecVersion as defined in vulkan_core.h:10016
+	// KhrZeroInitializeWorkgroupMemorySpecVersion as defined in vulkan_core.h:10011
 	KhrZeroInitializeWorkgroupMemorySpecVersion = 1
-	// KhrZeroInitializeWorkgroupMemoryExtensionName as defined in vulkan_core.h:10017
+	// KhrZeroInitializeWorkgroupMemoryExtensionName as defined in vulkan_core.h:10012
 	KhrZeroInitializeWorkgroupMemoryExtensionName = "VK_KHR_zero_initialize_workgroup_memory"
-	// KhrWorkgroupMemoryExplicitLayout as defined in vulkan_core.h:10022
+	// KhrWorkgroupMemoryExplicitLayout as defined in vulkan_core.h:10017
 	KhrWorkgroupMemoryExplicitLayout = 1
-	// KhrWorkgroupMemoryExplicitLayoutSpecVersion as defined in vulkan_core.h:10023
+	// KhrWorkgroupMemoryExplicitLayoutSpecVersion as defined in vulkan_core.h:10018
 	KhrWorkgroupMemoryExplicitLayoutSpecVersion = 1
-	// KhrWorkgroupMemoryExplicitLayoutExtensionName as defined in vulkan_core.h:10024
+	// KhrWorkgroupMemoryExplicitLayoutExtensionName as defined in vulkan_core.h:10019
 	KhrWorkgroupMemoryExplicitLayoutExtensionName = "VK_KHR_workgroup_memory_explicit_layout"
-	// KhrCopyCommands2 as defined in vulkan_core.h:10036
+	// KhrCopyCommands2 as defined in vulkan_core.h:10031
 	KhrCopyCommands2 = 1
-	// KhrCopyCommands2SpecVersion as defined in vulkan_core.h:10037
+	// KhrCopyCommands2SpecVersion as defined in vulkan_core.h:10032
 	KhrCopyCommands2SpecVersion = 1
-	// KhrCopyCommands2ExtensionName as defined in vulkan_core.h:10038
+	// KhrCopyCommands2ExtensionName as defined in vulkan_core.h:10033
 	KhrCopyCommands2ExtensionName = "VK_KHR_copy_commands2"
-	// KhrFormatFeatureFlags2 as defined in vulkan_core.h:10095
+	// KhrFormatFeatureFlags2 as defined in vulkan_core.h:10090
 	KhrFormatFeatureFlags2 = 1
-	// KhrFormatFeatureFlags2SpecVersion as defined in vulkan_core.h:10096
+	// KhrFormatFeatureFlags2SpecVersion as defined in vulkan_core.h:10091
 	KhrFormatFeatureFlags2SpecVersion = 2
-	// KhrFormatFeatureFlags2ExtensionName as defined in vulkan_core.h:10097
+	// KhrFormatFeatureFlags2ExtensionName as defined in vulkan_core.h:10092
 	KhrFormatFeatureFlags2ExtensionName = "VK_KHR_format_feature_flags2"
-	// KhrRayTracingMaintenance1 as defined in vulkan_core.h:10106
+	// KhrRayTracingMaintenance1 as defined in vulkan_core.h:10101
 	KhrRayTracingMaintenance1 = 1
-	// KhrRayTracingMaintenance1SpecVersion as defined in vulkan_core.h:10107
+	// KhrRayTracingMaintenance1SpecVersion as defined in vulkan_core.h:10102
 	KhrRayTracingMaintenance1SpecVersion = 1
-	// KhrRayTracingMaintenance1ExtensionName as defined in vulkan_core.h:10108
+	// KhrRayTracingMaintenance1ExtensionName as defined in vulkan_core.h:10103
 	KhrRayTracingMaintenance1ExtensionName = "VK_KHR_ray_tracing_maintenance1"
-	// KhrPortabilityEnumeration as defined in vulkan_core.h:10142
+	// KhrPortabilityEnumeration as defined in vulkan_core.h:10137
 	KhrPortabilityEnumeration = 1
-	// KhrPortabilityEnumerationSpecVersion as defined in vulkan_core.h:10143
+	// KhrPortabilityEnumerationSpecVersion as defined in vulkan_core.h:10138
 	KhrPortabilityEnumerationSpecVersion = 1
-	// KhrPortabilityEnumerationExtensionName as defined in vulkan_core.h:10144
+	// KhrPortabilityEnumerationExtensionName as defined in vulkan_core.h:10139
 	KhrPortabilityEnumerationExtensionName = "VK_KHR_portability_enumeration"
-	// KhrMaintenance4 as defined in vulkan_core.h:10147
+	// KhrMaintenance4 as defined in vulkan_core.h:10142
 	KhrMaintenance4 = 1
-	// KhrMaintenance4SpecVersion as defined in vulkan_core.h:10148
+	// KhrMaintenance4SpecVersion as defined in vulkan_core.h:10143
 	KhrMaintenance4SpecVersion = 2
-	// KhrMaintenance4ExtensionName as defined in vulkan_core.h:10149
+	// KhrMaintenance4ExtensionName as defined in vulkan_core.h:10144
 	KhrMaintenance4ExtensionName = "VK_KHR_maintenance4"
-	// ExtDebugReport as defined in vulkan_core.h:10181
+	// ExtDebugReport as defined in vulkan_core.h:10176
 	ExtDebugReport = 1
-	// ExtDebugReportSpecVersion as defined in vulkan_core.h:10183
+	// ExtDebugReportSpecVersion as defined in vulkan_core.h:10178
 	ExtDebugReportSpecVersion = 10
-	// ExtDebugReportExtensionName as defined in vulkan_core.h:10184
+	// ExtDebugReportExtensionName as defined in vulkan_core.h:10179
 	ExtDebugReportExtensionName = "VK_EXT_debug_report"
-	// NvGlslShader as defined in vulkan_core.h:10288
+	// NvGlslShader as defined in vulkan_core.h:10283
 	NvGlslShader = 1
-	// NvGlslShaderSpecVersion as defined in vulkan_core.h:10289
+	// NvGlslShaderSpecVersion as defined in vulkan_core.h:10284
 	NvGlslShaderSpecVersion = 1
-	// NvGlslShaderExtensionName as defined in vulkan_core.h:10290
+	// NvGlslShaderExtensionName as defined in vulkan_core.h:10285
 	NvGlslShaderExtensionName = "VK_NV_glsl_shader"
-	// ExtDepthRangeUnrestricted as defined in vulkan_core.h:10293
+	// ExtDepthRangeUnrestricted as defined in vulkan_core.h:10288
 	ExtDepthRangeUnrestricted = 1
-	// ExtDepthRangeUnrestrictedSpecVersion as defined in vulkan_core.h:10294
+	// ExtDepthRangeUnrestrictedSpecVersion as defined in vulkan_core.h:10289
 	ExtDepthRangeUnrestrictedSpecVersion = 1
-	// ExtDepthRangeUnrestrictedExtensionName as defined in vulkan_core.h:10295
+	// ExtDepthRangeUnrestrictedExtensionName as defined in vulkan_core.h:10290
 	ExtDepthRangeUnrestrictedExtensionName = "VK_EXT_depth_range_unrestricted"
-	// ImgFilterCubic as defined in vulkan_core.h:10298
+	// ImgFilterCubic as defined in vulkan_core.h:10293
 	ImgFilterCubic = 1
-	// ImgFilterCubicSpecVersion as defined in vulkan_core.h:10299
+	// ImgFilterCubicSpecVersion as defined in vulkan_core.h:10294
 	ImgFilterCubicSpecVersion = 1
-	// ImgFilterCubicExtensionName as defined in vulkan_core.h:10300
+	// ImgFilterCubicExtensionName as defined in vulkan_core.h:10295
 	ImgFilterCubicExtensionName = "VK_IMG_filter_cubic"
-	// AmdRasterizationOrder as defined in vulkan_core.h:10303
+	// AmdRasterizationOrder as defined in vulkan_core.h:10298
 	AmdRasterizationOrder = 1
-	// AmdRasterizationOrderSpecVersion as defined in vulkan_core.h:10304
+	// AmdRasterizationOrderSpecVersion as defined in vulkan_core.h:10299
 	AmdRasterizationOrderSpecVersion = 1
-	// AmdRasterizationOrderExtensionName as defined in vulkan_core.h:10305
+	// AmdRasterizationOrderExtensionName as defined in vulkan_core.h:10300
 	AmdRasterizationOrderExtensionName = "VK_AMD_rasterization_order"
-	// AmdShaderTrinaryMinmax as defined in vulkan_core.h:10320
+	// AmdShaderTrinaryMinmax as defined in vulkan_core.h:10315
 	AmdShaderTrinaryMinmax = 1
-	// AmdShaderTrinaryMinmaxSpecVersion as defined in vulkan_core.h:10321
+	// AmdShaderTrinaryMinmaxSpecVersion as defined in vulkan_core.h:10316
 	AmdShaderTrinaryMinmaxSpecVersion = 1
-	// AmdShaderTrinaryMinmaxExtensionName as defined in vulkan_core.h:10322
+	// AmdShaderTrinaryMinmaxExtensionName as defined in vulkan_core.h:10317
 	AmdShaderTrinaryMinmaxExtensionName = "VK_AMD_shader_trinary_minmax"
-	// AmdShaderExplicitVertexParameter as defined in vulkan_core.h:10325
+	// AmdShaderExplicitVertexParameter as defined in vulkan_core.h:10320
 	AmdShaderExplicitVertexParameter = 1
-	// AmdShaderExplicitVertexParameterSpecVersion as defined in vulkan_core.h:10326
+	// AmdShaderExplicitVertexParameterSpecVersion as defined in vulkan_core.h:10321
 	AmdShaderExplicitVertexParameterSpecVersion = 1
-	// AmdShaderExplicitVertexParameterExtensionName as defined in vulkan_core.h:10327
+	// AmdShaderExplicitVertexParameterExtensionName as defined in vulkan_core.h:10322
 	AmdShaderExplicitVertexParameterExtensionName = "VK_AMD_shader_explicit_vertex_parameter"
-	// ExtDebugMarker as defined in vulkan_core.h:10330
+	// ExtDebugMarker as defined in vulkan_core.h:10325
 	ExtDebugMarker = 1
-	// ExtDebugMarkerSpecVersion as defined in vulkan_core.h:10331
+	// ExtDebugMarkerSpecVersion as defined in vulkan_core.h:10326
 	ExtDebugMarkerSpecVersion = 4
-	// ExtDebugMarkerExtensionName as defined in vulkan_core.h:10332
+	// ExtDebugMarkerExtensionName as defined in vulkan_core.h:10327
 	ExtDebugMarkerExtensionName = "VK_EXT_debug_marker"
-	// AmdGcnShader as defined in vulkan_core.h:10386
+	// AmdGcnShader as defined in vulkan_core.h:10381
 	AmdGcnShader = 1
-	// AmdGcnShaderSpecVersion as defined in vulkan_core.h:10387
+	// AmdGcnShaderSpecVersion as defined in vulkan_core.h:10382
 	AmdGcnShaderSpecVersion = 1
-	// AmdGcnShaderExtensionName as defined in vulkan_core.h:10388
+	// AmdGcnShaderExtensionName as defined in vulkan_core.h:10383
 	AmdGcnShaderExtensionName = "VK_AMD_gcn_shader"
-	// NvDedicatedAllocation as defined in vulkan_core.h:10391
+	// NvDedicatedAllocation as defined in vulkan_core.h:10386
 	NvDedicatedAllocation = 1
-	// NvDedicatedAllocationSpecVersion as defined in vulkan_core.h:10392
+	// NvDedicatedAllocationSpecVersion as defined in vulkan_core.h:10387
 	NvDedicatedAllocationSpecVersion = 1
-	// NvDedicatedAllocationExtensionName as defined in vulkan_core.h:10393
+	// NvDedicatedAllocationExtensionName as defined in vulkan_core.h:10388
 	NvDedicatedAllocationExtensionName = "VK_NV_dedicated_allocation"
-	// ExtTransformFeedback as defined in vulkan_core.h:10415
+	// ExtTransformFeedback as defined in vulkan_core.h:10410
 	ExtTransformFeedback = 1
-	// ExtTransformFeedbackSpecVersion as defined in vulkan_core.h:10416
+	// ExtTransformFeedbackSpecVersion as defined in vulkan_core.h:10411
 	ExtTransformFeedbackSpecVersion = 1
-	// ExtTransformFeedbackExtensionName as defined in vulkan_core.h:10417
+	// ExtTransformFeedbackExtensionName as defined in vulkan_core.h:10412
 	ExtTransformFeedbackExtensionName = "VK_EXT_transform_feedback"
-	// NvxBinaryImport as defined in vulkan_core.h:10502
+	// NvxBinaryImport as defined in vulkan_core.h:10497
 	NvxBinaryImport = 1
-	// NvxBinaryImportSpecVersion as defined in vulkan_core.h:10505
+	// NvxBinaryImportSpecVersion as defined in vulkan_core.h:10500
 	NvxBinaryImportSpecVersion = 1
-	// NvxBinaryImportExtensionName as defined in vulkan_core.h:10506
+	// NvxBinaryImportExtensionName as defined in vulkan_core.h:10501
 	NvxBinaryImportExtensionName = "VK_NVX_binary_import"
-	// NvxImageViewHandle as defined in vulkan_core.h:10573
+	// NvxImageViewHandle as defined in vulkan_core.h:10568
 	NvxImageViewHandle = 1
-	// NvxImageViewHandleSpecVersion as defined in vulkan_core.h:10574
+	// NvxImageViewHandleSpecVersion as defined in vulkan_core.h:10569
 	NvxImageViewHandleSpecVersion = 2
-	// NvxImageViewHandleExtensionName as defined in vulkan_core.h:10575
+	// NvxImageViewHandleExtensionName as defined in vulkan_core.h:10570
 	NvxImageViewHandleExtensionName = "VK_NVX_image_view_handle"
-	// AmdDrawIndirectCount as defined in vulkan_core.h:10606
+	// AmdDrawIndirectCount as defined in vulkan_core.h:10601
 	AmdDrawIndirectCount = 1
-	// AmdDrawIndirectCountSpecVersion as defined in vulkan_core.h:10607
+	// AmdDrawIndirectCountSpecVersion as defined in vulkan_core.h:10602
 	AmdDrawIndirectCountSpecVersion = 2
-	// AmdDrawIndirectCountExtensionName as defined in vulkan_core.h:10608
+	// AmdDrawIndirectCountExtensionName as defined in vulkan_core.h:10603
 	AmdDrawIndirectCountExtensionName = "VK_AMD_draw_indirect_count"
-	// AmdNegativeViewportHeight as defined in vulkan_core.h:10633
+	// AmdNegativeViewportHeight as defined in vulkan_core.h:10628
 	AmdNegativeViewportHeight = 1
-	// AmdNegativeViewportHeightSpecVersion as defined in vulkan_core.h:10634
+	// AmdNegativeViewportHeightSpecVersion as defined in vulkan_core.h:10629
 	AmdNegativeViewportHeightSpecVersion = 1
-	// AmdNegativeViewportHeightExtensionName as defined in vulkan_core.h:10635
+	// AmdNegativeViewportHeightExtensionName as defined in vulkan_core.h:10630
 	AmdNegativeViewportHeightExtensionName = "VK_AMD_negative_viewport_height"
-	// AmdGpuShaderHalfFloat as defined in vulkan_core.h:10638
+	// AmdGpuShaderHalfFloat as defined in vulkan_core.h:10633
 	AmdGpuShaderHalfFloat = 1
-	// AmdGpuShaderHalfFloatSpecVersion as defined in vulkan_core.h:10639
+	// AmdGpuShaderHalfFloatSpecVersion as defined in vulkan_core.h:10634
 	AmdGpuShaderHalfFloatSpecVersion = 2
-	// AmdGpuShaderHalfFloatExtensionName as defined in vulkan_core.h:10640
+	// AmdGpuShaderHalfFloatExtensionName as defined in vulkan_core.h:10635
 	AmdGpuShaderHalfFloatExtensionName = "VK_AMD_gpu_shader_half_float"
-	// AmdShaderBallot as defined in vulkan_core.h:10643
+	// AmdShaderBallot as defined in vulkan_core.h:10638
 	AmdShaderBallot = 1
-	// AmdShaderBallotSpecVersion as defined in vulkan_core.h:10644
+	// AmdShaderBallotSpecVersion as defined in vulkan_core.h:10639
 	AmdShaderBallotSpecVersion = 1
-	// AmdShaderBallotExtensionName as defined in vulkan_core.h:10645
+	// AmdShaderBallotExtensionName as defined in vulkan_core.h:10640
 	AmdShaderBallotExtensionName = "VK_AMD_shader_ballot"
-	// AmdTextureGatherBiasLod as defined in vulkan_core.h:10648
+	// AmdTextureGatherBiasLod as defined in vulkan_core.h:10643
 	AmdTextureGatherBiasLod = 1
-	// AmdTextureGatherBiasLodSpecVersion as defined in vulkan_core.h:10649
+	// AmdTextureGatherBiasLodSpecVersion as defined in vulkan_core.h:10644
 	AmdTextureGatherBiasLodSpecVersion = 1
-	// AmdTextureGatherBiasLodExtensionName as defined in vulkan_core.h:10650
+	// AmdTextureGatherBiasLodExtensionName as defined in vulkan_core.h:10645
 	AmdTextureGatherBiasLodExtensionName = "VK_AMD_texture_gather_bias_lod"
-	// AmdShaderInfo as defined in vulkan_core.h:10659
+	// AmdShaderInfo as defined in vulkan_core.h:10654
 	AmdShaderInfo = 1
-	// AmdShaderInfoSpecVersion as defined in vulkan_core.h:10660
+	// AmdShaderInfoSpecVersion as defined in vulkan_core.h:10655
 	AmdShaderInfoSpecVersion = 1
-	// AmdShaderInfoExtensionName as defined in vulkan_core.h:10661
+	// AmdShaderInfoExtensionName as defined in vulkan_core.h:10656
 	AmdShaderInfoExtensionName = "VK_AMD_shader_info"
-	// AmdShaderImageLoadStoreLod as defined in vulkan_core.h:10700
+	// AmdShaderImageLoadStoreLod as defined in vulkan_core.h:10695
 	AmdShaderImageLoadStoreLod = 1
-	// AmdShaderImageLoadStoreLodSpecVersion as defined in vulkan_core.h:10701
+	// AmdShaderImageLoadStoreLodSpecVersion as defined in vulkan_core.h:10696
 	AmdShaderImageLoadStoreLodSpecVersion = 1
-	// AmdShaderImageLoadStoreLodExtensionName as defined in vulkan_core.h:10702
+	// AmdShaderImageLoadStoreLodExtensionName as defined in vulkan_core.h:10697
 	AmdShaderImageLoadStoreLodExtensionName = "VK_AMD_shader_image_load_store_lod"
-	// NvCornerSampledImage as defined in vulkan_core.h:10705
+	// NvCornerSampledImage as defined in vulkan_core.h:10700
 	NvCornerSampledImage = 1
-	// NvCornerSampledImageSpecVersion as defined in vulkan_core.h:10706
+	// NvCornerSampledImageSpecVersion as defined in vulkan_core.h:10701
 	NvCornerSampledImageSpecVersion = 2
-	// NvCornerSampledImageExtensionName as defined in vulkan_core.h:10707
+	// NvCornerSampledImageExtensionName as defined in vulkan_core.h:10702
 	NvCornerSampledImageExtensionName = "VK_NV_corner_sampled_image"
-	// ImgFormatPvrtc as defined in vulkan_core.h:10716
+	// ImgFormatPvrtc as defined in vulkan_core.h:10711
 	ImgFormatPvrtc = 1
-	// ImgFormatPvrtcSpecVersion as defined in vulkan_core.h:10717
+	// ImgFormatPvrtcSpecVersion as defined in vulkan_core.h:10712
 	ImgFormatPvrtcSpecVersion = 1
-	// ImgFormatPvrtcExtensionName as defined in vulkan_core.h:10718
+	// ImgFormatPvrtcExtensionName as defined in vulkan_core.h:10713
 	ImgFormatPvrtcExtensionName = "VK_IMG_format_pvrtc"
-	// NvExternalMemoryCapabilities as defined in vulkan_core.h:10721
+	// NvExternalMemoryCapabilities as defined in vulkan_core.h:10716
 	NvExternalMemoryCapabilities = 1
-	// NvExternalMemoryCapabilitiesSpecVersion as defined in vulkan_core.h:10722
+	// NvExternalMemoryCapabilitiesSpecVersion as defined in vulkan_core.h:10717
 	NvExternalMemoryCapabilitiesSpecVersion = 1
-	// NvExternalMemoryCapabilitiesExtensionName as defined in vulkan_core.h:10723
+	// NvExternalMemoryCapabilitiesExtensionName as defined in vulkan_core.h:10718
 	NvExternalMemoryCapabilitiesExtensionName = "VK_NV_external_memory_capabilities"
-	// NvExternalMemory as defined in vulkan_core.h:10763
+	// NvExternalMemory as defined in vulkan_core.h:10758
 	NvExternalMemory = 1
-	// NvExternalMemorySpecVersion as defined in vulkan_core.h:10764
+	// NvExternalMemorySpecVersion as defined in vulkan_core.h:10759
 	NvExternalMemorySpecVersion = 1
-	// NvExternalMemoryExtensionName as defined in vulkan_core.h:10765
+	// NvExternalMemoryExtensionName as defined in vulkan_core.h:10760
 	NvExternalMemoryExtensionName = "VK_NV_external_memory"
-	// ExtValidationFlags as defined in vulkan_core.h:10780
+	// ExtValidationFlags as defined in vulkan_core.h:10775
 	ExtValidationFlags = 1
-	// ExtValidationFlagsSpecVersion as defined in vulkan_core.h:10781
+	// ExtValidationFlagsSpecVersion as defined in vulkan_core.h:10776
 	ExtValidationFlagsSpecVersion = 2
-	// ExtValidationFlagsExtensionName as defined in vulkan_core.h:10782
+	// ExtValidationFlagsExtensionName as defined in vulkan_core.h:10777
 	ExtValidationFlagsExtensionName = "VK_EXT_validation_flags"
-	// ExtShaderSubgroupBallot as defined in vulkan_core.h:10798
+	// ExtShaderSubgroupBallot as defined in vulkan_core.h:10793
 	ExtShaderSubgroupBallot = 1
-	// ExtShaderSubgroupBallotSpecVersion as defined in vulkan_core.h:10799
+	// ExtShaderSubgroupBallotSpecVersion as defined in vulkan_core.h:10794
 	ExtShaderSubgroupBallotSpecVersion = 1
-	// ExtShaderSubgroupBallotExtensionName as defined in vulkan_core.h:10800
+	// ExtShaderSubgroupBallotExtensionName as defined in vulkan_core.h:10795
 	ExtShaderSubgroupBallotExtensionName = "VK_EXT_shader_subgroup_ballot"
-	// ExtShaderSubgroupVote as defined in vulkan_core.h:10803
+	// ExtShaderSubgroupVote as defined in vulkan_core.h:10798
 	ExtShaderSubgroupVote = 1
-	// ExtShaderSubgroupVoteSpecVersion as defined in vulkan_core.h:10804
+	// ExtShaderSubgroupVoteSpecVersion as defined in vulkan_core.h:10799
 	ExtShaderSubgroupVoteSpecVersion = 1
-	// ExtShaderSubgroupVoteExtensionName as defined in vulkan_core.h:10805
+	// ExtShaderSubgroupVoteExtensionName as defined in vulkan_core.h:10800
 	ExtShaderSubgroupVoteExtensionName = "VK_EXT_shader_subgroup_vote"
-	// ExtTextureCompressionAstcHdr as defined in vulkan_core.h:10808
+	// ExtTextureCompressionAstcHdr as defined in vulkan_core.h:10803
 	ExtTextureCompressionAstcHdr = 1
-	// ExtTextureCompressionAstcHdrSpecVersion as defined in vulkan_core.h:10809
+	// ExtTextureCompressionAstcHdrSpecVersion as defined in vulkan_core.h:10804
 	ExtTextureCompressionAstcHdrSpecVersion = 1
-	// ExtTextureCompressionAstcHdrExtensionName as defined in vulkan_core.h:10810
+	// ExtTextureCompressionAstcHdrExtensionName as defined in vulkan_core.h:10805
 	ExtTextureCompressionAstcHdrExtensionName = "VK_EXT_texture_compression_astc_hdr"
-	// ExtAstcDecodeMode as defined in vulkan_core.h:10815
+	// ExtAstcDecodeMode as defined in vulkan_core.h:10810
 	ExtAstcDecodeMode = 1
-	// ExtAstcDecodeModeSpecVersion as defined in vulkan_core.h:10816
+	// ExtAstcDecodeModeSpecVersion as defined in vulkan_core.h:10811
 	ExtAstcDecodeModeSpecVersion = 1
-	// ExtAstcDecodeModeExtensionName as defined in vulkan_core.h:10817
+	// ExtAstcDecodeModeExtensionName as defined in vulkan_core.h:10812
 	ExtAstcDecodeModeExtensionName = "VK_EXT_astc_decode_mode"
-	// ExtPipelineRobustness as defined in vulkan_core.h:10832
+	// ExtPipelineRobustness as defined in vulkan_core.h:10827
 	ExtPipelineRobustness = 1
-	// ExtPipelineRobustnessSpecVersion as defined in vulkan_core.h:10833
+	// ExtPipelineRobustnessSpecVersion as defined in vulkan_core.h:10828
 	ExtPipelineRobustnessSpecVersion = 1
-	// ExtPipelineRobustnessExtensionName as defined in vulkan_core.h:10834
+	// ExtPipelineRobustnessExtensionName as defined in vulkan_core.h:10829
 	ExtPipelineRobustnessExtensionName = "VK_EXT_pipeline_robustness"
-	// ExtConditionalRendering as defined in vulkan_core.h:10877
+	// ExtConditionalRendering as defined in vulkan_core.h:10872
 	ExtConditionalRendering = 1
-	// ExtConditionalRenderingSpecVersion as defined in vulkan_core.h:10878
+	// ExtConditionalRenderingSpecVersion as defined in vulkan_core.h:10873
 	ExtConditionalRenderingSpecVersion = 2
-	// ExtConditionalRenderingExtensionName as defined in vulkan_core.h:10879
+	// ExtConditionalRenderingExtensionName as defined in vulkan_core.h:10874
 	ExtConditionalRenderingExtensionName = "VK_EXT_conditional_rendering"
-	// NvClipSpaceWScaling as defined in vulkan_core.h:10920
+	// NvClipSpaceWScaling as defined in vulkan_core.h:10915
 	NvClipSpaceWScaling = 1
-	// NvClipSpaceWScalingSpecVersion as defined in vulkan_core.h:10921
+	// NvClipSpaceWScalingSpecVersion as defined in vulkan_core.h:10916
 	NvClipSpaceWScalingSpecVersion = 1
-	// NvClipSpaceWScalingExtensionName as defined in vulkan_core.h:10922
+	// NvClipSpaceWScalingExtensionName as defined in vulkan_core.h:10917
 	NvClipSpaceWScalingExtensionName = "VK_NV_clip_space_w_scaling"
-	// ExtDirectModeDisplay as defined in vulkan_core.h:10947
+	// ExtDirectModeDisplay as defined in vulkan_core.h:10942
 	ExtDirectModeDisplay = 1
-	// ExtDirectModeDisplaySpecVersion as defined in vulkan_core.h:10948
+	// ExtDirectModeDisplaySpecVersion as defined in vulkan_core.h:10943
 	ExtDirectModeDisplaySpecVersion = 1
-	// ExtDirectModeDisplayExtensionName as defined in vulkan_core.h:10949
+	// ExtDirectModeDisplayExtensionName as defined in vulkan_core.h:10944
 	ExtDirectModeDisplayExtensionName = "VK_EXT_direct_mode_display"
-	// ExtDisplaySurfaceCounter as defined in vulkan_core.h:10959
+	// ExtDisplaySurfaceCounter as defined in vulkan_core.h:10954
 	ExtDisplaySurfaceCounter = 1
-	// ExtDisplaySurfaceCounterSpecVersion as defined in vulkan_core.h:10960
+	// ExtDisplaySurfaceCounterSpecVersion as defined in vulkan_core.h:10955
 	ExtDisplaySurfaceCounterSpecVersion = 1
-	// ExtDisplaySurfaceCounterExtensionName as defined in vulkan_core.h:10961
+	// ExtDisplaySurfaceCounterExtensionName as defined in vulkan_core.h:10956
 	ExtDisplaySurfaceCounterExtensionName = "VK_EXT_display_surface_counter"
-	// ExtDisplayControl as defined in vulkan_core.h:10995
+	// ExtDisplayControl as defined in vulkan_core.h:10990
 	ExtDisplayControl = 1
-	// ExtDisplayControlSpecVersion as defined in vulkan_core.h:10996
+	// ExtDisplayControlSpecVersion as defined in vulkan_core.h:10991
 	ExtDisplayControlSpecVersion = 1
-	// ExtDisplayControlExtensionName as defined in vulkan_core.h:10997
+	// ExtDisplayControlExtensionName as defined in vulkan_core.h:10992
 	ExtDisplayControlExtensionName = "VK_EXT_display_control"
-	// GoogleDisplayTiming as defined in vulkan_core.h:11071
+	// GoogleDisplayTiming as defined in vulkan_core.h:11066
 	GoogleDisplayTiming = 1
-	// GoogleDisplayTimingSpecVersion as defined in vulkan_core.h:11072
+	// GoogleDisplayTimingSpecVersion as defined in vulkan_core.h:11067
 	GoogleDisplayTimingSpecVersion = 1
-	// GoogleDisplayTimingExtensionName as defined in vulkan_core.h:11073
+	// GoogleDisplayTimingExtensionName as defined in vulkan_core.h:11068
 	GoogleDisplayTimingExtensionName = "VK_GOOGLE_display_timing"
-	// NvSampleMaskOverrideCoverage as defined in vulkan_core.h:11115
+	// NvSampleMaskOverrideCoverage as defined in vulkan_core.h:11110
 	NvSampleMaskOverrideCoverage = 1
-	// NvSampleMaskOverrideCoverageSpecVersion as defined in vulkan_core.h:11116
+	// NvSampleMaskOverrideCoverageSpecVersion as defined in vulkan_core.h:11111
 	NvSampleMaskOverrideCoverageSpecVersion = 1
-	// NvSampleMaskOverrideCoverageExtensionName as defined in vulkan_core.h:11117
+	// NvSampleMaskOverrideCoverageExtensionName as defined in vulkan_core.h:11112
 	NvSampleMaskOverrideCoverageExtensionName = "VK_NV_sample_mask_override_coverage"
-	// NvGeometryShaderPassthrough as defined in vulkan_core.h:11120
+	// NvGeometryShaderPassthrough as defined in vulkan_core.h:11115
 	NvGeometryShaderPassthrough = 1
-	// NvGeometryShaderPassthroughSpecVersion as defined in vulkan_core.h:11121
+	// NvGeometryShaderPassthroughSpecVersion as defined in vulkan_core.h:11116
 	NvGeometryShaderPassthroughSpecVersion = 1
-	// NvGeometryShaderPassthroughExtensionName as defined in vulkan_core.h:11122
+	// NvGeometryShaderPassthroughExtensionName as defined in vulkan_core.h:11117
 	NvGeometryShaderPassthroughExtensionName = "VK_NV_geometry_shader_passthrough"
-	// NvViewportArray2 as defined in vulkan_core.h:11125
+	// NvViewportArray2 as defined in vulkan_core.h:11120
 	NvViewportArray2 = 1
-	// NvViewportArray2SpecVersion as defined in vulkan_core.h:11126
+	// NvViewportArray2SpecVersion as defined in vulkan_core.h:11121
 	NvViewportArray2SpecVersion = 1
-	// NvViewportArray2ExtensionName as defined in vulkan_core.h:11127
+	// NvViewportArray2ExtensionName as defined in vulkan_core.h:11122
 	NvViewportArray2ExtensionName = "VK_NV_viewport_array2"
-	// NvxMultiviewPerViewAttributes as defined in vulkan_core.h:11132
+	// NvxMultiviewPerViewAttributes as defined in vulkan_core.h:11127
 	NvxMultiviewPerViewAttributes = 1
-	// NvxMultiviewPerViewAttributesSpecVersion as defined in vulkan_core.h:11133
+	// NvxMultiviewPerViewAttributesSpecVersion as defined in vulkan_core.h:11128
 	NvxMultiviewPerViewAttributesSpecVersion = 1
-	// NvxMultiviewPerViewAttributesExtensionName as defined in vulkan_core.h:11134
+	// NvxMultiviewPerViewAttributesExtensionName as defined in vulkan_core.h:11129
 	NvxMultiviewPerViewAttributesExtensionName = "VK_NVX_multiview_per_view_attributes"
-	// NvViewportSwizzle as defined in vulkan_core.h:11143
+	// NvViewportSwizzle as defined in vulkan_core.h:11138
 	NvViewportSwizzle = 1
-	// NvViewportSwizzleSpecVersion as defined in vulkan_core.h:11144
+	// NvViewportSwizzleSpecVersion as defined in vulkan_core.h:11139
 	NvViewportSwizzleSpecVersion = 1
-	// NvViewportSwizzleExtensionName as defined in vulkan_core.h:11145
+	// NvViewportSwizzleExtensionName as defined in vulkan_core.h:11140
 	NvViewportSwizzleExtensionName = "VK_NV_viewport_swizzle"
-	// ExtDiscardRectangles as defined in vulkan_core.h:11176
+	// ExtDiscardRectangles as defined in vulkan_core.h:11171
 	ExtDiscardRectangles = 1
-	// ExtDiscardRectanglesSpecVersion as defined in vulkan_core.h:11177
+	// ExtDiscardRectanglesSpecVersion as defined in vulkan_core.h:11172
 	ExtDiscardRectanglesSpecVersion = 2
-	// ExtDiscardRectanglesExtensionName as defined in vulkan_core.h:11178
+	// ExtDiscardRectanglesExtensionName as defined in vulkan_core.h:11173
 	ExtDiscardRectanglesExtensionName = "VK_EXT_discard_rectangles"
-	// ExtConservativeRasterization as defined in vulkan_core.h:11222
+	// ExtConservativeRasterization as defined in vulkan_core.h:11217
 	ExtConservativeRasterization = 1
-	// ExtConservativeRasterizationSpecVersion as defined in vulkan_core.h:11223
+	// ExtConservativeRasterizationSpecVersion as defined in vulkan_core.h:11218
 	ExtConservativeRasterizationSpecVersion = 1
-	// ExtConservativeRasterizationExtensionName as defined in vulkan_core.h:11224
+	// ExtConservativeRasterizationExtensionName as defined in vulkan_core.h:11219
 	ExtConservativeRasterizationExtensionName = "VK_EXT_conservative_rasterization"
-	// ExtDepthClipEnable as defined in vulkan_core.h:11257
+	// ExtDepthClipEnable as defined in vulkan_core.h:11252
 	ExtDepthClipEnable = 1
-	// ExtDepthClipEnableSpecVersion as defined in vulkan_core.h:11258
+	// ExtDepthClipEnableSpecVersion as defined in vulkan_core.h:11253
 	ExtDepthClipEnableSpecVersion = 1
-	// ExtDepthClipEnableExtensionName as defined in vulkan_core.h:11259
+	// ExtDepthClipEnableExtensionName as defined in vulkan_core.h:11254
 	ExtDepthClipEnableExtensionName = "VK_EXT_depth_clip_enable"
-	// ExtSwapchainColorspace as defined in vulkan_core.h:11276
+	// ExtSwapchainColorspace as defined in vulkan_core.h:11271
 	ExtSwapchainColorspace = 1
-	// ExtSwapchainColorSpaceSpecVersion as defined in vulkan_core.h:11277
+	// ExtSwapchainColorSpaceSpecVersion as defined in vulkan_core.h:11272
 	ExtSwapchainColorSpaceSpecVersion = 4
-	// ExtSwapchainColorSpaceExtensionName as defined in vulkan_core.h:11278
+	// ExtSwapchainColorSpaceExtensionName as defined in vulkan_core.h:11273
 	ExtSwapchainColorSpaceExtensionName = "VK_EXT_swapchain_colorspace"
-	// ExtHdrMetadata as defined in vulkan_core.h:11281
+	// ExtHdrMetadata as defined in vulkan_core.h:11276
 	ExtHdrMetadata = 1
-	// ExtHdrMetadataSpecVersion as defined in vulkan_core.h:11282
+	// ExtHdrMetadataSpecVersion as defined in vulkan_core.h:11277
 	ExtHdrMetadataSpecVersion = 2
-	// ExtHdrMetadataExtensionName as defined in vulkan_core.h:11283
+	// ExtHdrMetadataExtensionName as defined in vulkan_core.h:11278
 	ExtHdrMetadataExtensionName = "VK_EXT_hdr_metadata"
-	// ExtExternalMemoryDmaBuf as defined in vulkan_core.h:11313
+	// ExtExternalMemoryDmaBuf as defined in vulkan_core.h:11308
 	ExtExternalMemoryDmaBuf = 1
-	// ExtExternalMemoryDmaBufSpecVersion as defined in vulkan_core.h:11314
+	// ExtExternalMemoryDmaBufSpecVersion as defined in vulkan_core.h:11309
 	ExtExternalMemoryDmaBufSpecVersion = 1
-	// ExtExternalMemoryDmaBufExtensionName as defined in vulkan_core.h:11315
+	// ExtExternalMemoryDmaBufExtensionName as defined in vulkan_core.h:11310
 	ExtExternalMemoryDmaBufExtensionName = "VK_EXT_external_memory_dma_buf"
-	// ExtQueueFamilyForeign as defined in vulkan_core.h:11318
+	// ExtQueueFamilyForeign as defined in vulkan_core.h:11313
 	ExtQueueFamilyForeign = 1
-	// ExtQueueFamilyForeignSpecVersion as defined in vulkan_core.h:11319
+	// ExtQueueFamilyForeignSpecVersion as defined in vulkan_core.h:11314
 	ExtQueueFamilyForeignSpecVersion = 1
-	// ExtQueueFamilyForeignExtensionName as defined in vulkan_core.h:11320
+	// ExtQueueFamilyForeignExtensionName as defined in vulkan_core.h:11315
 	ExtQueueFamilyForeignExtensionName = "VK_EXT_queue_family_foreign"
-	// QueueFamilyForeign as defined in vulkan_core.h:11321
+	// QueueFamilyForeign as defined in vulkan_core.h:11316
 	QueueFamilyForeign = (^uint32(2))
-	// ExtDebugUtils as defined in vulkan_core.h:11324
+	// ExtDebugUtils as defined in vulkan_core.h:11319
 	ExtDebugUtils = 1
-	// ExtDebugUtilsSpecVersion as defined in vulkan_core.h:11326
+	// ExtDebugUtilsSpecVersion as defined in vulkan_core.h:11321
 	ExtDebugUtilsSpecVersion = 2
-	// ExtDebugUtilsExtensionName as defined in vulkan_core.h:11327
+	// ExtDebugUtilsExtensionName as defined in vulkan_core.h:11322
 	ExtDebugUtilsExtensionName = "VK_EXT_debug_utils"
-	// ExtSamplerFilterMinmax as defined in vulkan_core.h:11466
+	// ExtSamplerFilterMinmax as defined in vulkan_core.h:11461
 	ExtSamplerFilterMinmax = 1
-	// ExtSamplerFilterMinmaxSpecVersion as defined in vulkan_core.h:11467
+	// ExtSamplerFilterMinmaxSpecVersion as defined in vulkan_core.h:11462
 	ExtSamplerFilterMinmaxSpecVersion = 2
-	// ExtSamplerFilterMinmaxExtensionName as defined in vulkan_core.h:11468
+	// ExtSamplerFilterMinmaxExtensionName as defined in vulkan_core.h:11463
 	ExtSamplerFilterMinmaxExtensionName = "VK_EXT_sampler_filter_minmax"
-	// AmdGpuShaderInt16 as defined in vulkan_core.h:11477
+	// AmdGpuShaderInt16 as defined in vulkan_core.h:11472
 	AmdGpuShaderInt16 = 1
-	// AmdGpuShaderInt16SpecVersion as defined in vulkan_core.h:11478
+	// AmdGpuShaderInt16SpecVersion as defined in vulkan_core.h:11473
 	AmdGpuShaderInt16SpecVersion = 2
-	// AmdGpuShaderInt16ExtensionName as defined in vulkan_core.h:11479
+	// AmdGpuShaderInt16ExtensionName as defined in vulkan_core.h:11474
 	AmdGpuShaderInt16ExtensionName = "VK_AMD_gpu_shader_int16"
-	// AmdMixedAttachmentSamples as defined in vulkan_core.h:11482
+	// AmdMixedAttachmentSamples as defined in vulkan_core.h:11477
 	AmdMixedAttachmentSamples = 1
-	// AmdMixedAttachmentSamplesSpecVersion as defined in vulkan_core.h:11483
+	// AmdMixedAttachmentSamplesSpecVersion as defined in vulkan_core.h:11478
 	AmdMixedAttachmentSamplesSpecVersion = 1
-	// AmdMixedAttachmentSamplesExtensionName as defined in vulkan_core.h:11484
+	// AmdMixedAttachmentSamplesExtensionName as defined in vulkan_core.h:11479
 	AmdMixedAttachmentSamplesExtensionName = "VK_AMD_mixed_attachment_samples"
-	// AmdShaderFragmentMask as defined in vulkan_core.h:11487
+	// AmdShaderFragmentMask as defined in vulkan_core.h:11482
 	AmdShaderFragmentMask = 1
-	// AmdShaderFragmentMaskSpecVersion as defined in vulkan_core.h:11488
+	// AmdShaderFragmentMaskSpecVersion as defined in vulkan_core.h:11483
 	AmdShaderFragmentMaskSpecVersion = 1
-	// AmdShaderFragmentMaskExtensionName as defined in vulkan_core.h:11489
+	// AmdShaderFragmentMaskExtensionName as defined in vulkan_core.h:11484
 	AmdShaderFragmentMaskExtensionName = "VK_AMD_shader_fragment_mask"
-	// ExtInlineUniformBlock as defined in vulkan_core.h:11492
+	// ExtInlineUniformBlock as defined in vulkan_core.h:11487
 	ExtInlineUniformBlock = 1
-	// ExtInlineUniformBlockSpecVersion as defined in vulkan_core.h:11493
+	// ExtInlineUniformBlockSpecVersion as defined in vulkan_core.h:11488
 	ExtInlineUniformBlockSpecVersion = 1
-	// ExtInlineUniformBlockExtensionName as defined in vulkan_core.h:11494
+	// ExtInlineUniformBlockExtensionName as defined in vulkan_core.h:11489
 	ExtInlineUniformBlockExtensionName = "VK_EXT_inline_uniform_block"
-	// ExtShaderStencilExport as defined in vulkan_core.h:11505
+	// ExtShaderStencilExport as defined in vulkan_core.h:11500
 	ExtShaderStencilExport = 1
-	// ExtShaderStencilExportSpecVersion as defined in vulkan_core.h:11506
+	// ExtShaderStencilExportSpecVersion as defined in vulkan_core.h:11501
 	ExtShaderStencilExportSpecVersion = 1
-	// ExtShaderStencilExportExtensionName as defined in vulkan_core.h:11507
+	// ExtShaderStencilExportExtensionName as defined in vulkan_core.h:11502
 	ExtShaderStencilExportExtensionName = "VK_EXT_shader_stencil_export"
-	// ExtSampleLocations as defined in vulkan_core.h:11510
+	// ExtSampleLocations as defined in vulkan_core.h:11505
 	ExtSampleLocations = 1
-	// ExtSampleLocationsSpecVersion as defined in vulkan_core.h:11511
+	// ExtSampleLocationsSpecVersion as defined in vulkan_core.h:11506
 	ExtSampleLocationsSpecVersion = 1
-	// ExtSampleLocationsExtensionName as defined in vulkan_core.h:11512
+	// ExtSampleLocationsExtensionName as defined in vulkan_core.h:11507
 	ExtSampleLocationsExtensionName = "VK_EXT_sample_locations"
-	// ExtBlendOperationAdvanced as defined in vulkan_core.h:11584
+	// ExtBlendOperationAdvanced as defined in vulkan_core.h:11579
 	ExtBlendOperationAdvanced = 1
-	// ExtBlendOperationAdvancedSpecVersion as defined in vulkan_core.h:11585
+	// ExtBlendOperationAdvancedSpecVersion as defined in vulkan_core.h:11580
 	ExtBlendOperationAdvancedSpecVersion = 2
-	// ExtBlendOperationAdvancedExtensionName as defined in vulkan_core.h:11586
+	// ExtBlendOperationAdvancedExtensionName as defined in vulkan_core.h:11581
 	ExtBlendOperationAdvancedExtensionName = "VK_EXT_blend_operation_advanced"
-	// NvFragmentCoverageToColor as defined in vulkan_core.h:11621
+	// NvFragmentCoverageToColor as defined in vulkan_core.h:11616
 	NvFragmentCoverageToColor = 1
-	// NvFragmentCoverageToColorSpecVersion as defined in vulkan_core.h:11622
+	// NvFragmentCoverageToColorSpecVersion as defined in vulkan_core.h:11617
 	NvFragmentCoverageToColorSpecVersion = 1
-	// NvFragmentCoverageToColorExtensionName as defined in vulkan_core.h:11623
+	// NvFragmentCoverageToColorExtensionName as defined in vulkan_core.h:11618
 	NvFragmentCoverageToColorExtensionName = "VK_NV_fragment_coverage_to_color"
-	// NvFramebufferMixedSamples as defined in vulkan_core.h:11635
+	// NvFramebufferMixedSamples as defined in vulkan_core.h:11630
 	NvFramebufferMixedSamples = 1
-	// NvFramebufferMixedSamplesSpecVersion as defined in vulkan_core.h:11636
+	// NvFramebufferMixedSamplesSpecVersion as defined in vulkan_core.h:11631
 	NvFramebufferMixedSamplesSpecVersion = 1
-	// NvFramebufferMixedSamplesExtensionName as defined in vulkan_core.h:11637
+	// NvFramebufferMixedSamplesExtensionName as defined in vulkan_core.h:11632
 	NvFramebufferMixedSamplesExtensionName = "VK_NV_framebuffer_mixed_samples"
-	// NvFillRectangle as defined in vulkan_core.h:11659
+	// NvFillRectangle as defined in vulkan_core.h:11654
 	NvFillRectangle = 1
-	// NvFillRectangleSpecVersion as defined in vulkan_core.h:11660
+	// NvFillRectangleSpecVersion as defined in vulkan_core.h:11655
 	NvFillRectangleSpecVersion = 1
-	// NvFillRectangleExtensionName as defined in vulkan_core.h:11661
+	// NvFillRectangleExtensionName as defined in vulkan_core.h:11656
 	NvFillRectangleExtensionName = "VK_NV_fill_rectangle"
-	// NvShaderSmBuiltins as defined in vulkan_core.h:11664
+	// NvShaderSmBuiltins as defined in vulkan_core.h:11659
 	NvShaderSmBuiltins = 1
-	// NvShaderSmBuiltinsSpecVersion as defined in vulkan_core.h:11665
+	// NvShaderSmBuiltinsSpecVersion as defined in vulkan_core.h:11660
 	NvShaderSmBuiltinsSpecVersion = 1
-	// NvShaderSmBuiltinsExtensionName as defined in vulkan_core.h:11666
+	// NvShaderSmBuiltinsExtensionName as defined in vulkan_core.h:11661
 	NvShaderSmBuiltinsExtensionName = "VK_NV_shader_sm_builtins"
-	// ExtPostDepthCoverage as defined in vulkan_core.h:11682
+	// ExtPostDepthCoverage as defined in vulkan_core.h:11677
 	ExtPostDepthCoverage = 1
-	// ExtPostDepthCoverageSpecVersion as defined in vulkan_core.h:11683
+	// ExtPostDepthCoverageSpecVersion as defined in vulkan_core.h:11678
 	ExtPostDepthCoverageSpecVersion = 1
-	// ExtPostDepthCoverageExtensionName as defined in vulkan_core.h:11684
+	// ExtPostDepthCoverageExtensionName as defined in vulkan_core.h:11679
 	ExtPostDepthCoverageExtensionName = "VK_EXT_post_depth_coverage"
-	// ExtImageDrmFormatModifier as defined in vulkan_core.h:11687
+	// ExtImageDrmFormatModifier as defined in vulkan_core.h:11682
 	ExtImageDrmFormatModifier = 1
-	// ExtImageDrmFormatModifierSpecVersion as defined in vulkan_core.h:11688
+	// ExtImageDrmFormatModifierSpecVersion as defined in vulkan_core.h:11683
 	ExtImageDrmFormatModifierSpecVersion = 2
-	// ExtImageDrmFormatModifierExtensionName as defined in vulkan_core.h:11689
+	// ExtImageDrmFormatModifierExtensionName as defined in vulkan_core.h:11684
 	ExtImageDrmFormatModifierExtensionName = "VK_EXT_image_drm_format_modifier"
-	// ExtValidationCache as defined in vulkan_core.h:11756
+	// ExtValidationCache as defined in vulkan_core.h:11751
 	ExtValidationCache = 1
-	// ExtValidationCacheSpecVersion as defined in vulkan_core.h:11758
+	// ExtValidationCacheSpecVersion as defined in vulkan_core.h:11753
 	ExtValidationCacheSpecVersion = 1
-	// ExtValidationCacheExtensionName as defined in vulkan_core.h:11759
+	// ExtValidationCacheExtensionName as defined in vulkan_core.h:11754
 	ExtValidationCacheExtensionName = "VK_EXT_validation_cache"
-	// ExtDescriptorIndexing as defined in vulkan_core.h:11811
+	// ExtDescriptorIndexing as defined in vulkan_core.h:11806
 	ExtDescriptorIndexing = 1
-	// ExtDescriptorIndexingSpecVersion as defined in vulkan_core.h:11812
+	// ExtDescriptorIndexingSpecVersion as defined in vulkan_core.h:11807
 	ExtDescriptorIndexingSpecVersion = 2
-	// ExtDescriptorIndexingExtensionName as defined in vulkan_core.h:11813
+	// ExtDescriptorIndexingExtensionName as defined in vulkan_core.h:11808
 	ExtDescriptorIndexingExtensionName = "VK_EXT_descriptor_indexing"
-	// ExtShaderViewportIndexLayer as defined in vulkan_core.h:11830
+	// ExtShaderViewportIndexLayer as defined in vulkan_core.h:11825
 	ExtShaderViewportIndexLayer = 1
-	// ExtShaderViewportIndexLayerSpecVersion as defined in vulkan_core.h:11831
+	// ExtShaderViewportIndexLayerSpecVersion as defined in vulkan_core.h:11826
 	ExtShaderViewportIndexLayerSpecVersion = 1
-	// ExtShaderViewportIndexLayerExtensionName as defined in vulkan_core.h:11832
+	// ExtShaderViewportIndexLayerExtensionName as defined in vulkan_core.h:11827
 	ExtShaderViewportIndexLayerExtensionName = "VK_EXT_shader_viewport_index_layer"
-	// NvShadingRateImage as defined in vulkan_core.h:11835
+	// NvShadingRateImage as defined in vulkan_core.h:11830
 	NvShadingRateImage = 1
-	// NvShadingRateImageSpecVersion as defined in vulkan_core.h:11836
+	// NvShadingRateImageSpecVersion as defined in vulkan_core.h:11831
 	NvShadingRateImageSpecVersion = 3
-	// NvShadingRateImageExtensionName as defined in vulkan_core.h:11837
+	// NvShadingRateImageExtensionName as defined in vulkan_core.h:11832
 	NvShadingRateImageExtensionName = "VK_NV_shading_rate_image"
-	// NvRayTracing as defined in vulkan_core.h:11935
+	// NvRayTracing as defined in vulkan_core.h:11930
 	NvRayTracing = 1
-	// NvRayTracingSpecVersion as defined in vulkan_core.h:11937
+	// NvRayTracingSpecVersion as defined in vulkan_core.h:11932
 	NvRayTracingSpecVersion = 3
-	// NvRayTracingExtensionName as defined in vulkan_core.h:11938
+	// NvRayTracingExtensionName as defined in vulkan_core.h:11933
 	NvRayTracingExtensionName = "VK_NV_ray_tracing"
 	// ShaderUnused as defined in https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html#VkVK_SHADER_UNUSED_KHR
 	ShaderUnused = (^uint32(0))
-	// ShaderUnusedNv as defined in vulkan_core.h:11940
+	// ShaderUnusedNv as defined in vulkan_core.h:11935
 	ShaderUnusedNv = ShaderUnused
-	// NvRepresentativeFragmentTest as defined in vulkan_core.h:12309
+	// NvRepresentativeFragmentTest as defined in vulkan_core.h:12304
 	NvRepresentativeFragmentTest = 1
-	// NvRepresentativeFragmentTestSpecVersion as defined in vulkan_core.h:12310
+	// NvRepresentativeFragmentTestSpecVersion as defined in vulkan_core.h:12305
 	NvRepresentativeFragmentTestSpecVersion = 2
-	// NvRepresentativeFragmentTestExtensionName as defined in vulkan_core.h:12311
+	// NvRepresentativeFragmentTestExtensionName as defined in vulkan_core.h:12306
 	NvRepresentativeFragmentTestExtensionName = "VK_NV_representative_fragment_test"
-	// ExtFilterCubic as defined in vulkan_core.h:12326
+	// ExtFilterCubic as defined in vulkan_core.h:12321
 	ExtFilterCubic = 1
-	// ExtFilterCubicSpecVersion as defined in vulkan_core.h:12327
+	// ExtFilterCubicSpecVersion as defined in vulkan_core.h:12322
 	ExtFilterCubicSpecVersion = 3
-	// ExtFilterCubicExtensionName as defined in vulkan_core.h:12328
+	// ExtFilterCubicExtensionName as defined in vulkan_core.h:12323
 	ExtFilterCubicExtensionName = "VK_EXT_filter_cubic"
-	// QcomRenderPassShaderResolve as defined in vulkan_core.h:12344
+	// QcomRenderPassShaderResolve as defined in vulkan_core.h:12339
 	QcomRenderPassShaderResolve = 1
-	// QcomRenderPassShaderResolveSpecVersion as defined in vulkan_core.h:12345
+	// QcomRenderPassShaderResolveSpecVersion as defined in vulkan_core.h:12340
 	QcomRenderPassShaderResolveSpecVersion = 4
-	// QcomRenderPassShaderResolveExtensionName as defined in vulkan_core.h:12346
+	// QcomRenderPassShaderResolveExtensionName as defined in vulkan_core.h:12341
 	QcomRenderPassShaderResolveExtensionName = "VK_QCOM_render_pass_shader_resolve"
-	// ExtGlobalPriority as defined in vulkan_core.h:12349
+	// ExtGlobalPriority as defined in vulkan_core.h:12344
 	ExtGlobalPriority = 1
-	// ExtGlobalPrioritySpecVersion as defined in vulkan_core.h:12350
+	// ExtGlobalPrioritySpecVersion as defined in vulkan_core.h:12345
 	ExtGlobalPrioritySpecVersion = 2
-	// ExtGlobalPriorityExtensionName as defined in vulkan_core.h:12351
+	// ExtGlobalPriorityExtensionName as defined in vulkan_core.h:12346
 	ExtGlobalPriorityExtensionName = "VK_EXT_global_priority"
-	// ExtExternalMemoryHost as defined in vulkan_core.h:12358
+	// ExtExternalMemoryHost as defined in vulkan_core.h:12353
 	ExtExternalMemoryHost = 1
-	// ExtExternalMemoryHostSpecVersion as defined in vulkan_core.h:12359
+	// ExtExternalMemoryHostSpecVersion as defined in vulkan_core.h:12354
 	ExtExternalMemoryHostSpecVersion = 1
-	// ExtExternalMemoryHostExtensionName as defined in vulkan_core.h:12360
+	// ExtExternalMemoryHostExtensionName as defined in vulkan_core.h:12355
 	ExtExternalMemoryHostExtensionName = "VK_EXT_external_memory_host"
-	// AmdBufferMarker as defined in vulkan_core.h:12391
+	// AmdBufferMarker as defined in vulkan_core.h:12386
 	AmdBufferMarker = 1
-	// AmdBufferMarkerSpecVersion as defined in vulkan_core.h:12392
+	// AmdBufferMarkerSpecVersion as defined in vulkan_core.h:12387
 	AmdBufferMarkerSpecVersion = 1
-	// AmdBufferMarkerExtensionName as defined in vulkan_core.h:12393
+	// AmdBufferMarkerExtensionName as defined in vulkan_core.h:12388
 	AmdBufferMarkerExtensionName = "VK_AMD_buffer_marker"
-	// AmdPipelineCompilerControl as defined in vulkan_core.h:12406
+	// AmdPipelineCompilerControl as defined in vulkan_core.h:12401
 	AmdPipelineCompilerControl = 1
-	// AmdPipelineCompilerControlSpecVersion as defined in vulkan_core.h:12407
+	// AmdPipelineCompilerControlSpecVersion as defined in vulkan_core.h:12402
 	AmdPipelineCompilerControlSpecVersion = 1
-	// AmdPipelineCompilerControlExtensionName as defined in vulkan_core.h:12408
+	// AmdPipelineCompilerControlExtensionName as defined in vulkan_core.h:12403
 	AmdPipelineCompilerControlExtensionName = "VK_AMD_pipeline_compiler_control"
-	// ExtCalibratedTimestamps as defined in vulkan_core.h:12422
+	// ExtCalibratedTimestamps as defined in vulkan_core.h:12417
 	ExtCalibratedTimestamps = 1
-	// ExtCalibratedTimestampsSpecVersion as defined in vulkan_core.h:12423
+	// ExtCalibratedTimestampsSpecVersion as defined in vulkan_core.h:12418
 	ExtCalibratedTimestampsSpecVersion = 2
-	// ExtCalibratedTimestampsExtensionName as defined in vulkan_core.h:12424
+	// ExtCalibratedTimestampsExtensionName as defined in vulkan_core.h:12419
 	ExtCalibratedTimestampsExtensionName = "VK_EXT_calibrated_timestamps"
-	// AmdShaderCoreProperties as defined in vulkan_core.h:12457
+	// AmdShaderCoreProperties as defined in vulkan_core.h:12452
 	AmdShaderCoreProperties = 1
-	// AmdShaderCorePropertiesSpecVersion as defined in vulkan_core.h:12458
+	// AmdShaderCorePropertiesSpecVersion as defined in vulkan_core.h:12453
 	AmdShaderCorePropertiesSpecVersion = 2
-	// AmdShaderCorePropertiesExtensionName as defined in vulkan_core.h:12459
+	// AmdShaderCorePropertiesExtensionName as defined in vulkan_core.h:12454
 	AmdShaderCorePropertiesExtensionName = "VK_AMD_shader_core_properties"
-	// AmdMemoryOverallocationBehavior as defined in vulkan_core.h:12481
+	// AmdMemoryOverallocationBehavior as defined in vulkan_core.h:12476
 	AmdMemoryOverallocationBehavior = 1
-	// AmdMemoryOverallocationBehaviorSpecVersion as defined in vulkan_core.h:12482
+	// AmdMemoryOverallocationBehaviorSpecVersion as defined in vulkan_core.h:12477
 	AmdMemoryOverallocationBehaviorSpecVersion = 1
-	// AmdMemoryOverallocationBehaviorExtensionName as defined in vulkan_core.h:12483
+	// AmdMemoryOverallocationBehaviorExtensionName as defined in vulkan_core.h:12478
 	AmdMemoryOverallocationBehaviorExtensionName = "VK_AMD_memory_overallocation_behavior"
-	// ExtVertexAttributeDivisor as defined in vulkan_core.h:12499
+	// ExtVertexAttributeDivisor as defined in vulkan_core.h:12494
 	ExtVertexAttributeDivisor = 1
-	// ExtVertexAttributeDivisorSpecVersion as defined in vulkan_core.h:12500
+	// ExtVertexAttributeDivisorSpecVersion as defined in vulkan_core.h:12495
 	ExtVertexAttributeDivisorSpecVersion = 3
-	// ExtVertexAttributeDivisorExtensionName as defined in vulkan_core.h:12501
+	// ExtVertexAttributeDivisorExtensionName as defined in vulkan_core.h:12496
 	ExtVertexAttributeDivisorExtensionName = "VK_EXT_vertex_attribute_divisor"
-	// ExtPipelineCreationFeedback as defined in vulkan_core.h:12529
+	// ExtPipelineCreationFeedback as defined in vulkan_core.h:12524
 	ExtPipelineCreationFeedback = 1
-	// ExtPipelineCreationFeedbackSpecVersion as defined in vulkan_core.h:12530
+	// ExtPipelineCreationFeedbackSpecVersion as defined in vulkan_core.h:12525
 	ExtPipelineCreationFeedbackSpecVersion = 1
-	// ExtPipelineCreationFeedbackExtensionName as defined in vulkan_core.h:12531
+	// ExtPipelineCreationFeedbackExtensionName as defined in vulkan_core.h:12526
 	ExtPipelineCreationFeedbackExtensionName = "VK_EXT_pipeline_creation_feedback"
-	// NvShaderSubgroupPartitioned as defined in vulkan_core.h:12542
+	// NvShaderSubgroupPartitioned as defined in vulkan_core.h:12537
 	NvShaderSubgroupPartitioned = 1
-	// NvShaderSubgroupPartitionedSpecVersion as defined in vulkan_core.h:12543
+	// NvShaderSubgroupPartitionedSpecVersion as defined in vulkan_core.h:12538
 	NvShaderSubgroupPartitionedSpecVersion = 1
-	// NvShaderSubgroupPartitionedExtensionName as defined in vulkan_core.h:12544
+	// NvShaderSubgroupPartitionedExtensionName as defined in vulkan_core.h:12539
 	NvShaderSubgroupPartitionedExtensionName = "VK_NV_shader_subgroup_partitioned"
-	// NvComputeShaderDerivatives as defined in vulkan_core.h:12547
+	// NvComputeShaderDerivatives as defined in vulkan_core.h:12542
 	NvComputeShaderDerivatives = 1
-	// NvComputeShaderDerivativesSpecVersion as defined in vulkan_core.h:12548
+	// NvComputeShaderDerivativesSpecVersion as defined in vulkan_core.h:12543
 	NvComputeShaderDerivativesSpecVersion = 1
-	// NvComputeShaderDerivativesExtensionName as defined in vulkan_core.h:12549
+	// NvComputeShaderDerivativesExtensionName as defined in vulkan_core.h:12544
 	NvComputeShaderDerivativesExtensionName = "VK_NV_compute_shader_derivatives"
-	// NvMeshShader as defined in vulkan_core.h:12559
+	// NvMeshShader as defined in vulkan_core.h:12554
 	NvMeshShader = 1
-	// NvMeshShaderSpecVersion as defined in vulkan_core.h:12560
+	// NvMeshShaderSpecVersion as defined in vulkan_core.h:12555
 	NvMeshShaderSpecVersion = 1
-	// NvMeshShaderExtensionName as defined in vulkan_core.h:12561
+	// NvMeshShaderExtensionName as defined in vulkan_core.h:12556
 	NvMeshShaderExtensionName = "VK_NV_mesh_shader"
-	// NvFragmentShaderBarycentric as defined in vulkan_core.h:12620
+	// NvFragmentShaderBarycentric as defined in vulkan_core.h:12615
 	NvFragmentShaderBarycentric = 1
-	// NvFragmentShaderBarycentricSpecVersion as defined in vulkan_core.h:12621
+	// NvFragmentShaderBarycentricSpecVersion as defined in vulkan_core.h:12616
 	NvFragmentShaderBarycentricSpecVersion = 1
-	// NvFragmentShaderBarycentricExtensionName as defined in vulkan_core.h:12622
+	// NvFragmentShaderBarycentricExtensionName as defined in vulkan_core.h:12617
 	NvFragmentShaderBarycentricExtensionName = "VK_NV_fragment_shader_barycentric"
-	// NvShaderImageFootprint as defined in vulkan_core.h:12627
+	// NvShaderImageFootprint as defined in vulkan_core.h:12622
 	NvShaderImageFootprint = 1
-	// NvShaderImageFootprintSpecVersion as defined in vulkan_core.h:12628
+	// NvShaderImageFootprintSpecVersion as defined in vulkan_core.h:12623
 	NvShaderImageFootprintSpecVersion = 2
-	// NvShaderImageFootprintExtensionName as defined in vulkan_core.h:12629
+	// NvShaderImageFootprintExtensionName as defined in vulkan_core.h:12624
 	NvShaderImageFootprintExtensionName = "VK_NV_shader_image_footprint"
-	// NvScissorExclusive as defined in vulkan_core.h:12638
+	// NvScissorExclusive as defined in vulkan_core.h:12633
 	NvScissorExclusive = 1
-	// NvScissorExclusiveSpecVersion as defined in vulkan_core.h:12639
+	// NvScissorExclusiveSpecVersion as defined in vulkan_core.h:12634
 	NvScissorExclusiveSpecVersion = 2
-	// NvScissorExclusiveExtensionName as defined in vulkan_core.h:12640
+	// NvScissorExclusiveExtensionName as defined in vulkan_core.h:12635
 	NvScissorExclusiveExtensionName = "VK_NV_scissor_exclusive"
-	// NvDeviceDiagnosticCheckpoints as defined in vulkan_core.h:12672
+	// NvDeviceDiagnosticCheckpoints as defined in vulkan_core.h:12667
 	NvDeviceDiagnosticCheckpoints = 1
-	// NvDeviceDiagnosticCheckpointsSpecVersion as defined in vulkan_core.h:12673
+	// NvDeviceDiagnosticCheckpointsSpecVersion as defined in vulkan_core.h:12668
 	NvDeviceDiagnosticCheckpointsSpecVersion = 2
-	// NvDeviceDiagnosticCheckpointsExtensionName as defined in vulkan_core.h:12674
+	// NvDeviceDiagnosticCheckpointsExtensionName as defined in vulkan_core.h:12669
 	NvDeviceDiagnosticCheckpointsExtensionName = "VK_NV_device_diagnostic_checkpoints"
-	// IntelShaderIntegerFunctions2 as defined in vulkan_core.h:12703
+	// IntelShaderIntegerFunctions2 as defined in vulkan_core.h:12698
 	IntelShaderIntegerFunctions2 = 1
-	// IntelShaderIntegerFunctions2SpecVersion as defined in vulkan_core.h:12704
+	// IntelShaderIntegerFunctions2SpecVersion as defined in vulkan_core.h:12699
 	IntelShaderIntegerFunctions2SpecVersion = 1
-	// IntelShaderIntegerFunctions2ExtensionName as defined in vulkan_core.h:12705
+	// IntelShaderIntegerFunctions2ExtensionName as defined in vulkan_core.h:12700
 	IntelShaderIntegerFunctions2ExtensionName = "VK_INTEL_shader_integer_functions2"
-	// IntelPerformanceQuery as defined in vulkan_core.h:12714
+	// IntelPerformanceQuery as defined in vulkan_core.h:12709
 	IntelPerformanceQuery = 1
-	// IntelPerformanceQuerySpecVersion as defined in vulkan_core.h:12716
+	// IntelPerformanceQuerySpecVersion as defined in vulkan_core.h:12711
 	IntelPerformanceQuerySpecVersion = 2
-	// IntelPerformanceQueryExtensionName as defined in vulkan_core.h:12717
+	// IntelPerformanceQueryExtensionName as defined in vulkan_core.h:12712
 	IntelPerformanceQueryExtensionName = "VK_INTEL_performance_query"
-	// ExtPciBusInfo as defined in vulkan_core.h:12852
+	// ExtPciBusInfo as defined in vulkan_core.h:12847
 	ExtPciBusInfo = 1
-	// ExtPciBusInfoSpecVersion as defined in vulkan_core.h:12853
+	// ExtPciBusInfoSpecVersion as defined in vulkan_core.h:12848
 	ExtPciBusInfoSpecVersion = 2
-	// ExtPciBusInfoExtensionName as defined in vulkan_core.h:12854
+	// ExtPciBusInfoExtensionName as defined in vulkan_core.h:12849
 	ExtPciBusInfoExtensionName = "VK_EXT_pci_bus_info"
-	// AmdDisplayNativeHdr as defined in vulkan_core.h:12866
+	// AmdDisplayNativeHdr as defined in vulkan_core.h:12861
 	AmdDisplayNativeHdr = 1
-	// AmdDisplayNativeHdrSpecVersion as defined in vulkan_core.h:12867
+	// AmdDisplayNativeHdrSpecVersion as defined in vulkan_core.h:12862
 	AmdDisplayNativeHdrSpecVersion = 1
-	// AmdDisplayNativeHdrExtensionName as defined in vulkan_core.h:12868
+	// AmdDisplayNativeHdrExtensionName as defined in vulkan_core.h:12863
 	AmdDisplayNativeHdrExtensionName = "VK_AMD_display_native_hdr"
-	// ExtFragmentDensityMap as defined in vulkan_core.h:12891
+	// ExtFragmentDensityMap as defined in vulkan_core.h:12886
 	ExtFragmentDensityMap = 1
-	// ExtFragmentDensityMapSpecVersion as defined in vulkan_core.h:12892
+	// ExtFragmentDensityMapSpecVersion as defined in vulkan_core.h:12887
 	ExtFragmentDensityMapSpecVersion = 2
-	// ExtFragmentDensityMapExtensionName as defined in vulkan_core.h:12893
+	// ExtFragmentDensityMapExtensionName as defined in vulkan_core.h:12888
 	ExtFragmentDensityMapExtensionName = "VK_EXT_fragment_density_map"
-	// ExtScalarBlockLayout as defined in vulkan_core.h:12918
+	// ExtScalarBlockLayout as defined in vulkan_core.h:12913
 	ExtScalarBlockLayout = 1
-	// ExtScalarBlockLayoutSpecVersion as defined in vulkan_core.h:12919
+	// ExtScalarBlockLayoutSpecVersion as defined in vulkan_core.h:12914
 	ExtScalarBlockLayoutSpecVersion = 1
-	// ExtScalarBlockLayoutExtensionName as defined in vulkan_core.h:12920
+	// ExtScalarBlockLayoutExtensionName as defined in vulkan_core.h:12915
 	ExtScalarBlockLayoutExtensionName = "VK_EXT_scalar_block_layout"
-	// GoogleHlslFunctionality1 as defined in vulkan_core.h:12925
+	// GoogleHlslFunctionality1 as defined in vulkan_core.h:12920
 	GoogleHlslFunctionality1 = 1
-	// GoogleHlslFunctionality1SpecVersion as defined in vulkan_core.h:12926
+	// GoogleHlslFunctionality1SpecVersion as defined in vulkan_core.h:12921
 	GoogleHlslFunctionality1SpecVersion = 1
-	// GoogleHlslFunctionality1ExtensionName as defined in vulkan_core.h:12927
+	// GoogleHlslFunctionality1ExtensionName as defined in vulkan_core.h:12922
 	GoogleHlslFunctionality1ExtensionName = "VK_GOOGLE_hlsl_functionality1"
-	// GoogleDecorateString as defined in vulkan_core.h:12932
+	// GoogleDecorateString as defined in vulkan_core.h:12927
 	GoogleDecorateString = 1
-	// GoogleDecorateStringSpecVersion as defined in vulkan_core.h:12933
+	// GoogleDecorateStringSpecVersion as defined in vulkan_core.h:12928
 	GoogleDecorateStringSpecVersion = 1
-	// GoogleDecorateStringExtensionName as defined in vulkan_core.h:12934
+	// GoogleDecorateStringExtensionName as defined in vulkan_core.h:12929
 	GoogleDecorateStringExtensionName = "VK_GOOGLE_decorate_string"
-	// ExtSubgroupSizeControl as defined in vulkan_core.h:12937
+	// ExtSubgroupSizeControl as defined in vulkan_core.h:12932
 	ExtSubgroupSizeControl = 1
-	// ExtSubgroupSizeControlSpecVersion as defined in vulkan_core.h:12938
+	// ExtSubgroupSizeControlSpecVersion as defined in vulkan_core.h:12933
 	ExtSubgroupSizeControlSpecVersion = 2
-	// ExtSubgroupSizeControlExtensionName as defined in vulkan_core.h:12939
+	// ExtSubgroupSizeControlExtensionName as defined in vulkan_core.h:12934
 	ExtSubgroupSizeControlExtensionName = "VK_EXT_subgroup_size_control"
-	// AmdShaderCoreProperties2 as defined in vulkan_core.h:12948
+	// AmdShaderCoreProperties2 as defined in vulkan_core.h:12943
 	AmdShaderCoreProperties2 = 1
-	// AmdShaderCoreProperties2SpecVersion as defined in vulkan_core.h:12949
+	// AmdShaderCoreProperties2SpecVersion as defined in vulkan_core.h:12944
 	AmdShaderCoreProperties2SpecVersion = 1
-	// AmdShaderCoreProperties2ExtensionName as defined in vulkan_core.h:12950
+	// AmdShaderCoreProperties2ExtensionName as defined in vulkan_core.h:12945
 	AmdShaderCoreProperties2ExtensionName = "VK_AMD_shader_core_properties2"
-	// AmdDeviceCoherentMemory as defined in vulkan_core.h:12965
+	// AmdDeviceCoherentMemory as defined in vulkan_core.h:12960
 	AmdDeviceCoherentMemory = 1
-	// AmdDeviceCoherentMemorySpecVersion as defined in vulkan_core.h:12966
+	// AmdDeviceCoherentMemorySpecVersion as defined in vulkan_core.h:12961
 	AmdDeviceCoherentMemorySpecVersion = 1
-	// AmdDeviceCoherentMemoryExtensionName as defined in vulkan_core.h:12967
+	// AmdDeviceCoherentMemoryExtensionName as defined in vulkan_core.h:12962
 	AmdDeviceCoherentMemoryExtensionName = "VK_AMD_device_coherent_memory"
-	// ExtShaderImageAtomicInt64 as defined in vulkan_core.h:12976
+	// ExtShaderImageAtomicInt64 as defined in vulkan_core.h:12971
 	ExtShaderImageAtomicInt64 = 1
-	// ExtShaderImageAtomicInt64SpecVersion as defined in vulkan_core.h:12977
+	// ExtShaderImageAtomicInt64SpecVersion as defined in vulkan_core.h:12972
 	ExtShaderImageAtomicInt64SpecVersion = 1
-	// ExtShaderImageAtomicInt64ExtensionName as defined in vulkan_core.h:12978
+	// ExtShaderImageAtomicInt64ExtensionName as defined in vulkan_core.h:12973
 	ExtShaderImageAtomicInt64ExtensionName = "VK_EXT_shader_image_atomic_int64"
-	// ExtMemoryBudget as defined in vulkan_core.h:12988
+	// ExtMemoryBudget as defined in vulkan_core.h:12983
 	ExtMemoryBudget = 1
-	// ExtMemoryBudgetSpecVersion as defined in vulkan_core.h:12989
+	// ExtMemoryBudgetSpecVersion as defined in vulkan_core.h:12984
 	ExtMemoryBudgetSpecVersion = 1
-	// ExtMemoryBudgetExtensionName as defined in vulkan_core.h:12990
+	// ExtMemoryBudgetExtensionName as defined in vulkan_core.h:12985
 	ExtMemoryBudgetExtensionName = "VK_EXT_memory_budget"
-	// ExtMemoryPriority as defined in vulkan_core.h:13000
+	// ExtMemoryPriority as defined in vulkan_core.h:12995
 	ExtMemoryPriority = 1
-	// ExtMemoryPrioritySpecVersion as defined in vulkan_core.h:13001
+	// ExtMemoryPrioritySpecVersion as defined in vulkan_core.h:12996
 	ExtMemoryPrioritySpecVersion = 1
-	// ExtMemoryPriorityExtensionName as defined in vulkan_core.h:13002
+	// ExtMemoryPriorityExtensionName as defined in vulkan_core.h:12997
 	ExtMemoryPriorityExtensionName = "VK_EXT_memory_priority"
-	// NvDedicatedAllocationImageAliasing as defined in vulkan_core.h:13017
+	// NvDedicatedAllocationImageAliasing as defined in vulkan_core.h:13012
 	NvDedicatedAllocationImageAliasing = 1
-	// NvDedicatedAllocationImageAliasingSpecVersion as defined in vulkan_core.h:13018
+	// NvDedicatedAllocationImageAliasingSpecVersion as defined in vulkan_core.h:13013
 	NvDedicatedAllocationImageAliasingSpecVersion = 1
-	// NvDedicatedAllocationImageAliasingExtensionName as defined in vulkan_core.h:13019
+	// NvDedicatedAllocationImageAliasingExtensionName as defined in vulkan_core.h:13014
 	NvDedicatedAllocationImageAliasingExtensionName = "VK_NV_dedicated_allocation_image_aliasing"
-	// ExtBufferDeviceAddress as defined in vulkan_core.h:13028
+	// ExtBufferDeviceAddress as defined in vulkan_core.h:13023
 	ExtBufferDeviceAddress = 1
-	// ExtBufferDeviceAddressSpecVersion as defined in vulkan_core.h:13029
+	// ExtBufferDeviceAddressSpecVersion as defined in vulkan_core.h:13024
 	ExtBufferDeviceAddressSpecVersion = 2
-	// ExtBufferDeviceAddressExtensionName as defined in vulkan_core.h:13030
+	// ExtBufferDeviceAddressExtensionName as defined in vulkan_core.h:13025
 	ExtBufferDeviceAddressExtensionName = "VK_EXT_buffer_device_address"
-	// ExtToolingInfo as defined in vulkan_core.h:13058
+	// ExtToolingInfo as defined in vulkan_core.h:13053
 	ExtToolingInfo = 1
-	// ExtToolingInfoSpecVersion as defined in vulkan_core.h:13059
+	// ExtToolingInfoSpecVersion as defined in vulkan_core.h:13054
 	ExtToolingInfoSpecVersion = 1
-	// ExtToolingInfoExtensionName as defined in vulkan_core.h:13060
+	// ExtToolingInfoExtensionName as defined in vulkan_core.h:13055
 	ExtToolingInfoExtensionName = "VK_EXT_tooling_info"
-	// ExtSeparateStencilUsage as defined in vulkan_core.h:13077
+	// ExtSeparateStencilUsage as defined in vulkan_core.h:13072
 	ExtSeparateStencilUsage = 1
-	// ExtSeparateStencilUsageSpecVersion as defined in vulkan_core.h:13078
+	// ExtSeparateStencilUsageSpecVersion as defined in vulkan_core.h:13073
 	ExtSeparateStencilUsageSpecVersion = 1
-	// ExtSeparateStencilUsageExtensionName as defined in vulkan_core.h:13079
+	// ExtSeparateStencilUsageExtensionName as defined in vulkan_core.h:13074
 	ExtSeparateStencilUsageExtensionName = "VK_EXT_separate_stencil_usage"
-	// ExtValidationFeatures as defined in vulkan_core.h:13084
+	// ExtValidationFeatures as defined in vulkan_core.h:13079
 	ExtValidationFeatures = 1
-	// ExtValidationFeaturesSpecVersion as defined in vulkan_core.h:13085
+	// ExtValidationFeaturesSpecVersion as defined in vulkan_core.h:13080
 	ExtValidationFeaturesSpecVersion = 5
-	// ExtValidationFeaturesExtensionName as defined in vulkan_core.h:13086
+	// ExtValidationFeaturesExtensionName as defined in vulkan_core.h:13081
 	ExtValidationFeaturesExtensionName = "VK_EXT_validation_features"
-	// NvCooperativeMatrix as defined in vulkan_core.h:13119
+	// NvCooperativeMatrix as defined in vulkan_core.h:13114
 	NvCooperativeMatrix = 1
-	// NvCooperativeMatrixSpecVersion as defined in vulkan_core.h:13120
+	// NvCooperativeMatrixSpecVersion as defined in vulkan_core.h:13115
 	NvCooperativeMatrixSpecVersion = 1
-	// NvCooperativeMatrixExtensionName as defined in vulkan_core.h:13121
+	// NvCooperativeMatrixExtensionName as defined in vulkan_core.h:13116
 	NvCooperativeMatrixExtensionName = "VK_NV_cooperative_matrix"
-	// NvCoverageReductionMode as defined in vulkan_core.h:13181
+	// NvCoverageReductionMode as defined in vulkan_core.h:13176
 	NvCoverageReductionMode = 1
-	// NvCoverageReductionModeSpecVersion as defined in vulkan_core.h:13182
+	// NvCoverageReductionModeSpecVersion as defined in vulkan_core.h:13177
 	NvCoverageReductionModeSpecVersion = 1
-	// NvCoverageReductionModeExtensionName as defined in vulkan_core.h:13183
+	// NvCoverageReductionModeExtensionName as defined in vulkan_core.h:13178
 	NvCoverageReductionModeExtensionName = "VK_NV_coverage_reduction_mode"
-	// ExtFragmentShaderInterlock as defined in vulkan_core.h:13223
+	// ExtFragmentShaderInterlock as defined in vulkan_core.h:13218
 	ExtFragmentShaderInterlock = 1
-	// ExtFragmentShaderInterlockSpecVersion as defined in vulkan_core.h:13224
+	// ExtFragmentShaderInterlockSpecVersion as defined in vulkan_core.h:13219
 	ExtFragmentShaderInterlockSpecVersion = 1
-	// ExtFragmentShaderInterlockExtensionName as defined in vulkan_core.h:13225
+	// ExtFragmentShaderInterlockExtensionName as defined in vulkan_core.h:13220
 	ExtFragmentShaderInterlockExtensionName = "VK_EXT_fragment_shader_interlock"
-	// ExtYcbcrImageArrays as defined in vulkan_core.h:13236
+	// ExtYcbcrImageArrays as defined in vulkan_core.h:13231
 	ExtYcbcrImageArrays = 1
-	// ExtYcbcrImageArraysSpecVersion as defined in vulkan_core.h:13237
+	// ExtYcbcrImageArraysSpecVersion as defined in vulkan_core.h:13232
 	ExtYcbcrImageArraysSpecVersion = 1
-	// ExtYcbcrImageArraysExtensionName as defined in vulkan_core.h:13238
+	// ExtYcbcrImageArraysExtensionName as defined in vulkan_core.h:13233
 	ExtYcbcrImageArraysExtensionName = "VK_EXT_ycbcr_image_arrays"
-	// ExtProvokingVertex as defined in vulkan_core.h:13247
+	// ExtProvokingVertex as defined in vulkan_core.h:13242
 	ExtProvokingVertex = 1
-	// ExtProvokingVertexSpecVersion as defined in vulkan_core.h:13248
+	// ExtProvokingVertexSpecVersion as defined in vulkan_core.h:13243
 	ExtProvokingVertexSpecVersion = 1
-	// ExtProvokingVertexExtensionName as defined in vulkan_core.h:13249
+	// ExtProvokingVertexExtensionName as defined in vulkan_core.h:13244
 	ExtProvokingVertexExtensionName = "VK_EXT_provoking_vertex"
-	// ExtHeadlessSurface as defined in vulkan_core.h:13278
+	// ExtHeadlessSurface as defined in vulkan_core.h:13273
 	ExtHeadlessSurface = 1
-	// ExtHeadlessSurfaceSpecVersion as defined in vulkan_core.h:13279
+	// ExtHeadlessSurfaceSpecVersion as defined in vulkan_core.h:13274
 	ExtHeadlessSurfaceSpecVersion = 1
-	// ExtHeadlessSurfaceExtensionName as defined in vulkan_core.h:13280
+	// ExtHeadlessSurfaceExtensionName as defined in vulkan_core.h:13275
 	ExtHeadlessSurfaceExtensionName = "VK_EXT_headless_surface"
-	// ExtLineRasterization as defined in vulkan_core.h:13299
+	// ExtLineRasterization as defined in vulkan_core.h:13294
 	ExtLineRasterization = 1
-	// ExtLineRasterizationSpecVersion as defined in vulkan_core.h:13300
+	// ExtLineRasterizationSpecVersion as defined in vulkan_core.h:13295
 	ExtLineRasterizationSpecVersion = 1
-	// ExtLineRasterizationExtensionName as defined in vulkan_core.h:13301
+	// ExtLineRasterizationExtensionName as defined in vulkan_core.h:13296
 	ExtLineRasterizationExtensionName = "VK_EXT_line_rasterization"
-	// ExtShaderAtomicFloat as defined in vulkan_core.h:13346
+	// ExtShaderAtomicFloat as defined in vulkan_core.h:13341
 	ExtShaderAtomicFloat = 1
-	// ExtShaderAtomicFloatSpecVersion as defined in vulkan_core.h:13347
+	// ExtShaderAtomicFloatSpecVersion as defined in vulkan_core.h:13342
 	ExtShaderAtomicFloatSpecVersion = 1
-	// ExtShaderAtomicFloatExtensionName as defined in vulkan_core.h:13348
+	// ExtShaderAtomicFloatExtensionName as defined in vulkan_core.h:13343
 	ExtShaderAtomicFloatExtensionName = "VK_EXT_shader_atomic_float"
-	// ExtHostQueryReset as defined in vulkan_core.h:13368
+	// ExtHostQueryReset as defined in vulkan_core.h:13363
 	ExtHostQueryReset = 1
-	// ExtHostQueryResetSpecVersion as defined in vulkan_core.h:13369
+	// ExtHostQueryResetSpecVersion as defined in vulkan_core.h:13364
 	ExtHostQueryResetSpecVersion = 1
-	// ExtHostQueryResetExtensionName as defined in vulkan_core.h:13370
+	// ExtHostQueryResetExtensionName as defined in vulkan_core.h:13365
 	ExtHostQueryResetExtensionName = "VK_EXT_host_query_reset"
-	// ExtIndexTypeUint8 as defined in vulkan_core.h:13384
+	// ExtIndexTypeUint8 as defined in vulkan_core.h:13379
 	ExtIndexTypeUint8 = 1
-	// ExtIndexTypeUint8SpecVersion as defined in vulkan_core.h:13385
+	// ExtIndexTypeUint8SpecVersion as defined in vulkan_core.h:13380
 	ExtIndexTypeUint8SpecVersion = 1
-	// ExtIndexTypeUint8ExtensionName as defined in vulkan_core.h:13386
+	// ExtIndexTypeUint8ExtensionName as defined in vulkan_core.h:13381
 	ExtIndexTypeUint8ExtensionName = "VK_EXT_index_type_uint8"
-	// ExtExtendedDynamicState as defined in vulkan_core.h:13395
+	// ExtExtendedDynamicState as defined in vulkan_core.h:13390
 	ExtExtendedDynamicState = 1
-	// ExtExtendedDynamicStateSpecVersion as defined in vulkan_core.h:13396
+	// ExtExtendedDynamicStateSpecVersion as defined in vulkan_core.h:13391
 	ExtExtendedDynamicStateSpecVersion = 1
-	// ExtExtendedDynamicStateExtensionName as defined in vulkan_core.h:13397
+	// ExtExtendedDynamicStateExtensionName as defined in vulkan_core.h:13392
 	ExtExtendedDynamicStateExtensionName = "VK_EXT_extended_dynamic_state"
-	// ExtShaderAtomicFloat2 as defined in vulkan_core.h:13479
+	// ExtShaderAtomicFloat2 as defined in vulkan_core.h:13474
 	ExtShaderAtomicFloat2 = 1
-	// ExtShaderAtomicFloat2SpecVersion as defined in vulkan_core.h:13480
+	// ExtShaderAtomicFloat2SpecVersion as defined in vulkan_core.h:13475
 	ExtShaderAtomicFloat2SpecVersion = 1
-	// ExtShaderAtomicFloat2ExtensionName as defined in vulkan_core.h:13481
+	// ExtShaderAtomicFloat2ExtensionName as defined in vulkan_core.h:13476
 	ExtShaderAtomicFloat2ExtensionName = "VK_EXT_shader_atomic_float2"
-	// ExtSurfaceMaintenance1 as defined in vulkan_core.h:13501
+	// ExtSurfaceMaintenance1 as defined in vulkan_core.h:13496
 	ExtSurfaceMaintenance1 = 1
-	// ExtSurfaceMaintenance1SpecVersion as defined in vulkan_core.h:13502
+	// ExtSurfaceMaintenance1SpecVersion as defined in vulkan_core.h:13497
 	ExtSurfaceMaintenance1SpecVersion = 1
-	// ExtSurfaceMaintenance1ExtensionName as defined in vulkan_core.h:13503
+	// ExtSurfaceMaintenance1ExtensionName as defined in vulkan_core.h:13498
 	ExtSurfaceMaintenance1ExtensionName = "VK_EXT_surface_maintenance1"
-	// ExtSwapchainMaintenance1 as defined in vulkan_core.h:13545
+	// ExtSwapchainMaintenance1 as defined in vulkan_core.h:13540
 	ExtSwapchainMaintenance1 = 1
-	// ExtSwapchainMaintenance1SpecVersion as defined in vulkan_core.h:13546
+	// ExtSwapchainMaintenance1SpecVersion as defined in vulkan_core.h:13541
 	ExtSwapchainMaintenance1SpecVersion = 1
-	// ExtSwapchainMaintenance1ExtensionName as defined in vulkan_core.h:13547
+	// ExtSwapchainMaintenance1ExtensionName as defined in vulkan_core.h:13542
 	ExtSwapchainMaintenance1ExtensionName = "VK_EXT_swapchain_maintenance1"
-	// ExtShaderDemoteToHelperInvocation as defined in vulkan_core.h:13600
+	// ExtShaderDemoteToHelperInvocation as defined in vulkan_core.h:13595
 	ExtShaderDemoteToHelperInvocation = 1
-	// ExtShaderDemoteToHelperInvocationSpecVersion as defined in vulkan_core.h:13601
+	// ExtShaderDemoteToHelperInvocationSpecVersion as defined in vulkan_core.h:13596
 	ExtShaderDemoteToHelperInvocationSpecVersion = 1
-	// ExtShaderDemoteToHelperInvocationExtensionName as defined in vulkan_core.h:13602
+	// ExtShaderDemoteToHelperInvocationExtensionName as defined in vulkan_core.h:13597
 	ExtShaderDemoteToHelperInvocationExtensionName = "VK_EXT_shader_demote_to_helper_invocation"
-	// NvDeviceGeneratedCommands as defined in vulkan_core.h:13607
+	// NvDeviceGeneratedCommands as defined in vulkan_core.h:13602
 	NvDeviceGeneratedCommands = 1
-	// NvDeviceGeneratedCommandsSpecVersion as defined in vulkan_core.h:13609
+	// NvDeviceGeneratedCommandsSpecVersion as defined in vulkan_core.h:13604
 	NvDeviceGeneratedCommandsSpecVersion = 3
-	// NvDeviceGeneratedCommandsExtensionName as defined in vulkan_core.h:13610
+	// NvDeviceGeneratedCommandsExtensionName as defined in vulkan_core.h:13605
 	NvDeviceGeneratedCommandsExtensionName = "VK_NV_device_generated_commands"
-	// NvInheritedViewportScissor as defined in vulkan_core.h:13798
+	// NvInheritedViewportScissor as defined in vulkan_core.h:13793
 	NvInheritedViewportScissor = 1
-	// NvInheritedViewportScissorSpecVersion as defined in vulkan_core.h:13799
+	// NvInheritedViewportScissorSpecVersion as defined in vulkan_core.h:13794
 	NvInheritedViewportScissorSpecVersion = 1
-	// NvInheritedViewportScissorExtensionName as defined in vulkan_core.h:13800
+	// NvInheritedViewportScissorExtensionName as defined in vulkan_core.h:13795
 	NvInheritedViewportScissorExtensionName = "VK_NV_inherited_viewport_scissor"
-	// ExtTexelBufferAlignment as defined in vulkan_core.h:13817
+	// ExtTexelBufferAlignment as defined in vulkan_core.h:13812
 	ExtTexelBufferAlignment = 1
-	// ExtTexelBufferAlignmentSpecVersion as defined in vulkan_core.h:13818
+	// ExtTexelBufferAlignmentSpecVersion as defined in vulkan_core.h:13813
 	ExtTexelBufferAlignmentSpecVersion = 1
-	// ExtTexelBufferAlignmentExtensionName as defined in vulkan_core.h:13819
+	// ExtTexelBufferAlignmentExtensionName as defined in vulkan_core.h:13814
 	ExtTexelBufferAlignmentExtensionName = "VK_EXT_texel_buffer_alignment"
-	// QcomRenderPassTransform as defined in vulkan_core.h:13830
+	// QcomRenderPassTransform as defined in vulkan_core.h:13825
 	QcomRenderPassTransform = 1
-	// QcomRenderPassTransformSpecVersion as defined in vulkan_core.h:13831
+	// QcomRenderPassTransformSpecVersion as defined in vulkan_core.h:13826
 	QcomRenderPassTransformSpecVersion = 3
-	// QcomRenderPassTransformExtensionName as defined in vulkan_core.h:13832
+	// QcomRenderPassTransformExtensionName as defined in vulkan_core.h:13827
 	QcomRenderPassTransformExtensionName = "VK_QCOM_render_pass_transform"
-	// ExtDeviceMemoryReport as defined in vulkan_core.h:13848
+	// ExtDeviceMemoryReport as defined in vulkan_core.h:13843
 	ExtDeviceMemoryReport = 1
-	// ExtDeviceMemoryReportSpecVersion as defined in vulkan_core.h:13849
+	// ExtDeviceMemoryReportSpecVersion as defined in vulkan_core.h:13844
 	ExtDeviceMemoryReportSpecVersion = 2
-	// ExtDeviceMemoryReportExtensionName as defined in vulkan_core.h:13850
+	// ExtDeviceMemoryReportExtensionName as defined in vulkan_core.h:13845
 	ExtDeviceMemoryReportExtensionName = "VK_EXT_device_memory_report"
-	// ExtAcquireDrmDisplay as defined in vulkan_core.h:13893
+	// ExtAcquireDrmDisplay as defined in vulkan_core.h:13888
 	ExtAcquireDrmDisplay = 1
-	// ExtAcquireDrmDisplaySpecVersion as defined in vulkan_core.h:13894
+	// ExtAcquireDrmDisplaySpecVersion as defined in vulkan_core.h:13889
 	ExtAcquireDrmDisplaySpecVersion = 1
-	// ExtAcquireDrmDisplayExtensionName as defined in vulkan_core.h:13895
+	// ExtAcquireDrmDisplayExtensionName as defined in vulkan_core.h:13890
 	ExtAcquireDrmDisplayExtensionName = "VK_EXT_acquire_drm_display"
-	// ExtRobustness2 as defined in vulkan_core.h:13913
+	// ExtRobustness2 as defined in vulkan_core.h:13908
 	ExtRobustness2 = 1
-	// ExtRobustness2SpecVersion as defined in vulkan_core.h:13914
+	// ExtRobustness2SpecVersion as defined in vulkan_core.h:13909
 	ExtRobustness2SpecVersion = 1
-	// ExtRobustness2ExtensionName as defined in vulkan_core.h:13915
+	// ExtRobustness2ExtensionName as defined in vulkan_core.h:13910
 	ExtRobustness2ExtensionName = "VK_EXT_robustness2"
-	// ExtCustomBorderColor as defined in vulkan_core.h:13933
+	// ExtCustomBorderColor as defined in vulkan_core.h:13928
 	ExtCustomBorderColor = 1
-	// ExtCustomBorderColorSpecVersion as defined in vulkan_core.h:13934
+	// ExtCustomBorderColorSpecVersion as defined in vulkan_core.h:13929
 	ExtCustomBorderColorSpecVersion = 12
-	// ExtCustomBorderColorExtensionName as defined in vulkan_core.h:13935
+	// ExtCustomBorderColorExtensionName as defined in vulkan_core.h:13930
 	ExtCustomBorderColorExtensionName = "VK_EXT_custom_border_color"
-	// GoogleUserType as defined in vulkan_core.h:13958
+	// GoogleUserType as defined in vulkan_core.h:13953
 	GoogleUserType = 1
-	// GoogleUserTypeSpecVersion as defined in vulkan_core.h:13959
+	// GoogleUserTypeSpecVersion as defined in vulkan_core.h:13954
 	GoogleUserTypeSpecVersion = 1
-	// GoogleUserTypeExtensionName as defined in vulkan_core.h:13960
+	// GoogleUserTypeExtensionName as defined in vulkan_core.h:13955
 	GoogleUserTypeExtensionName = "VK_GOOGLE_user_type"
-	// NvPresentBarrier as defined in vulkan_core.h:13963
+	// NvPresentBarrier as defined in vulkan_core.h:13958
 	NvPresentBarrier = 1
-	// NvPresentBarrierSpecVersion as defined in vulkan_core.h:13964
+	// NvPresentBarrierSpecVersion as defined in vulkan_core.h:13959
 	NvPresentBarrierSpecVersion = 1
-	// NvPresentBarrierExtensionName as defined in vulkan_core.h:13965
+	// NvPresentBarrierExtensionName as defined in vulkan_core.h:13960
 	NvPresentBarrierExtensionName = "VK_NV_present_barrier"
-	// ExtPrivateData as defined in vulkan_core.h:13986
+	// ExtPrivateData as defined in vulkan_core.h:13981
 	ExtPrivateData = 1
-	// ExtPrivateDataSpecVersion as defined in vulkan_core.h:13989
+	// ExtPrivateDataSpecVersion as defined in vulkan_core.h:13984
 	ExtPrivateDataSpecVersion = 1
-	// ExtPrivateDataExtensionName as defined in vulkan_core.h:13990
+	// ExtPrivateDataExtensionName as defined in vulkan_core.h:13985
 	ExtPrivateDataExtensionName = "VK_EXT_private_data"
-	// ExtPipelineCreationCacheControl as defined in vulkan_core.h:14032
+	// ExtPipelineCreationCacheControl as defined in vulkan_core.h:14027
 	ExtPipelineCreationCacheControl = 1
-	// ExtPipelineCreationCacheControlSpecVersion as defined in vulkan_core.h:14033
+	// ExtPipelineCreationCacheControlSpecVersion as defined in vulkan_core.h:14028
 	ExtPipelineCreationCacheControlSpecVersion = 3
-	// ExtPipelineCreationCacheControlExtensionName as defined in vulkan_core.h:14034
+	// ExtPipelineCreationCacheControlExtensionName as defined in vulkan_core.h:14029
 	ExtPipelineCreationCacheControlExtensionName = "VK_EXT_pipeline_creation_cache_control"
-	// NvDeviceDiagnosticsConfig as defined in vulkan_core.h:14039
+	// NvDeviceDiagnosticsConfig as defined in vulkan_core.h:14034
 	NvDeviceDiagnosticsConfig = 1
-	// NvDeviceDiagnosticsConfigSpecVersion as defined in vulkan_core.h:14040
+	// NvDeviceDiagnosticsConfigSpecVersion as defined in vulkan_core.h:14035
 	NvDeviceDiagnosticsConfigSpecVersion = 2
-	// NvDeviceDiagnosticsConfigExtensionName as defined in vulkan_core.h:14041
+	// NvDeviceDiagnosticsConfigExtensionName as defined in vulkan_core.h:14036
 	NvDeviceDiagnosticsConfigExtensionName = "VK_NV_device_diagnostics_config"
-	// QcomRenderPassStoreOps as defined in vulkan_core.h:14065
+	// QcomRenderPassStoreOps as defined in vulkan_core.h:14060
 	QcomRenderPassStoreOps = 1
-	// QcomRenderPassStoreOpsSpecVersion as defined in vulkan_core.h:14066
+	// QcomRenderPassStoreOpsSpecVersion as defined in vulkan_core.h:14061
 	QcomRenderPassStoreOpsSpecVersion = 2
-	// QcomRenderPassStoreOpsExtensionName as defined in vulkan_core.h:14067
+	// QcomRenderPassStoreOpsExtensionName as defined in vulkan_core.h:14062
 	QcomRenderPassStoreOpsExtensionName = "VK_QCOM_render_pass_store_ops"
-	// NvLowLatency as defined in vulkan_core.h:14070
+	// NvLowLatency as defined in vulkan_core.h:14065
 	NvLowLatency = 1
-	// NvLowLatencySpecVersion as defined in vulkan_core.h:14071
+	// NvLowLatencySpecVersion as defined in vulkan_core.h:14066
 	NvLowLatencySpecVersion = 1
-	// NvLowLatencyExtensionName as defined in vulkan_core.h:14072
+	// NvLowLatencyExtensionName as defined in vulkan_core.h:14067
 	NvLowLatencyExtensionName = "VK_NV_low_latency"
-	// ExtDescriptorBuffer as defined in vulkan_core.h:14081
+	// ExtDescriptorBuffer as defined in vulkan_core.h:14076
 	ExtDescriptorBuffer = 1
-	// ExtDescriptorBufferSpecVersion as defined in vulkan_core.h:14083
+	// ExtDescriptorBufferSpecVersion as defined in vulkan_core.h:14078
 	ExtDescriptorBufferSpecVersion = 1
-	// ExtDescriptorBufferExtensionName as defined in vulkan_core.h:14084
+	// ExtDescriptorBufferExtensionName as defined in vulkan_core.h:14079
 	ExtDescriptorBufferExtensionName = "VK_EXT_descriptor_buffer"
-	// ExtGraphicsPipelineLibrary as defined in vulkan_core.h:14293
+	// ExtGraphicsPipelineLibrary as defined in vulkan_core.h:14288
 	ExtGraphicsPipelineLibrary = 1
-	// ExtGraphicsPipelineLibrarySpecVersion as defined in vulkan_core.h:14294
+	// ExtGraphicsPipelineLibrarySpecVersion as defined in vulkan_core.h:14289
 	ExtGraphicsPipelineLibrarySpecVersion = 1
-	// ExtGraphicsPipelineLibraryExtensionName as defined in vulkan_core.h:14295
+	// ExtGraphicsPipelineLibraryExtensionName as defined in vulkan_core.h:14290
 	ExtGraphicsPipelineLibraryExtensionName = "VK_EXT_graphics_pipeline_library"
-	// AmdShaderEarlyAndLateFragmentTests as defined in vulkan_core.h:14326
+	// AmdShaderEarlyAndLateFragmentTests as defined in vulkan_core.h:14321
 	AmdShaderEarlyAndLateFragmentTests = 1
-	// AmdShaderEarlyAndLateFragmentTestsSpecVersion as defined in vulkan_core.h:14327
+	// AmdShaderEarlyAndLateFragmentTestsSpecVersion as defined in vulkan_core.h:14322
 	AmdShaderEarlyAndLateFragmentTestsSpecVersion = 1
-	// AmdShaderEarlyAndLateFragmentTestsExtensionName as defined in vulkan_core.h:14328
+	// AmdShaderEarlyAndLateFragmentTestsExtensionName as defined in vulkan_core.h:14323
 	AmdShaderEarlyAndLateFragmentTestsExtensionName = "VK_AMD_shader_early_and_late_fragment_tests"
-	// NvFragmentShadingRateEnums as defined in vulkan_core.h:14337
+	// NvFragmentShadingRateEnums as defined in vulkan_core.h:14332
 	NvFragmentShadingRateEnums = 1
-	// NvFragmentShadingRateEnumsSpecVersion as defined in vulkan_core.h:14338
+	// NvFragmentShadingRateEnumsSpecVersion as defined in vulkan_core.h:14333
 	NvFragmentShadingRateEnumsSpecVersion = 1
-	// NvFragmentShadingRateEnumsExtensionName as defined in vulkan_core.h:14339
+	// NvFragmentShadingRateEnumsExtensionName as defined in vulkan_core.h:14334
 	NvFragmentShadingRateEnumsExtensionName = "VK_NV_fragment_shading_rate_enums"
-	// NvRayTracingMotionBlur as defined in vulkan_core.h:14394
+	// NvRayTracingMotionBlur as defined in vulkan_core.h:14389
 	NvRayTracingMotionBlur = 1
-	// NvRayTracingMotionBlurSpecVersion as defined in vulkan_core.h:14395
+	// NvRayTracingMotionBlurSpecVersion as defined in vulkan_core.h:14390
 	NvRayTracingMotionBlurSpecVersion = 1
-	// NvRayTracingMotionBlurExtensionName as defined in vulkan_core.h:14396
+	// NvRayTracingMotionBlurExtensionName as defined in vulkan_core.h:14391
 	NvRayTracingMotionBlurExtensionName = "VK_NV_ray_tracing_motion_blur"
-	// ExtYcbcr2plane444Formats as defined in vulkan_core.h:14484
+	// ExtYcbcr2plane444Formats as defined in vulkan_core.h:14479
 	ExtYcbcr2plane444Formats = 1
-	// ExtYcbcr2plane444FormatsSpecVersion as defined in vulkan_core.h:14485
+	// ExtYcbcr2plane444FormatsSpecVersion as defined in vulkan_core.h:14480
 	ExtYcbcr2plane444FormatsSpecVersion = 1
-	// ExtYcbcr2plane444FormatsExtensionName as defined in vulkan_core.h:14486
+	// ExtYcbcr2plane444FormatsExtensionName as defined in vulkan_core.h:14481
 	ExtYcbcr2plane444FormatsExtensionName = "VK_EXT_ycbcr_2plane_444_formats"
-	// ExtFragmentDensityMap2 as defined in vulkan_core.h:14495
+	// ExtFragmentDensityMap2 as defined in vulkan_core.h:14490
 	ExtFragmentDensityMap2 = 1
-	// ExtFragmentDensityMap2SpecVersion as defined in vulkan_core.h:14496
+	// ExtFragmentDensityMap2SpecVersion as defined in vulkan_core.h:14491
 	ExtFragmentDensityMap2SpecVersion = 1
-	// ExtFragmentDensityMap2ExtensionName as defined in vulkan_core.h:14497
+	// ExtFragmentDensityMap2ExtensionName as defined in vulkan_core.h:14492
 	ExtFragmentDensityMap2ExtensionName = "VK_EXT_fragment_density_map2"
-	// QcomRotatedCopyCommands as defined in vulkan_core.h:14515
+	// QcomRotatedCopyCommands as defined in vulkan_core.h:14510
 	QcomRotatedCopyCommands = 1
-	// QcomRotatedCopyCommandsSpecVersion as defined in vulkan_core.h:14516
+	// QcomRotatedCopyCommandsSpecVersion as defined in vulkan_core.h:14511
 	QcomRotatedCopyCommandsSpecVersion = 1
-	// QcomRotatedCopyCommandsExtensionName as defined in vulkan_core.h:14517
+	// QcomRotatedCopyCommandsExtensionName as defined in vulkan_core.h:14512
 	QcomRotatedCopyCommandsExtensionName = "VK_QCOM_rotated_copy_commands"
-	// ExtImageRobustness as defined in vulkan_core.h:14526
+	// ExtImageRobustness as defined in vulkan_core.h:14521
 	ExtImageRobustness = 1
-	// ExtImageRobustnessSpecVersion as defined in vulkan_core.h:14527
+	// ExtImageRobustnessSpecVersion as defined in vulkan_core.h:14522
 	ExtImageRobustnessSpecVersion = 1
-	// ExtImageRobustnessExtensionName as defined in vulkan_core.h:14528
+	// ExtImageRobustnessExtensionName as defined in vulkan_core.h:14523
 	ExtImageRobustnessExtensionName = "VK_EXT_image_robustness"
-	// ExtImageCompressionControl as defined in vulkan_core.h:14533
+	// ExtImageCompressionControl as defined in vulkan_core.h:14528
 	ExtImageCompressionControl = 1
-	// ExtImageCompressionControlSpecVersion as defined in vulkan_core.h:14534
+	// ExtImageCompressionControlSpecVersion as defined in vulkan_core.h:14529
 	ExtImageCompressionControlSpecVersion = 1
-	// ExtImageCompressionControlExtensionName as defined in vulkan_core.h:14535
+	// ExtImageCompressionControlExtensionName as defined in vulkan_core.h:14530
 	ExtImageCompressionControlExtensionName = "VK_EXT_image_compression_control"
-	// ExtAttachmentFeedbackLoopLayout as defined in vulkan_core.h:14619
+	// ExtAttachmentFeedbackLoopLayout as defined in vulkan_core.h:14614
 	ExtAttachmentFeedbackLoopLayout = 1
-	// ExtAttachmentFeedbackLoopLayoutSpecVersion as defined in vulkan_core.h:14620
+	// ExtAttachmentFeedbackLoopLayoutSpecVersion as defined in vulkan_core.h:14615
 	ExtAttachmentFeedbackLoopLayoutSpecVersion = 2
-	// ExtAttachmentFeedbackLoopLayoutExtensionName as defined in vulkan_core.h:14621
+	// ExtAttachmentFeedbackLoopLayoutExtensionName as defined in vulkan_core.h:14616
 	ExtAttachmentFeedbackLoopLayoutExtensionName = "VK_EXT_attachment_feedback_loop_layout"
-	// Ext4444Formats as defined in vulkan_core.h:14630
+	// Ext4444Formats as defined in vulkan_core.h:14625
 	Ext4444Formats = 1
-	// Ext4444FormatsSpecVersion as defined in vulkan_core.h:14631
+	// Ext4444FormatsSpecVersion as defined in vulkan_core.h:14626
 	Ext4444FormatsSpecVersion = 1
-	// Ext4444FormatsExtensionName as defined in vulkan_core.h:14632
+	// Ext4444FormatsExtensionName as defined in vulkan_core.h:14627
 	Ext4444FormatsExtensionName = "VK_EXT_4444_formats"
-	// ExtDeviceFault as defined in vulkan_core.h:14642
+	// ExtDeviceFault as defined in vulkan_core.h:14637
 	ExtDeviceFault = 1
-	// ExtDeviceFaultSpecVersion as defined in vulkan_core.h:14643
+	// ExtDeviceFaultSpecVersion as defined in vulkan_core.h:14638
 	ExtDeviceFaultSpecVersion = 1
-	// ExtDeviceFaultExtensionName as defined in vulkan_core.h:14644
+	// ExtDeviceFaultExtensionName as defined in vulkan_core.h:14639
 	ExtDeviceFaultExtensionName = "VK_EXT_device_fault"
-	// ArmRasterizationOrderAttachmentAccess as defined in vulkan_core.h:14719
+	// ArmRasterizationOrderAttachmentAccess as defined in vulkan_core.h:14714
 	ArmRasterizationOrderAttachmentAccess = 1
-	// ArmRasterizationOrderAttachmentAccessSpecVersion as defined in vulkan_core.h:14720
+	// ArmRasterizationOrderAttachmentAccessSpecVersion as defined in vulkan_core.h:14715
 	ArmRasterizationOrderAttachmentAccessSpecVersion = 1
-	// ArmRasterizationOrderAttachmentAccessExtensionName as defined in vulkan_core.h:14721
+	// ArmRasterizationOrderAttachmentAccessExtensionName as defined in vulkan_core.h:14716
 	ArmRasterizationOrderAttachmentAccessExtensionName = "VK_ARM_rasterization_order_attachment_access"
-	// ExtRgba10x6Formats as defined in vulkan_core.h:14734
+	// ExtRgba10x6Formats as defined in vulkan_core.h:14729
 	ExtRgba10x6Formats = 1
-	// ExtRgba10x6FormatsSpecVersion as defined in vulkan_core.h:14735
+	// ExtRgba10x6FormatsSpecVersion as defined in vulkan_core.h:14730
 	ExtRgba10x6FormatsSpecVersion = 1
-	// ExtRgba10x6FormatsExtensionName as defined in vulkan_core.h:14736
+	// ExtRgba10x6FormatsExtensionName as defined in vulkan_core.h:14731
 	ExtRgba10x6FormatsExtensionName = "VK_EXT_rgba10x6_formats"
-	// ValveMutableDescriptorType as defined in vulkan_core.h:14745
+	// ValveMutableDescriptorType as defined in vulkan_core.h:14740
 	ValveMutableDescriptorType = 1
-	// ValveMutableDescriptorTypeSpecVersion as defined in vulkan_core.h:14746
+	// ValveMutableDescriptorTypeSpecVersion as defined in vulkan_core.h:14741
 	ValveMutableDescriptorTypeSpecVersion = 1
-	// ValveMutableDescriptorTypeExtensionName as defined in vulkan_core.h:14747
+	// ValveMutableDescriptorTypeExtensionName as defined in vulkan_core.h:14742
 	ValveMutableDescriptorTypeExtensionName = "VK_VALVE_mutable_descriptor_type"
-	// ExtVertexInputDynamicState as defined in vulkan_core.h:14774
+	// ExtVertexInputDynamicState as defined in vulkan_core.h:14769
 	ExtVertexInputDynamicState = 1
-	// ExtVertexInputDynamicStateSpecVersion as defined in vulkan_core.h:14775
+	// ExtVertexInputDynamicStateSpecVersion as defined in vulkan_core.h:14770
 	ExtVertexInputDynamicStateSpecVersion = 2
-	// ExtVertexInputDynamicStateExtensionName as defined in vulkan_core.h:14776
+	// ExtVertexInputDynamicStateExtensionName as defined in vulkan_core.h:14771
 	ExtVertexInputDynamicStateExtensionName = "VK_EXT_vertex_input_dynamic_state"
-	// ExtPhysicalDeviceDrm as defined in vulkan_core.h:14813
+	// ExtPhysicalDeviceDrm as defined in vulkan_core.h:14808
 	ExtPhysicalDeviceDrm = 1
-	// ExtPhysicalDeviceDrmSpecVersion as defined in vulkan_core.h:14814
+	// ExtPhysicalDeviceDrmSpecVersion as defined in vulkan_core.h:14809
 	ExtPhysicalDeviceDrmSpecVersion = 1
-	// ExtPhysicalDeviceDrmExtensionName as defined in vulkan_core.h:14815
+	// ExtPhysicalDeviceDrmExtensionName as defined in vulkan_core.h:14810
 	ExtPhysicalDeviceDrmExtensionName = "VK_EXT_physical_device_drm"
-	// ExtDeviceAddressBindingReport as defined in vulkan_core.h:14829
+	// ExtDeviceAddressBindingReport as defined in vulkan_core.h:14824
 	ExtDeviceAddressBindingReport = 1
-	// ExtDeviceAddressBindingReportSpecVersion as defined in vulkan_core.h:14830
+	// ExtDeviceAddressBindingReportSpecVersion as defined in vulkan_core.h:14825
 	ExtDeviceAddressBindingReportSpecVersion = 1
-	// ExtDeviceAddressBindingReportExtensionName as defined in vulkan_core.h:14831
+	// ExtDeviceAddressBindingReportExtensionName as defined in vulkan_core.h:14826
 	ExtDeviceAddressBindingReportExtensionName = "VK_EXT_device_address_binding_report"
-	// ExtDepthClipControl as defined in vulkan_core.h:14861
+	// ExtDepthClipControl as defined in vulkan_core.h:14856
 	ExtDepthClipControl = 1
-	// ExtDepthClipControlSpecVersion as defined in vulkan_core.h:14862
+	// ExtDepthClipControlSpecVersion as defined in vulkan_core.h:14857
 	ExtDepthClipControlSpecVersion = 1
-	// ExtDepthClipControlExtensionName as defined in vulkan_core.h:14863
+	// ExtDepthClipControlExtensionName as defined in vulkan_core.h:14858
 	ExtDepthClipControlExtensionName = "VK_EXT_depth_clip_control"
-	// ExtPrimitiveTopologyListRestart as defined in vulkan_core.h:14878
+	// ExtPrimitiveTopologyListRestart as defined in vulkan_core.h:14873
 	ExtPrimitiveTopologyListRestart = 1
-	// ExtPrimitiveTopologyListRestartSpecVersion as defined in vulkan_core.h:14879
+	// ExtPrimitiveTopologyListRestartSpecVersion as defined in vulkan_core.h:14874
 	ExtPrimitiveTopologyListRestartSpecVersion = 1
-	// ExtPrimitiveTopologyListRestartExtensionName as defined in vulkan_core.h:14880
+	// ExtPrimitiveTopologyListRestartExtensionName as defined in vulkan_core.h:14875
 	ExtPrimitiveTopologyListRestartExtensionName = "VK_EXT_primitive_topology_list_restart"
-	// HuaweiSubpassShading as defined in vulkan_core.h:14890
+	// HuaweiSubpassShading as defined in vulkan_core.h:14885
 	HuaweiSubpassShading = 1
-	// HuaweiSubpassShadingSpecVersion as defined in vulkan_core.h:14891
+	// HuaweiSubpassShadingSpecVersion as defined in vulkan_core.h:14886
 	HuaweiSubpassShadingSpecVersion = 2
-	// HuaweiSubpassShadingExtensionName as defined in vulkan_core.h:14892
+	// HuaweiSubpassShadingExtensionName as defined in vulkan_core.h:14887
 	HuaweiSubpassShadingExtensionName = "VK_HUAWEI_subpass_shading"
-	// HuaweiInvocationMask as defined in vulkan_core.h:14926
+	// HuaweiInvocationMask as defined in vulkan_core.h:14921
 	HuaweiInvocationMask = 1
-	// HuaweiInvocationMaskSpecVersion as defined in vulkan_core.h:14927
+	// HuaweiInvocationMaskSpecVersion as defined in vulkan_core.h:14922
 	HuaweiInvocationMaskSpecVersion = 1
-	// HuaweiInvocationMaskExtensionName as defined in vulkan_core.h:14928
+	// HuaweiInvocationMaskExtensionName as defined in vulkan_core.h:14923
 	HuaweiInvocationMaskExtensionName = "VK_HUAWEI_invocation_mask"
-	// NvExternalMemoryRdma as defined in vulkan_core.h:14945
+	// NvExternalMemoryRdma as defined in vulkan_core.h:14940
 	NvExternalMemoryRdma = 1
-	// NvExternalMemoryRdmaSpecVersion as defined in vulkan_core.h:14947
+	// NvExternalMemoryRdmaSpecVersion as defined in vulkan_core.h:14942
 	NvExternalMemoryRdmaSpecVersion = 1
-	// NvExternalMemoryRdmaExtensionName as defined in vulkan_core.h:14948
+	// NvExternalMemoryRdmaExtensionName as defined in vulkan_core.h:14943
 	NvExternalMemoryRdmaExtensionName = "VK_NV_external_memory_rdma"
-	// ExtPipelineProperties as defined in vulkan_core.h:14972
+	// ExtPipelineProperties as defined in vulkan_core.h:14967
 	ExtPipelineProperties = 1
-	// ExtPipelinePropertiesSpecVersion as defined in vulkan_core.h:14973
+	// ExtPipelinePropertiesSpecVersion as defined in vulkan_core.h:14968
 	ExtPipelinePropertiesSpecVersion = 1
-	// ExtPipelinePropertiesExtensionName as defined in vulkan_core.h:14974
+	// ExtPipelinePropertiesExtensionName as defined in vulkan_core.h:14969
 	ExtPipelinePropertiesExtensionName = "VK_EXT_pipeline_properties"
-	// ExtMultisampledRenderToSingleSampled as defined in vulkan_core.h:14999
+	// ExtMultisampledRenderToSingleSampled as defined in vulkan_core.h:14994
 	ExtMultisampledRenderToSingleSampled = 1
-	// ExtMultisampledRenderToSingleSampledSpecVersion as defined in vulkan_core.h:15000
+	// ExtMultisampledRenderToSingleSampledSpecVersion as defined in vulkan_core.h:14995
 	ExtMultisampledRenderToSingleSampledSpecVersion = 1
-	// ExtMultisampledRenderToSingleSampledExtensionName as defined in vulkan_core.h:15001
+	// ExtMultisampledRenderToSingleSampledExtensionName as defined in vulkan_core.h:14996
 	ExtMultisampledRenderToSingleSampledExtensionName = "VK_EXT_multisampled_render_to_single_sampled"
-	// ExtExtendedDynamicState2 as defined in vulkan_core.h:15023
+	// ExtExtendedDynamicState2 as defined in vulkan_core.h:15018
 	ExtExtendedDynamicState2 = 1
-	// ExtExtendedDynamicState2SpecVersion as defined in vulkan_core.h:15024
+	// ExtExtendedDynamicState2SpecVersion as defined in vulkan_core.h:15019
 	ExtExtendedDynamicState2SpecVersion = 1
-	// ExtExtendedDynamicState2ExtensionName as defined in vulkan_core.h:15025
+	// ExtExtendedDynamicState2ExtensionName as defined in vulkan_core.h:15020
 	ExtExtendedDynamicState2ExtensionName = "VK_EXT_extended_dynamic_state2"
-	// ExtColorWriteEnable as defined in vulkan_core.h:15063
+	// ExtColorWriteEnable as defined in vulkan_core.h:15058
 	ExtColorWriteEnable = 1
-	// ExtColorWriteEnableSpecVersion as defined in vulkan_core.h:15064
+	// ExtColorWriteEnableSpecVersion as defined in vulkan_core.h:15059
 	ExtColorWriteEnableSpecVersion = 1
-	// ExtColorWriteEnableExtensionName as defined in vulkan_core.h:15065
+	// ExtColorWriteEnableExtensionName as defined in vulkan_core.h:15060
 	ExtColorWriteEnableExtensionName = "VK_EXT_color_write_enable"
-	// ExtPrimitivesGeneratedQuery as defined in vulkan_core.h:15089
+	// ExtPrimitivesGeneratedQuery as defined in vulkan_core.h:15084
 	ExtPrimitivesGeneratedQuery = 1
-	// ExtPrimitivesGeneratedQuerySpecVersion as defined in vulkan_core.h:15090
+	// ExtPrimitivesGeneratedQuerySpecVersion as defined in vulkan_core.h:15085
 	ExtPrimitivesGeneratedQuerySpecVersion = 1
-	// ExtPrimitivesGeneratedQueryExtensionName as defined in vulkan_core.h:15091
+	// ExtPrimitivesGeneratedQueryExtensionName as defined in vulkan_core.h:15086
 	ExtPrimitivesGeneratedQueryExtensionName = "VK_EXT_primitives_generated_query"
-	// ExtGlobalPriorityQuery as defined in vulkan_core.h:15102
+	// ExtGlobalPriorityQuery as defined in vulkan_core.h:15097
 	ExtGlobalPriorityQuery = 1
-	// ExtGlobalPriorityQuerySpecVersion as defined in vulkan_core.h:15103
+	// ExtGlobalPriorityQuerySpecVersion as defined in vulkan_core.h:15098
 	ExtGlobalPriorityQuerySpecVersion = 1
-	// ExtGlobalPriorityQueryExtensionName as defined in vulkan_core.h:15104
+	// ExtGlobalPriorityQueryExtensionName as defined in vulkan_core.h:15099
 	ExtGlobalPriorityQueryExtensionName = "VK_EXT_global_priority_query"
-	// ExtImageViewMinLod as defined in vulkan_core.h:15112
+	// ExtImageViewMinLod as defined in vulkan_core.h:15107
 	ExtImageViewMinLod = 1
-	// ExtImageViewMinLodSpecVersion as defined in vulkan_core.h:15113
+	// ExtImageViewMinLodSpecVersion as defined in vulkan_core.h:15108
 	ExtImageViewMinLodSpecVersion = 1
-	// ExtImageViewMinLodExtensionName as defined in vulkan_core.h:15114
+	// ExtImageViewMinLodExtensionName as defined in vulkan_core.h:15109
 	ExtImageViewMinLodExtensionName = "VK_EXT_image_view_min_lod"
-	// ExtMultiDraw as defined in vulkan_core.h:15129
+	// ExtMultiDraw as defined in vulkan_core.h:15124
 	ExtMultiDraw = 1
-	// ExtMultiDrawSpecVersion as defined in vulkan_core.h:15130
+	// ExtMultiDrawSpecVersion as defined in vulkan_core.h:15125
 	ExtMultiDrawSpecVersion = 1
-	// ExtMultiDrawExtensionName as defined in vulkan_core.h:15131
+	// ExtMultiDrawExtensionName as defined in vulkan_core.h:15126
 	ExtMultiDrawExtensionName = "VK_EXT_multi_draw"
-	// ExtImage2dViewOf3d as defined in vulkan_core.h:15178
+	// ExtImage2dViewOf3d as defined in vulkan_core.h:15173
 	ExtImage2dViewOf3d = 1
-	// ExtImage2dViewOf3dSpecVersion as defined in vulkan_core.h:15179
+	// ExtImage2dViewOf3dSpecVersion as defined in vulkan_core.h:15174
 	ExtImage2dViewOf3dSpecVersion = 1
-	// ExtImage2dViewOf3dExtensionName as defined in vulkan_core.h:15180
+	// ExtImage2dViewOf3dExtensionName as defined in vulkan_core.h:15175
 	ExtImage2dViewOf3dExtensionName = "VK_EXT_image_2d_view_of_3d"
-	// ExtOpacityMicromap as defined in vulkan_core.h:15190
+	// ExtOpacityMicromap as defined in vulkan_core.h:15185
 	ExtOpacityMicromap = 1
-	// ExtOpacityMicromapSpecVersion as defined in vulkan_core.h:15192
+	// ExtOpacityMicromapSpecVersion as defined in vulkan_core.h:15187
 	ExtOpacityMicromapSpecVersion = 2
-	// ExtOpacityMicromapExtensionName as defined in vulkan_core.h:15193
+	// ExtOpacityMicromapExtensionName as defined in vulkan_core.h:15188
 	ExtOpacityMicromapExtensionName = "VK_EXT_opacity_micromap"
-	// ExtLoadStoreOpNone as defined in vulkan_core.h:15458
+	// ExtLoadStoreOpNone as defined in vulkan_core.h:15453
 	ExtLoadStoreOpNone = 1
-	// ExtLoadStoreOpNoneSpecVersion as defined in vulkan_core.h:15459
+	// ExtLoadStoreOpNoneSpecVersion as defined in vulkan_core.h:15454
 	ExtLoadStoreOpNoneSpecVersion = 1
-	// ExtLoadStoreOpNoneExtensionName as defined in vulkan_core.h:15460
+	// ExtLoadStoreOpNoneExtensionName as defined in vulkan_core.h:15455
 	ExtLoadStoreOpNoneExtensionName = "VK_EXT_load_store_op_none"
-	// HuaweiClusterCullingShader as defined in vulkan_core.h:15463
+	// HuaweiClusterCullingShader as defined in vulkan_core.h:15458
 	HuaweiClusterCullingShader = 1
-	// HuaweiClusterCullingShaderSpecVersion as defined in vulkan_core.h:15464
+	// HuaweiClusterCullingShaderSpecVersion as defined in vulkan_core.h:15459
 	HuaweiClusterCullingShaderSpecVersion = 1
-	// HuaweiClusterCullingShaderExtensionName as defined in vulkan_core.h:15465
+	// HuaweiClusterCullingShaderExtensionName as defined in vulkan_core.h:15460
 	HuaweiClusterCullingShaderExtensionName = "VK_HUAWEI_cluster_culling_shader"
-	// ExtBorderColorSwizzle as defined in vulkan_core.h:15498
+	// ExtBorderColorSwizzle as defined in vulkan_core.h:15494
 	ExtBorderColorSwizzle = 1
-	// ExtBorderColorSwizzleSpecVersion as defined in vulkan_core.h:15499
+	// ExtBorderColorSwizzleSpecVersion as defined in vulkan_core.h:15495
 	ExtBorderColorSwizzleSpecVersion = 1
-	// ExtBorderColorSwizzleExtensionName as defined in vulkan_core.h:15500
+	// ExtBorderColorSwizzleExtensionName as defined in vulkan_core.h:15496
 	ExtBorderColorSwizzleExtensionName = "VK_EXT_border_color_swizzle"
-	// ExtPageableDeviceLocalMemory as defined in vulkan_core.h:15517
+	// ExtPageableDeviceLocalMemory as defined in vulkan_core.h:15513
 	ExtPageableDeviceLocalMemory = 1
-	// ExtPageableDeviceLocalMemorySpecVersion as defined in vulkan_core.h:15518
+	// ExtPageableDeviceLocalMemorySpecVersion as defined in vulkan_core.h:15514
 	ExtPageableDeviceLocalMemorySpecVersion = 1
-	// ExtPageableDeviceLocalMemoryExtensionName as defined in vulkan_core.h:15519
+	// ExtPageableDeviceLocalMemoryExtensionName as defined in vulkan_core.h:15515
 	ExtPageableDeviceLocalMemoryExtensionName = "VK_EXT_pageable_device_local_memory"
-	// ArmShaderCoreProperties as defined in vulkan_core.h:15536
+	// ArmShaderCoreProperties as defined in vulkan_core.h:15532
 	ArmShaderCoreProperties = 1
-	// ArmShaderCorePropertiesSpecVersion as defined in vulkan_core.h:15537
+	// ArmShaderCorePropertiesSpecVersion as defined in vulkan_core.h:15533
 	ArmShaderCorePropertiesSpecVersion = 1
-	// ArmShaderCorePropertiesExtensionName as defined in vulkan_core.h:15538
+	// ArmShaderCorePropertiesExtensionName as defined in vulkan_core.h:15534
 	ArmShaderCorePropertiesExtensionName = "VK_ARM_shader_core_properties"
-	// ExtImageSlicedViewOf3d as defined in vulkan_core.h:15549
+	// ExtImageSlicedViewOf3d as defined in vulkan_core.h:15545
 	ExtImageSlicedViewOf3d = 1
-	// ExtImageSlicedViewOf3dSpecVersion as defined in vulkan_core.h:15550
+	// ExtImageSlicedViewOf3dSpecVersion as defined in vulkan_core.h:15546
 	ExtImageSlicedViewOf3dSpecVersion = 1
-	// ExtImageSlicedViewOf3dExtensionName as defined in vulkan_core.h:15551
+	// ExtImageSlicedViewOf3dExtensionName as defined in vulkan_core.h:15547
 	ExtImageSlicedViewOf3dExtensionName = "VK_EXT_image_sliced_view_of_3d"
-	// Remaining3dSlices as defined in vulkan_core.h:15552
+	// Remaining3dSlices as defined in vulkan_core.h:15548
 	Remaining3dSlices = (^uint32(0))
-	// ValveDescriptorSetHostMapping as defined in vulkan_core.h:15568
+	// ValveDescriptorSetHostMapping as defined in vulkan_core.h:15564
 	ValveDescriptorSetHostMapping = 1
-	// ValveDescriptorSetHostMappingSpecVersion as defined in vulkan_core.h:15569
+	// ValveDescriptorSetHostMappingSpecVersion as defined in vulkan_core.h:15565
 	ValveDescriptorSetHostMappingSpecVersion = 1
-	// ValveDescriptorSetHostMappingExtensionName as defined in vulkan_core.h:15570
+	// ValveDescriptorSetHostMappingExtensionName as defined in vulkan_core.h:15566
 	ValveDescriptorSetHostMappingExtensionName = "VK_VALVE_descriptor_set_host_mapping"
-	// ExtDepthClampZeroOne as defined in vulkan_core.h:15607
+	// ExtDepthClampZeroOne as defined in vulkan_core.h:15603
 	ExtDepthClampZeroOne = 1
-	// ExtDepthClampZeroOneSpecVersion as defined in vulkan_core.h:15608
+	// ExtDepthClampZeroOneSpecVersion as defined in vulkan_core.h:15604
 	ExtDepthClampZeroOneSpecVersion = 1
-	// ExtDepthClampZeroOneExtensionName as defined in vulkan_core.h:15609
+	// ExtDepthClampZeroOneExtensionName as defined in vulkan_core.h:15605
 	ExtDepthClampZeroOneExtensionName = "VK_EXT_depth_clamp_zero_one"
-	// ExtNonSeamlessCubeMap as defined in vulkan_core.h:15618
+	// ExtNonSeamlessCubeMap as defined in vulkan_core.h:15614
 	ExtNonSeamlessCubeMap = 1
-	// ExtNonSeamlessCubeMapSpecVersion as defined in vulkan_core.h:15619
+	// ExtNonSeamlessCubeMapSpecVersion as defined in vulkan_core.h:15615
 	ExtNonSeamlessCubeMapSpecVersion = 1
-	// ExtNonSeamlessCubeMapExtensionName as defined in vulkan_core.h:15620
+	// ExtNonSeamlessCubeMapExtensionName as defined in vulkan_core.h:15616
 	ExtNonSeamlessCubeMapExtensionName = "VK_EXT_non_seamless_cube_map"
-	// QcomFragmentDensityMapOffset as defined in vulkan_core.h:15629
+	// QcomFragmentDensityMapOffset as defined in vulkan_core.h:15625
 	QcomFragmentDensityMapOffset = 1
-	// QcomFragmentDensityMapOffsetSpecVersion as defined in vulkan_core.h:15630
+	// QcomFragmentDensityMapOffsetSpecVersion as defined in vulkan_core.h:15626
 	QcomFragmentDensityMapOffsetSpecVersion = 1
-	// QcomFragmentDensityMapOffsetExtensionName as defined in vulkan_core.h:15631
+	// QcomFragmentDensityMapOffsetExtensionName as defined in vulkan_core.h:15627
 	QcomFragmentDensityMapOffsetExtensionName = "VK_QCOM_fragment_density_map_offset"
-	// NvCopyMemoryIndirect as defined in vulkan_core.h:15653
+	// NvCopyMemoryIndirect as defined in vulkan_core.h:15649
 	NvCopyMemoryIndirect = 1
-	// NvCopyMemoryIndirectSpecVersion as defined in vulkan_core.h:15654
+	// NvCopyMemoryIndirectSpecVersion as defined in vulkan_core.h:15650
 	NvCopyMemoryIndirectSpecVersion = 1
-	// NvCopyMemoryIndirectExtensionName as defined in vulkan_core.h:15655
+	// NvCopyMemoryIndirectExtensionName as defined in vulkan_core.h:15651
 	NvCopyMemoryIndirectExtensionName = "VK_NV_copy_memory_indirect"
-	// NvMemoryDecompression as defined in vulkan_core.h:15704
+	// NvMemoryDecompression as defined in vulkan_core.h:15700
 	NvMemoryDecompression = 1
-	// NvMemoryDecompressionSpecVersion as defined in vulkan_core.h:15705
+	// NvMemoryDecompressionSpecVersion as defined in vulkan_core.h:15701
 	NvMemoryDecompressionSpecVersion = 1
-	// NvMemoryDecompressionExtensionName as defined in vulkan_core.h:15706
+	// NvMemoryDecompressionExtensionName as defined in vulkan_core.h:15702
 	NvMemoryDecompressionExtensionName = "VK_NV_memory_decompression"
-	// NvLinearColorAttachment as defined in vulkan_core.h:15751
+	// NvLinearColorAttachment as defined in vulkan_core.h:15747
 	NvLinearColorAttachment = 1
-	// NvLinearColorAttachmentSpecVersion as defined in vulkan_core.h:15752
+	// NvLinearColorAttachmentSpecVersion as defined in vulkan_core.h:15748
 	NvLinearColorAttachmentSpecVersion = 1
-	// NvLinearColorAttachmentExtensionName as defined in vulkan_core.h:15753
+	// NvLinearColorAttachmentExtensionName as defined in vulkan_core.h:15749
 	NvLinearColorAttachmentExtensionName = "VK_NV_linear_color_attachment"
-	// GoogleSurfacelessQuery as defined in vulkan_core.h:15762
+	// GoogleSurfacelessQuery as defined in vulkan_core.h:15758
 	GoogleSurfacelessQuery = 1
-	// GoogleSurfacelessQuerySpecVersion as defined in vulkan_core.h:15763
+	// GoogleSurfacelessQuerySpecVersion as defined in vulkan_core.h:15759
 	GoogleSurfacelessQuerySpecVersion = 2
-	// GoogleSurfacelessQueryExtensionName as defined in vulkan_core.h:15764
+	// GoogleSurfacelessQueryExtensionName as defined in vulkan_core.h:15760
 	GoogleSurfacelessQueryExtensionName = "VK_GOOGLE_surfaceless_query"
-	// ExtImageCompressionControlSwapchain as defined in vulkan_core.h:15767
+	// ExtImageCompressionControlSwapchain as defined in vulkan_core.h:15763
 	ExtImageCompressionControlSwapchain = 1
-	// ExtImageCompressionControlSwapchainSpecVersion as defined in vulkan_core.h:15768
+	// ExtImageCompressionControlSwapchainSpecVersion as defined in vulkan_core.h:15764
 	ExtImageCompressionControlSwapchainSpecVersion = 1
-	// ExtImageCompressionControlSwapchainExtensionName as defined in vulkan_core.h:15769
+	// ExtImageCompressionControlSwapchainExtensionName as defined in vulkan_core.h:15765
 	ExtImageCompressionControlSwapchainExtensionName = "VK_EXT_image_compression_control_swapchain"
-	// QcomImageProcessing as defined in vulkan_core.h:15778
+	// QcomImageProcessing as defined in vulkan_core.h:15774
 	QcomImageProcessing = 1
-	// QcomImageProcessingSpecVersion as defined in vulkan_core.h:15779
+	// QcomImageProcessingSpecVersion as defined in vulkan_core.h:15775
 	QcomImageProcessingSpecVersion = 1
-	// QcomImageProcessingExtensionName as defined in vulkan_core.h:15780
+	// QcomImageProcessingExtensionName as defined in vulkan_core.h:15776
 	QcomImageProcessingExtensionName = "VK_QCOM_image_processing"
-	// ExtExtendedDynamicState3 as defined in vulkan_core.h:15808
+	// ExtExtendedDynamicState3 as defined in vulkan_core.h:15804
 	ExtExtendedDynamicState3 = 1
-	// ExtExtendedDynamicState3SpecVersion as defined in vulkan_core.h:15809
+	// ExtExtendedDynamicState3SpecVersion as defined in vulkan_core.h:15805
 	ExtExtendedDynamicState3SpecVersion = 2
-	// ExtExtendedDynamicState3ExtensionName as defined in vulkan_core.h:15810
+	// ExtExtendedDynamicState3ExtensionName as defined in vulkan_core.h:15806
 	ExtExtendedDynamicState3ExtensionName = "VK_EXT_extended_dynamic_state3"
-	// ExtSubpassMergeFeedback as defined in vulkan_core.h:16041
+	// ExtSubpassMergeFeedback as defined in vulkan_core.h:16037
 	ExtSubpassMergeFeedback = 1
-	// ExtSubpassMergeFeedbackSpecVersion as defined in vulkan_core.h:16042
+	// ExtSubpassMergeFeedbackSpecVersion as defined in vulkan_core.h:16038
 	ExtSubpassMergeFeedbackSpecVersion = 2
-	// ExtSubpassMergeFeedbackExtensionName as defined in vulkan_core.h:16043
+	// ExtSubpassMergeFeedbackExtensionName as defined in vulkan_core.h:16039
 	ExtSubpassMergeFeedbackExtensionName = "VK_EXT_subpass_merge_feedback"
-	// LunargDirectDriverLoading as defined in vulkan_core.h:16098
+	// LunargDirectDriverLoading as defined in vulkan_core.h:16094
 	LunargDirectDriverLoading = 1
-	// LunargDirectDriverLoadingSpecVersion as defined in vulkan_core.h:16099
+	// LunargDirectDriverLoadingSpecVersion as defined in vulkan_core.h:16095
 	LunargDirectDriverLoadingSpecVersion = 1
-	// LunargDirectDriverLoadingExtensionName as defined in vulkan_core.h:16100
+	// LunargDirectDriverLoadingExtensionName as defined in vulkan_core.h:16096
 	LunargDirectDriverLoadingExtensionName = "VK_LUNARG_direct_driver_loading"
-	// ExtShaderModuleIdentifier as defined in vulkan_core.h:16128
+	// ExtShaderModuleIdentifier as defined in vulkan_core.h:16124
 	ExtShaderModuleIdentifier = 1
-	// MaxShaderModuleIdentifierSize as defined in vulkan_core.h:16129
+	// MaxShaderModuleIdentifierSize as defined in vulkan_core.h:16125
 	MaxShaderModuleIdentifierSize = uint32(32)
-	// ExtShaderModuleIdentifierSpecVersion as defined in vulkan_core.h:16130
+	// ExtShaderModuleIdentifierSpecVersion as defined in vulkan_core.h:16126
 	ExtShaderModuleIdentifierSpecVersion = 1
-	// ExtShaderModuleIdentifierExtensionName as defined in vulkan_core.h:16131
+	// ExtShaderModuleIdentifierExtensionName as defined in vulkan_core.h:16127
 	ExtShaderModuleIdentifierExtensionName = "VK_EXT_shader_module_identifier"
-	// ExtRasterizationOrderAttachmentAccess as defined in vulkan_core.h:16174
+	// ExtRasterizationOrderAttachmentAccess as defined in vulkan_core.h:16170
 	ExtRasterizationOrderAttachmentAccess = 1
-	// ExtRasterizationOrderAttachmentAccessSpecVersion as defined in vulkan_core.h:16175
+	// ExtRasterizationOrderAttachmentAccessSpecVersion as defined in vulkan_core.h:16171
 	ExtRasterizationOrderAttachmentAccessSpecVersion = 1
-	// ExtRasterizationOrderAttachmentAccessExtensionName as defined in vulkan_core.h:16176
+	// ExtRasterizationOrderAttachmentAccessExtensionName as defined in vulkan_core.h:16172
 	ExtRasterizationOrderAttachmentAccessExtensionName = "VK_EXT_rasterization_order_attachment_access"
-	// NvOpticalFlow as defined in vulkan_core.h:16179
+	// NvOpticalFlow as defined in vulkan_core.h:16175
 	NvOpticalFlow = 1
-	// NvOpticalFlowSpecVersion as defined in vulkan_core.h:16181
+	// NvOpticalFlowSpecVersion as defined in vulkan_core.h:16177
 	NvOpticalFlowSpecVersion = 1
-	// NvOpticalFlowExtensionName as defined in vulkan_core.h:16182
+	// NvOpticalFlowExtensionName as defined in vulkan_core.h:16178
 	NvOpticalFlowExtensionName = "VK_NV_optical_flow"
-	// ExtLegacyDithering as defined in vulkan_core.h:16343
+	// ExtLegacyDithering as defined in vulkan_core.h:16339
 	ExtLegacyDithering = 1
-	// ExtLegacyDitheringSpecVersion as defined in vulkan_core.h:16344
+	// ExtLegacyDitheringSpecVersion as defined in vulkan_core.h:16340
 	ExtLegacyDitheringSpecVersion = 1
-	// ExtLegacyDitheringExtensionName as defined in vulkan_core.h:16345
+	// ExtLegacyDitheringExtensionName as defined in vulkan_core.h:16341
 	ExtLegacyDitheringExtensionName = "VK_EXT_legacy_dithering"
-	// ExtPipelineProtectedAccess as defined in vulkan_core.h:16354
+	// ExtPipelineProtectedAccess as defined in vulkan_core.h:16350
 	ExtPipelineProtectedAccess = 1
-	// ExtPipelineProtectedAccessSpecVersion as defined in vulkan_core.h:16355
+	// ExtPipelineProtectedAccessSpecVersion as defined in vulkan_core.h:16351
 	ExtPipelineProtectedAccessSpecVersion = 1
-	// ExtPipelineProtectedAccessExtensionName as defined in vulkan_core.h:16356
+	// ExtPipelineProtectedAccessExtensionName as defined in vulkan_core.h:16352
 	ExtPipelineProtectedAccessExtensionName = "VK_EXT_pipeline_protected_access"
-	// QcomTileProperties as defined in vulkan_core.h:16365
+	// QcomTileProperties as defined in vulkan_core.h:16361
 	QcomTileProperties = 1
-	// QcomTilePropertiesSpecVersion as defined in vulkan_core.h:16366
+	// QcomTilePropertiesSpecVersion as defined in vulkan_core.h:16362
 	QcomTilePropertiesSpecVersion = 1
-	// QcomTilePropertiesExtensionName as defined in vulkan_core.h:16367
+	// QcomTilePropertiesExtensionName as defined in vulkan_core.h:16363
 	QcomTilePropertiesExtensionName = "VK_QCOM_tile_properties"
-	// SecAmigoProfiling as defined in vulkan_core.h:16399
+	// SecAmigoProfiling as defined in vulkan_core.h:16395
 	SecAmigoProfiling = 1
-	// SecAmigoProfilingSpecVersion as defined in vulkan_core.h:16400
+	// SecAmigoProfilingSpecVersion as defined in vulkan_core.h:16396
 	SecAmigoProfilingSpecVersion = 1
-	// SecAmigoProfilingExtensionName as defined in vulkan_core.h:16401
+	// SecAmigoProfilingExtensionName as defined in vulkan_core.h:16397
 	SecAmigoProfilingExtensionName = "VK_SEC_amigo_profiling"
-	// QcomMultiviewPerViewViewports as defined in vulkan_core.h:16417
+	// QcomMultiviewPerViewViewports as defined in vulkan_core.h:16413
 	QcomMultiviewPerViewViewports = 1
-	// QcomMultiviewPerViewViewportsSpecVersion as defined in vulkan_core.h:16418
+	// QcomMultiviewPerViewViewportsSpecVersion as defined in vulkan_core.h:16414
 	QcomMultiviewPerViewViewportsSpecVersion = 1
-	// QcomMultiviewPerViewViewportsExtensionName as defined in vulkan_core.h:16419
+	// QcomMultiviewPerViewViewportsExtensionName as defined in vulkan_core.h:16415
 	QcomMultiviewPerViewViewportsExtensionName = "VK_QCOM_multiview_per_view_viewports"
-	// NvRayTracingInvocationReorder as defined in vulkan_core.h:16428
+	// NvRayTracingInvocationReorder as defined in vulkan_core.h:16424
 	NvRayTracingInvocationReorder = 1
-	// NvRayTracingInvocationReorderSpecVersion as defined in vulkan_core.h:16429
+	// NvRayTracingInvocationReorderSpecVersion as defined in vulkan_core.h:16425
 	NvRayTracingInvocationReorderSpecVersion = 1
-	// NvRayTracingInvocationReorderExtensionName as defined in vulkan_core.h:16430
+	// NvRayTracingInvocationReorderExtensionName as defined in vulkan_core.h:16426
 	NvRayTracingInvocationReorderExtensionName = "VK_NV_ray_tracing_invocation_reorder"
-	// ExtMutableDescriptorType as defined in vulkan_core.h:16451
+	// ExtMutableDescriptorType as defined in vulkan_core.h:16447
 	ExtMutableDescriptorType = 1
-	// ExtMutableDescriptorTypeSpecVersion as defined in vulkan_core.h:16452
+	// ExtMutableDescriptorTypeSpecVersion as defined in vulkan_core.h:16448
 	ExtMutableDescriptorTypeSpecVersion = 1
-	// ExtMutableDescriptorTypeExtensionName as defined in vulkan_core.h:16453
+	// ExtMutableDescriptorTypeExtensionName as defined in vulkan_core.h:16449
 	ExtMutableDescriptorTypeExtensionName = "VK_EXT_mutable_descriptor_type"
-	// ArmShaderCoreBuiltins as defined in vulkan_core.h:16456
+	// ArmShaderCoreBuiltins as defined in vulkan_core.h:16452
 	ArmShaderCoreBuiltins = 1
-	// ArmShaderCoreBuiltinsSpecVersion as defined in vulkan_core.h:16457
+	// ArmShaderCoreBuiltinsSpecVersion as defined in vulkan_core.h:16453
 	ArmShaderCoreBuiltinsSpecVersion = 2
-	// ArmShaderCoreBuiltinsExtensionName as defined in vulkan_core.h:16458
+	// ArmShaderCoreBuiltinsExtensionName as defined in vulkan_core.h:16454
 	ArmShaderCoreBuiltinsExtensionName = "VK_ARM_shader_core_builtins"
-	// ExtPipelineLibraryGroupHandles as defined in vulkan_core.h:16475
+	// ExtPipelineLibraryGroupHandles as defined in vulkan_core.h:16471
 	ExtPipelineLibraryGroupHandles = 1
-	// ExtPipelineLibraryGroupHandlesSpecVersion as defined in vulkan_core.h:16476
+	// ExtPipelineLibraryGroupHandlesSpecVersion as defined in vulkan_core.h:16472
 	ExtPipelineLibraryGroupHandlesSpecVersion = 1
-	// ExtPipelineLibraryGroupHandlesExtensionName as defined in vulkan_core.h:16477
+	// ExtPipelineLibraryGroupHandlesExtensionName as defined in vulkan_core.h:16473
 	ExtPipelineLibraryGroupHandlesExtensionName = "VK_EXT_pipeline_library_group_handles"
-	// QcomMultiviewPerViewRenderAreas as defined in vulkan_core.h:16486
+	// QcomMultiviewPerViewRenderAreas as defined in vulkan_core.h:16482
 	QcomMultiviewPerViewRenderAreas = 1
-	// QcomMultiviewPerViewRenderAreasSpecVersion as defined in vulkan_core.h:16487
+	// QcomMultiviewPerViewRenderAreasSpecVersion as defined in vulkan_core.h:16483
 	QcomMultiviewPerViewRenderAreasSpecVersion = 1
-	// QcomMultiviewPerViewRenderAreasExtensionName as defined in vulkan_core.h:16488
+	// QcomMultiviewPerViewRenderAreasExtensionName as defined in vulkan_core.h:16484
 	QcomMultiviewPerViewRenderAreasExtensionName = "VK_QCOM_multiview_per_view_render_areas"
-	// KhrAccelerationStructure as defined in vulkan_core.h:16504
+	// KhrAccelerationStructure as defined in vulkan_core.h:16500
 	KhrAccelerationStructure = 1
-	// KhrAccelerationStructureSpecVersion as defined in vulkan_core.h:16505
+	// KhrAccelerationStructureSpecVersion as defined in vulkan_core.h:16501
 	KhrAccelerationStructureSpecVersion = 13
-	// KhrAccelerationStructureExtensionName as defined in vulkan_core.h:16506
+	// KhrAccelerationStructureExtensionName as defined in vulkan_core.h:16502
 	KhrAccelerationStructureExtensionName = "VK_KHR_acceleration_structure"
-	// KhrRayTracingPipeline as defined in vulkan_core.h:16779
+	// KhrRayTracingPipeline as defined in vulkan_core.h:16775
 	KhrRayTracingPipeline = 1
-	// KhrRayTracingPipelineSpecVersion as defined in vulkan_core.h:16780
+	// KhrRayTracingPipelineSpecVersion as defined in vulkan_core.h:16776
 	KhrRayTracingPipelineSpecVersion = 1
-	// KhrRayTracingPipelineExtensionName as defined in vulkan_core.h:16781
+	// KhrRayTracingPipelineExtensionName as defined in vulkan_core.h:16777
 	KhrRayTracingPipelineExtensionName = "VK_KHR_ray_tracing_pipeline"
-	// KhrRayQuery as defined in vulkan_core.h:16915
+	// KhrRayQuery as defined in vulkan_core.h:16911
 	KhrRayQuery = 1
-	// KhrRayQuerySpecVersion as defined in vulkan_core.h:16916
+	// KhrRayQuerySpecVersion as defined in vulkan_core.h:16912
 	KhrRayQuerySpecVersion = 1
-	// KhrRayQueryExtensionName as defined in vulkan_core.h:16917
+	// KhrRayQueryExtensionName as defined in vulkan_core.h:16913
 	KhrRayQueryExtensionName = "VK_KHR_ray_query"
-	// ExtMeshShader as defined in vulkan_core.h:16926
+	// ExtMeshShader as defined in vulkan_core.h:16922
 	ExtMeshShader = 1
-	// ExtMeshShaderSpecVersion as defined in vulkan_core.h:16927
+	// ExtMeshShaderSpecVersion as defined in vulkan_core.h:16923
 	ExtMeshShaderSpecVersion = 1
-	// ExtMeshShaderExtensionName as defined in vulkan_core.h:16928
+	// ExtMeshShaderExtensionName as defined in vulkan_core.h:16924
 	ExtMeshShaderExtensionName = "VK_EXT_mesh_shader"
 	// NoPrototypes as defined in vk_bridge.h:4
 	NoPrototypes = 1
@@ -1882,6 +1882,7 @@ const (
 	ThreadDone                               Result = 1000268001
 	OperationDeferred                        Result = 1000268002
 	OperationNotDeferred                     Result = 1000268003
+	ErrorInvalidVideoStdParameters           Result = -1000299000
 	ErrorCompressionExhausted                Result = -1000338000
 	ErrorInvalidDeviceAddress                Result = -1000257000
 	ErrorPipelineCompileRequired             Result = 1000297000
@@ -2167,20 +2168,16 @@ const (
 	StructureTypeVideoEncodeH264VclFrameInfo                                 StructureType = 1000038003
 	StructureTypeVideoEncodeH264DpbSlotInfo                                  StructureType = 1000038004
 	StructureTypeVideoEncodeH264NaluSliceInfo                                StructureType = 1000038005
-	StructureTypeVideoEncodeH264EmitPictureParametersInfo                    StructureType = 1000038006
 	StructureTypeVideoEncodeH264ProfileInfo                                  StructureType = 1000038007
 	StructureTypeVideoEncodeH264RateControlInfo                              StructureType = 1000038008
 	StructureTypeVideoEncodeH264RateControlLayerInfo                         StructureType = 1000038009
-	StructureTypeVideoEncodeH264ReferenceListsInfo                           StructureType = 1000038010
 	StructureTypeVideoEncodeH265Capabilities                                 StructureType = 1000039000
 	StructureTypeVideoEncodeH265SessionParametersCreateInfo                  StructureType = 1000039001
 	StructureTypeVideoEncodeH265SessionParametersAddInfo                     StructureType = 1000039002
 	StructureTypeVideoEncodeH265VclFrameInfo                                 StructureType = 1000039003
 	StructureTypeVideoEncodeH265DpbSlotInfo                                  StructureType = 1000039004
 	StructureTypeVideoEncodeH265NaluSliceSegmentInfo                         StructureType = 1000039005
-	StructureTypeVideoEncodeH265EmitPictureParametersInfo                    StructureType = 1000039006
 	StructureTypeVideoEncodeH265ProfileInfo                                  StructureType = 1000039007
-	StructureTypeVideoEncodeH265ReferenceListsInfo                           StructureType = 1000039008
 	StructureTypeVideoEncodeH265RateControlInfo                              StructureType = 1000039009
 	StructureTypeVideoEncodeH265RateControlLayerInfo                         StructureType = 1000039010
 	StructureTypeVideoDecodeH264Capabilities                                 StructureType = 1000040000
@@ -2468,6 +2465,7 @@ const (
 	StructureTypeVideoEncodeRateControlLayerInfo                             StructureType = 1000299002
 	StructureTypeVideoEncodeCapabilities                                     StructureType = 1000299003
 	StructureTypeVideoEncodeUsageInfo                                        StructureType = 1000299004
+	StructureTypeQueryPoolVideoEncodeFeedbackCreateInfo                      StructureType = 1000299005
 	StructureTypePhysicalDeviceDiagnosticsConfigFeaturesNv                   StructureType = 1000300000
 	StructureTypeDeviceDiagnosticsConfigCreateInfoNv                         StructureType = 1000300001
 	StructureTypeQueryLowLatencySupportNv                                    StructureType = 1000310000
@@ -2774,6 +2772,7 @@ const (
 	VendorIdCodeplay VendorId = 65540
 	VendorIdMesa     VendorId = 65541
 	VendorIdPocl     VendorId = 65542
+	VendorIdMobileye VendorId = 65543
 	VendorIdMaxEnum  VendorId = 2147483647
 )
 
@@ -3105,7 +3104,7 @@ const (
 	QueryTypeAccelerationStructureSerializationSize                QueryType = 1000150001
 	QueryTypeAccelerationStructureCompactedSizeNv                  QueryType = 1000165000
 	QueryTypePerformanceQueryIntel                                 QueryType = 1000210000
-	QueryTypeVideoEncodeBitstreamBufferRange                       QueryType = 1000299000
+	QueryTypeVideoEncodeFeedback                                   QueryType = 1000299000
 	QueryTypeMeshPrimitivesGenerated                               QueryType = 1000328000
 	QueryTypePrimitivesGenerated                                   QueryType = 1000382000
 	QueryTypeAccelerationStructureSerializationBottomLevelPointers QueryType = 1000386000

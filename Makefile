@@ -1,4 +1,4 @@
-VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.242.zip
+VULKAN_HEADERS_URL=https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.243.zip
 HEADERS_DIR=headers
 
 help:
